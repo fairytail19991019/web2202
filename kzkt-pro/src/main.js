@@ -9,6 +9,11 @@ import VueAxios from 'vue-axios'
 axios.defaults.baseURL='http://localhost:3000'
 Vue.use(VueAxios,axios)
 
+// 引入导航栏模块
+import { Navbar, TabItem } from 'mint-ui';
+Vue.component(Navbar.name, Navbar);
+Vue.component(TabItem.name, TabItem);
+
 //配置mintui
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
@@ -17,6 +22,7 @@ Vue.use(MintUI)
 //配置vant
 import Vant from 'vant';
 import 'vant/lib/index.css';
+import vueConfig from 'vue.config'
 Vue.use(Vant);
 
 Vue.config.productionTip = false
