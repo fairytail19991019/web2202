@@ -9,7 +9,7 @@ import VueAxios from 'vue-axios'
 axios.defaults.baseURL='http://localhost:3000'
 Vue.use(VueAxios,axios)
 
-// 引入导航栏模块
+// 引入导航栏 模块
 import { Navbar, TabItem } from 'mint-ui';
 Vue.component(Navbar.name, Navbar);
 Vue.component(TabItem.name, TabItem);

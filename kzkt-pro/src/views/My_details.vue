@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!-- 腾讯课堂详情页 23.48 -->
+        <!-- 腾讯课堂详情页 23.48  -->
         <mt-navbar v-model="selected">
             <mt-tab-item id="1">介绍</mt-tab-item>
             <mt-tab-item id="2">目录</mt-tab-item>
