@@ -19,6 +19,12 @@ import Vant from 'vant';
 import 'vant/lib/index.css';
 Vue.use(Vant);
 
+// 集成 swiper
+// 前提先安装: npm install swiper@5.* vue-awesome-swiper@4.*
+import VueAwesomeSwiper from 'vue-awesome-swiper';
+import 'swiper/css/swiper.css'
+Vue.use(VueAwesomeSwiper)
+
 Vue.config.productionTip = false
 
 new Vue({
