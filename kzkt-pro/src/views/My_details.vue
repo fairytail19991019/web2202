@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!-- 详情页 -->
+        <!-- 腾讯课堂详情页 -->
     </div>
 </template>
 
