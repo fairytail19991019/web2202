@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <nav>
+      12345645456456465
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
