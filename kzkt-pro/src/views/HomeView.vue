@@ -5,7 +5,7 @@
       <mt-tab-item id="index">
         首页
       </mt-tab-item>
-      <mt-tab-item id="knowage">
+      <mt-tab-item id="knowdge">
         涨知识
       </mt-tab-item>
       <mt-tab-item id="class">
@@ -28,8 +28,8 @@ export default {
         this.$router.push('/home/me')
       }else if(newValue=='class'){
         this.$router.push('/home/class')
-      }else if(newValue=='knowdeg'){
-        this.$router.push('/home/knowdeg')
+      }else if(newValue=='knowdge'){
+        this.$router.push('/home/knowdge')
       }
     },
   },
