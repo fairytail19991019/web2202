@@ -6,6 +6,11 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/mydetails',
+    name: 'MyDetails',
+    component: () => import('../views/MyDetails.vue'),
+  },
+  {
     path: '/',
     redirect:'/home/index'
   },
@@ -27,11 +32,6 @@ const routes = [
       path: 'class',
       name: "class",
       component: () => import('../views/MyClass.vue')
-    },
-    {
-      path: '/MyDetails',
-      name: 'MyDetails',
-      component: () => import('../views/MyDetails.vue'),
     },
     {
       path: 'me',
