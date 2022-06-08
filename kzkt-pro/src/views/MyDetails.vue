@@ -471,234 +471,159 @@
         </div>
       </mt-tab-container-item>
 
-
-
-
-
-
       <mt-tab-container-item id="3">
-
         <div>
-
-        
-            
-            <div class="clear" style="display:flex;justify-content: space-between;align-items: center;padding:16px 16px;">
-              <div>
-                <h3>学员评价</h3>
-              </div>
-              <div>
-                 <a href="">查看全部</a>
-              </div>
-             
+          <div
+            class="clear"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 16px 16px;
+            "
+          >
+            <div>
+              <h3>学员评价</h3>
             </div>
-            
-            
-                
-                  
-                  <div class="clear" style="display:flex;justify-content: space-between;align-items: center;padding:16px 16px;">
-                    <!-- 用户头像 -->
-                    <div><img src="../assets/img/userlog1.jpg" alt="" style="width:32px;height:32px;"></div>
-                    <!-- 昵称|时间 -->
-                    <div style="font-size:1rem; line-height:1.5rem;">
-                      <p >***三</p>
-                      <p>8个月前|已上课3小时20分钟评论 <span>五星好评</span></p>
-                     
-                    </div>
-
-                  </div>
-                </div>
-                <div class="comment-msg-wrap">
-            
-                    <p >
-                      很好 很喜欢老师的课程 作为一个小白 虽然不是老师的学生
-                      但是老师课后也会帮助我 帮我解决我的困惑 谢谢老师
-                    </p>
-                 
-                
-            
+            <div>
+              <a href="">查看全部</a>
+            </div>
           </div>
+
+          <div
+            class="clear"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 16px 16px;
+            "
+          >
+            <!-- 用户头像 -->
+            <div>
+              <img
+                src="../assets/img/userlog1.jpg"
+                alt=""
+                style="width: 32px; height: 32px"
+              />
+            </div>
+            <!-- 昵称|时间 -->
+            <div style="font-size: 1rem; line-height: 1.5rem">
+              <p>***三</p>
+              <p>8个月前|已上课3小时20分钟评论 <span>五星好评</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="comment-msg-wrap">
+          <p>
+            很好 很喜欢老师的课程 作为一个小白 虽然不是老师的学生
+            但是老师课后也会帮助我 帮我解决我的困惑 谢谢老师
+          </p>
+        </div>
       </mt-tab-container-item>
 
       <mt-tab-container-item id="4">
-        <section class="section related-courses">
-          <h2 class="section-tt">
-            关联的<!-- -->付费<!-- -->课程<span
-              class="yjl-contact-btn"
-              style="display: inline-block"
-              ><i></i>获取选课建议</span
-            >
-          </h2>
-          <div class="related-courses-list">
-            <a
-              class="course-card-wrapper js-report-link"
-              data-report-module="link_course"
-              data-report-position="1"
-              href="https://m.ke.qq.com/course/2994691"
-              ><div class="course-card-cover">
-                <img
-                  data-src="https://10.idqqimg.com/qqcourse_logo_ng/ajNVdqHZLLCspQWJI3icibehFEK6Qm2BlEPeZnaSr008MoUknSHX6WXqZA1wvQWL42c4XMicsgWZjY/356"
-                  alt="课程封面"
-                  class=""
-                  src="https://10.idqqimg.com/qqcourse_logo_ng/ajNVdqHZLLCspQWJI3icibehFEK6Qm2BlEPeZnaSr008MoUknSHX6WXqZA1wvQWL42c4XMicsgWZjY/356"
-                />
-              </div>
-              <div class="course-card-content">
-                <h3 class="course-card-name">
-                  【插画喵-VIP课】PS商业插画全能特训班
-                </h3>
-                <div class="course-card-price">
-                  <span class="price"
-                    ><span class="coursedot" aria-hidden="true">¥</span
-                    >2980<span class="float"></span></span
-                  ><span class="course-card-tips">103人购买</span>
-                </div>
-              </div></a
-            >
-            <ul class="course-type-list">
-              <li>
-                <svg class="icon-svg svg--success" viewBox="0 0 480 480">
-                  <use xlink:href="#success"></use></svg
-                >实时咨询
-              </li>
-              <li>
-                <svg class="icon-svg svg--success" viewBox="0 0 480 480">
-                  <use xlink:href="#success"></use></svg
-                >有问题优先回答
-              </li>
-              <li>
-                <svg class="icon-svg svg--success" viewBox="0 0 480 480">
-                  <use xlink:href="#success"></use></svg
-                >大师级授课
-              </li>
-            </ul>
-          </div>
-        </section>
 
-        <section class="section recommend-courses">
-          <h2 class="section-tt">
-            机构课程推荐<span class="yjl-contact-btn"><i></i>获取选课建议</span>
-          </h2>
-          <div class="recommend-courses-list">
-            <a
-              class="course-card-wrapper js-report-link"
-              data-report-module="agency-recommend"
-              data-report-position="1"
-              href="https://m.ke.qq.com/course/3678641"
-              ><div class="course-card-cover">
-                <img
-                  data-src="https://10.idqqimg.com/qqcourse_logo_ng/ajNVdqHZLLARDSwlwOKCc69IiciaJBepzkiaQNhQrCJ66xL3Seonb2G0mp4RM3XViazGp5L5yZa6ia1k/356"
-                  alt="课程封面"
-                  class=""
-                  src="https://10.idqqimg.com/qqcourse_logo_ng/ajNVdqHZLLARDSwlwOKCc69IiciaJBepzkiaQNhQrCJ66xL3Seonb2G0mp4RM3XViazGp5L5yZa6ia1k/356"
-                />
+       
+            <h2 class="section-tt">授课机构</h2>
+            <div style="display:flex;
+              align-items: center;" class="clear">
+              <img src="../assets/img/teacther.jpg" alt="" style="width:36px;height:36px;margin-right:10px;">
+              <div class="agency-desc">
+                <p class="agency-name">
+                  <span style="font-size:1rem;margin:2px 1px;">视商研习社</span>
+                </p>
+                <ul style="display:flex;font-size:0.75rem;;margin:2px 1px;" class="clear">
+                 
+                  <li>好评度<!-- -->100%</li>
+                  <li class="slash">·</li>
+                  <li>课程数<!-- -->5</li>
+                  <li class="slash">·</li>
+                  <li>学生数<!-- -->8571</li>
+                </ul>
               </div>
-              <div class="course-card-content">
-                <h3 class="course-card-name">
-                  【插画喵-训练营】商业插画训练营
-                </h3>
-                <div class="course-card-price">
-                  <span class="price"><span class="price-free">免费</span></span
-                  ><span class="course-card-tips">268人最近报名</span>
-                </div>
-              </div></a
-            ><a
-              class="course-card-wrapper js-report-link"
-              data-report-module="agency-recommend"
-              data-report-position="2"
-              href="https://m.ke.qq.com/course/3100480"
-              ><div class="course-card-cover">
-                <img
-                  data-src="https://10.idqqimg.com/qqcourse_logo_ng/ajNVdqHZLLCFBibgkbPZOhQVbKrgJQibKFB9vJ9Lhicj59c4zAjcicHOFxuTFlsWTCLbAbA2wUJgbDI/356"
-                  alt="课程封面"
-                  class=""
-                  src="https://10.idqqimg.com/qqcourse_logo_ng/ajNVdqHZLLCFBibgkbPZOhQVbKrgJQibKFB9vJ9Lhicj59c4zAjcicHOFxuTFlsWTCLbAbA2wUJgbDI/356"
-                />
+              
+            </div>
+            
+
+
+              
+              <div style="display:flex" class="clear">
+                 <img src="../assets/img/qqlog.jpg" alt="" style="width:20px;height:20px;">
+                <div class="list-item-left"><i class="is-qq"></i>福利群</div>
+                <div class="list-item-center">定期发放干货资料，优惠福利</div>
+                <div class="list-item-right"><i></i></div>
               </div>
-              <div class="course-card-content">
-                <h3 class="course-card-name">
-                  【插画喵-公开课】0基础学商业插画/PS/ipad/板绘
-                </h3>
-                <div class="course-card-price">
-                  <span class="price"><span class="price-free">免费</span></span
-                  ><span class="course-card-tips">48人最近报名</span>
+
+                
+
+              
+
+            
+          
+          <section class="section related-courses">
+            <h2 class="section-tt">
+              关联的<!-- -->付费<!-- -->课程<span
+                class="yjl-contact-btn"
+                style="display: inline-block"
+                ><i></i>获取选课建议</span
+              >
+            </h2>
+           
+           <div>
+            
+            <div style="display:flex;justify-content: space-between;
+              align-items: center;padding:16px 16px;">
+            <div style="margin-right:10px;">
+                <img src="../assets/img/dyjj01.jpg" alt="" style="height:70px;width:124px;">
+            </div>
+            <div >
+              <div>
+                <div >
+                  <h5  style="margin:5px 0;">
+                    抖音vlog短视频自媒体制作引流运营赚钱盈利全攻略实战福利课教程
+                  </h5>
                 </div>
-              </div></a
-            ><a
-              class="course-card-wrapper js-report-link"
-              data-report-module="agency-recommend"
-              data-report-position="3"
-              href="https://m.ke.qq.com/course/3737465"
-              ><div class="course-card-cover">
-                <img
-                  data-src="https://10.idqqimg.com/qqcourse_logo_ng/ajNVdqHZLLCvT2toQPd9WwjicsUgSsNkhKuIAWxacYFVRF9vI9xsqttwqkFq54fQOfx5VLpqVhKE/356"
-                  alt="课程封面"
-                  class=""
-                  src="https://10.idqqimg.com/qqcourse_logo_ng/ajNVdqHZLLCvT2toQPd9WwjicsUgSsNkhKuIAWxacYFVRF9vI9xsqttwqkFq54fQOfx5VLpqVhKE/356"
-                />
+                  <div style="margin:5px 0;">
+                    <span style="font-size:0.8rem;">免费</span>
+                    <span style="font-size:0.8rem;">6人最近报名</span>
+                  </div>
               </div>
-              <div class="course-card-content">
-                <h3 class="course-card-name">
-                  【插画喵-训练营】速写训练营（啵啵老师）
-                </h3>
-                <div class="course-card-price">
-                  <span class="price"><span class="price-free">免费</span></span
-                  ><span class="course-card-tips">45人最近报名</span>
-                </div>
-              </div></a
-            ><a
-              class="course-card-wrapper js-report-link"
-              data-report-module="agency-recommend"
-              data-report-position="4"
-              href="https://m.ke.qq.com/course/3489452"
-              ><div class="course-card-cover">
-                <img
-                  data-src="https://10.idqqimg.com/qqcourse_logo_ng/ajNVdqHZLLBdeP4El5Bty8AE4hTDroOmwbRoNzaeZRTGdwCxFaNyHib58O75L9CyucIK15rVazOU/356"
-                  alt="课程封面"
-                  class=""
-                  src="https://10.idqqimg.com/qqcourse_logo_ng/ajNVdqHZLLBdeP4El5Bty8AE4hTDroOmwbRoNzaeZRTGdwCxFaNyHib58O75L9CyucIK15rVazOU/356"
-                />
-              </div>
-              <div class="course-card-content">
-                <h3 class="course-card-name">
-                  【插画喵-专题课】素描基础课（适用iPad）
-                </h3>
-                <div class="course-card-price">
-                  <span class="price"
-                    ><span class="coursedot" aria-hidden="true">¥</span>699<span
-                      class="float"
-                    ></span></span
-                  ><span class="course-card-tips">6082人购买</span>
-                </div>
-              </div></a
-            ><a
-              class="course-card-wrapper js-report-link"
-              data-report-module="agency-recommend"
-              data-report-position="5"
-              href="https://m.ke.qq.com/course/3450169"
-              ><div class="course-card-cover">
-                <img
-                  data-src="https://10.idqqimg.com/qqcourse_logo_ng/ajNVdqHZLLCQwTgdAD4Vn9AVsPt94A5mcxHYLuBporcbqKK9f95tKsn6GOCTlncvZ5d6NvicISF8/356"
-                  alt="课程封面"
-                  class=""
-                  src="https://10.idqqimg.com/qqcourse_logo_ng/ajNVdqHZLLCQwTgdAD4Vn9AVsPt94A5mcxHYLuBporcbqKK9f95tKsn6GOCTlncvZ5d6NvicISF8/356"
-                />
-              </div>
-              <div class="course-card-content">
-                <h3 class="course-card-name">
-                  【插画喵-专题课】学前班（适用PS）
-                </h3>
-                <div class="course-card-price">
-                  <span class="price"
-                    ><span class="coursedot" aria-hidden="true">¥</span>9<span
-                      class="float"
-                      >.9</span
-                    ></span
-                  ><span class="course-card-tips">6062人购买</span>
-                </div>
-              </div></a
-            >
+            </div>
           </div>
-        </section>
+          </div>
+
+          </section>
+
+
+
+          <div>
+            <h2 class="section-tt">
+              机构课程推荐<span class="yjl-contact-btn"
+                ><i></i>获取选课建议</span
+              > 
+            </h2>
+            <div style="display:flex;justify-content: space-between;
+              align-items: center;padding:16px 16px;">
+            <div style="margin-right:10px;">
+                <img src="../assets/img/dyjj01.jpg" alt="" style="height:70px;width:124px;">
+            </div>
+            <div >
+              <div>
+                <div >
+                  <h5  style="margin:5px 0;">
+                    抖音vlog短视频自媒体制作引流运营赚钱盈利全攻略实战福利课教程
+                  </h5>
+                </div>
+                  <div style="margin:5px 0;">
+                    <span style="font-size:0.8rem;">免费</span>
+                    <span style="font-size:0.8rem;">6人最近报名</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
       </mt-tab-container-item>
     </mt-tab-container>
   </div>
