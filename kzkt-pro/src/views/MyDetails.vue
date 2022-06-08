@@ -135,20 +135,20 @@
       <mt-tab-container-item id="4">
 
        
-            <h2 class="section-tt">授课机构</h2>
+            <h2 >授课机构</h2>
             <div style="display:flex;
               align-items: center;" class="clear">
               <img src="../assets/img/teacther.jpg" alt="" style="width:36px;height:36px;margin-right:10px;">
-              <div class="agency-desc">
-                <p class="agency-name">
+              <div >
+                <p >
                   <span style="font-size:1rem;margin:2px 1px;">视商研习社</span>
                 </p>
                 <ul style="display:flex;font-size:0.75rem;;margin:2px 1px;" class="clear">
                  
                   <li>好评度<!-- -->100%</li>
-                  <li class="slash">·</li>
+                  <li >·</li>
                   <li>课程数<!-- -->5</li>
-                  <li class="slash">·</li>
+                  <li >·</li>
                   <li>学生数<!-- -->8571</li>
                 </ul>
               </div>
@@ -160,9 +160,9 @@
               
               <div style="display:flex" class="clear">
                  <img src="../assets/img/qqlog.jpg" alt="" style="width:20px;height:20px;">
-                <div class="list-item-left"><i class="is-qq"></i>福利群</div>
-                <div class="list-item-center">定期发放干货资料，优惠福利</div>
-                <div class="list-item-right"><i></i></div>
+                <div><i class="is-qq"></i>福利群</div>
+                <div >定期发放干货资料，优惠福利</div>
+                <div ><i></i></div>
               </div>
 
                 
@@ -171,12 +171,10 @@
 
             
           
-          <section class="section related-courses">
-            <h2 class="section-tt">
-              关联的<!-- -->付费<!-- -->课程<span
-                class="yjl-contact-btn"
-                style="display: inline-block"
-                ><i></i>获取选课建议</span
+          
+            <h2 >
+              关联的付费课程
+              <span style="display: inline-block"><i></i>获取选课建议</span
               >
             </h2>
            
@@ -202,13 +200,8 @@
             </div>
           </div>
           </div>
-
-          </section>
-
-
-
           <div>
-            <h2 class="section-tt">
+            <h2 >
               机构课程推荐<span class="yjl-contact-btn"
                 ><i></i>获取选课建议</span
               > 
