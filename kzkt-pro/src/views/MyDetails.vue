@@ -23,12 +23,12 @@
 
     <mt-tab-container v-model="selected">
       <mt-tab-container-item id="1">
-        <div style="height: 115px; width: 100%; padding: 16px">
-          <div>
-            <img src="" alt="" />
-            <div>
-              <span>免费领取资料</span>
-              <span>联系老师领取干货资料</span>
+        <div style="height: 115px; width: 100%; padding: 16px;display:flex;align-items: center;">
+          <div style="display:flex;">
+              <img src="../assets/img/wenjianjia.jpg" alt=""  style="width:36px;height:36px;margin-right:10px;">
+              <div >
+                  <div><span>免费领取资料</span></div>
+                  <div> <span>联系老师领取干货资料</span></div>
             </div>
           </div>
         </div>
@@ -184,7 +184,6 @@
             </div>
           </div>
           </div>
-
       </mt-tab-container-item>
     </mt-tab-container>
   </div>
