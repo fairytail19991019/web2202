@@ -36,13 +36,11 @@
           <div style="padding: 0 16px">
             <h3>讲师介绍</h3>
           </div>
-
           <div style="padding: 0 16px; display: inline-flex" class="clear">
             <img
               src="../assets/img/teacther.jpg"
               alt=""
-              style="height: 2.5rem; width: 2.5rem"
-            />
+              style="height: 2.5rem; width: 2.5rem"/>
             <div>
               <p>闽西老师</p>
               <span>视商研习创始人，手机拍摄摄影师，腾讯课堂认证讲师!</span>
@@ -56,30 +54,21 @@
               <img
                 src="../assets/img/classdetail.jpg"
                 alt=""
-                style="width: 100%"
-              />
+                style="width: 100%"/>
             </div>
           </div>
         </div>
       </mt-tab-container-item>
+
       <mt-tab-container-item id="2">
-
-        <h2 class="section-tt">课程目录</h2>
-        <div style="max-height: 520px; margin-bottom: 30px">
-          
-              
-                  <div class="sub-title suffix-0">前言：为什么要学习剪映</div>
-                
-
-
-           
-          <div class="collapse-btn">
-           
-            <p class="collapse-tip">APP内学习，流畅又清晰</p>
+        <h2>课程目录</h2>
+        <div style="max-height: 520px; margin-bottom: 30px">   
+          <div >前言：为什么要学习剪映</div>
+          <div >
+            <p>APP内学习，流畅又清晰</p>
           </div>
         </div>
       </mt-tab-container-item>
-
 
       <mt-tab-container-item id="3">
         <div>
@@ -89,9 +78,7 @@
               display: flex;
               justify-content: space-between;
               align-items: center;
-              padding: 16px 16px;
-            "
-          >
+              padding: 16px 16px;">
             <div>
               <h3>学员评价</h3>
             </div>
@@ -99,7 +86,6 @@
               <a href="">查看全部</a>
             </div>
           </div>
-
           <div
             class="clear"
             style="
@@ -124,7 +110,7 @@
             </div>
           </div>
         </div>
-        <div class="comment-msg-wrap">
+        <div>
           <p>
             很好 很喜欢老师的课程 作为一个小白 虽然不是老师的学生
             但是老师课后也会帮助我 帮我解决我的困惑 谢谢老师
@@ -133,8 +119,6 @@
       </mt-tab-container-item>
 
       <mt-tab-container-item id="4">
-
-       
             <h2 >授课机构</h2>
             <div style="display:flex;
               align-items: center;" class="clear">
@@ -144,44 +128,21 @@
                   <span style="font-size:1rem;margin:2px 1px;">视商研习社</span>
                 </p>
                 <ul style="display:flex;font-size:0.75rem;;margin:2px 1px;" class="clear">
-                 
-                  <li>好评度<!-- -->100%</li>
-                  <li >·</li>
-                  <li>课程数<!-- -->5</li>
-                  <li >·</li>
-                  <li>学生数<!-- -->8571</li>
+                  <li>好评度100%</li> <li >·</li><li>课程数5</li><li >·</li><li>学生数8571</li>
                 </ul>
               </div>
               
-            </div>
-            
-
-
-              
+            </div> 
               <div style="display:flex" class="clear">
                  <img src="../assets/img/qqlog.jpg" alt="" style="width:20px;height:20px;">
                 <div><i class="is-qq"></i>福利群</div>
                 <div >定期发放干货资料，优惠福利</div>
                 <div ><i></i></div>
               </div>
-
-                
-
-              
-
-            
-          
-          
-            <h2 >
-              关联的付费课程
-              <span style="display: inline-block"><i></i>获取选课建议</span
-              >
-            </h2>
+            <h2 >关联的付费课程<span style="display: inline-block"><i></i>获取选课建议</span></h2>
            
            <div>
-            
-            <div style="display:flex;justify-content: space-between;
-              align-items: center;padding:16px 16px;">
+            <div style="display:flex;justify-content: space-between; align-items: center;padding:16px 16px;">
             <div style="margin-right:10px;">
                 <img src="../assets/img/dyjj01.jpg" alt="" style="height:70px;width:124px;">
             </div>
@@ -202,12 +163,9 @@
           </div>
           <div>
             <h2 >
-              机构课程推荐<span class="yjl-contact-btn"
-                ><i></i>获取选课建议</span
-              > 
+              机构课程推荐<span><i></i>获取选课建议</span> 
             </h2>
-            <div style="display:flex;justify-content: space-between;
-              align-items: center;padding:16px 16px;">
+            <div style="display:flex;justify-content: space-between;align-items: center;padding:16px 16px;">
             <div style="margin-right:10px;">
                 <img src="../assets/img/dyjj01.jpg" alt="" style="height:70px;width:124px;">
             </div>
