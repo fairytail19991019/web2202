@@ -28,27 +28,35 @@
 
     <!-- 推荐课程 -->
     <h2>推荐课程</h2>
-    <van-tabs v-model="activeName">
-      <!-- 二级筛选 -->
-      <van-tabs  class="table-small">
-        <van-tab title="前端开发"></van-tab>
-        <van-tab title="软件测试"></van-tab>
-        <van-tab title="英语"></van-tab>
-        <van-tab title="java"></van-tab>
-        <van-tab title="Excel"></van-tab>
-      </van-tabs>
-      <van-tab title="综合" name="a">
-        <zu-jian-01 />
-        <zu-jian-01 />
-        <zu-jian-01 />
-      </van-tab>
-      <van-tab title="好评" name="b">
-        <zu-jian-01 />
-        <zu-jian-01 />
-      </van-tab>
-      <van-tab title="人气" name="c">人气</van-tab>
-    </van-tabs>
+
     <div style="height: 10px"></div>
+
+    <mt-navbar v-model="selected">
+      <mt-tab-item id="1">综合</mt-tab-item>
+      <mt-tab-item id="2">好评</mt-tab-item>
+      <mt-tab-item id="3">人气</mt-tab-item>
+    </mt-navbar>
+
+    <mt-navbar class="sort">
+      <mt-tab-item id="1">前端开发</mt-tab-item>
+      <mt-tab-item id="2">软件测试</mt-tab-item>
+      <mt-tab-item id="3">英语</mt-tab-item>
+      <mt-tab-item id="4">Java</mt-tab-item>
+      <mt-tab-item id="5">eExcel</mt-tab-item>
+    </mt-navbar>
+
+    <!-- tab-container -->
+    <mt-tab-container v-model="selected">
+      <mt-tab-container-item id="1">
+        <zu-jian-01 />
+      </mt-tab-container-item>
+      <mt-tab-container-item id="2">
+        <zu-jian-01 />
+      </mt-tab-container-item>
+      <mt-tab-container-item id="3">
+        <zu-jian-01 />
+      </mt-tab-container-item>
+    </mt-tab-container>
   </div>
 </template>
 
@@ -60,7 +68,8 @@ export default {
     return {
       // 搜索框内容
       value: "",
-      activeName: "a",
+      active: 0,
+      selected: 1,
       swiperOptions: {
         //效果,特效  默认为"slide"（普通位移切换），还可设置为"fade"（淡入）、"cube"（方块）、"coverflow"（3d流）、"flip"（3d翻转）
         effect: "fade",
@@ -96,7 +105,22 @@ export default {
     height: 18vh;
   }
 }
+.sort{
+  display: flex;
+  flex: 1;
+  margin-top: 20px;
+  margin-bottom: 10px;
 
-
-
+  .mint-tab-item{
+    border: 1px solid rgb(14, 181, 231);
+    border-radius: 20px;
+    padding: 5px 0;
+    width: 30px;
+    margin: 0 10px;
+  }
+  .active{
+    color: white;
+    background-color: rgb(14, 181, 231);
+  }
+}
 </style>
