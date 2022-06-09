@@ -23,9 +23,9 @@ r.post('/login',(req,res,next)=>{
         console.log(result);
         //通过返回数组的length判断是否登录成功
         if(result.length==0){
-            res.send({code:500,msg:'登录失败'})
+            res.send({code:500,msg:'登录失败',result:result})
         }else{
-            res.send({code:200,msg:'登录成功'})
+            res.send({code:200,msg:'登录成功',result:result})
         }
     })
 })

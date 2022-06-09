@@ -14,6 +14,18 @@ i.get('/category', (req, res, next) => {
 })
 i.get('/classall', (req, res, next) => {
     console.log(req.query)
+    // 获取客户端传递的page参数
+    let page = req.query.page ? req.query.page : 1;
+
+    // 存储每页显示的记录数
+    let pagesize = 20;
+
+    // 通过公式来计算从第几条记录开始返回
+    let offset = (page - 1) * pagesize;
+
+    // 用于存储获取到的总记录数
+    let rowcount;
+    
     pool.query('select * from kz_class', (err, result) => {
         if (err) {
             next(err)
