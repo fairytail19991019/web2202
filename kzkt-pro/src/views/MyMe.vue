@@ -12,7 +12,7 @@
         />
       </van-col>
       <van-col span="14"
-        ><router-link to="">登录/注册<van-icon name="arrow" /></router-link
+        ><router-link to="/register">登录/注册<van-icon name="arrow" /></router-link
       ></van-col>
       <van-col span="4"><van-icon name="comment-o" size="25" /></van-col>
     </van-row>

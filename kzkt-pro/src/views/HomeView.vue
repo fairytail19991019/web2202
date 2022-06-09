@@ -2,10 +2,22 @@
   <div>
     <router-view />
     <mt-tabbar v-model="tabSelected" fixed>
-      <mt-tab-item id="index"> 首页 </mt-tab-item>
-      <mt-tab-item id="knowdge"> 涨知识 </mt-tab-item>
-      <mt-tab-item id="class"> 课程表 </mt-tab-item>
-      <mt-tab-item id="me"> 我的 </mt-tab-item>
+      <mt-tab-item id="index"> 
+        <van-icon  size="26" slot="icon" name="wap-home-o" />
+        首页 
+        </mt-tab-item>
+      <mt-tab-item id="knowdge"> 
+        <van-icon  size="26" slot="icon" name="video-o" />
+        涨知识 
+        </mt-tab-item>
+      <mt-tab-item id="class">
+        <van-icon  size="26" slot="icon" name="calendar-o" />
+        课程表 
+        </mt-tab-item>
+      <mt-tab-item id="me"> 
+        <van-icon size="26"  slot="icon" name="manager-o" />
+        我的 
+        </mt-tab-item>
     </mt-tabbar>
   </div>
 </template>
