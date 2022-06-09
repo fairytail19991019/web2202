@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    loginname:sessionStorage.getItem('phone'),  //存储登录用户信息
+    loginname:sessionStorage.getItem('name'),  //存储登录用户信息
   },
   getters: {
   },
@@ -15,6 +15,10 @@ export default new Vuex.Store({
       state.loginname=payload
       //将用户名存入sessionStorage  刷新网页依然存在
       sessionStorage.setItem('name',payload)
+    },
+    quit(state){
+      state.loginname=null
+      sessionStorage.removeItem('name')
     }
   },
   actions: {

@@ -64,9 +64,9 @@ export default {
           if (res.data.code == 200) {
             //登录成功后 修改vuex中的state里的登录状态 保存用户名
             // 通知vuex 执行mutations中的updataLoginStatr方法 更新state
-            this.$store.commit('updateLoginState',this.phone)
+            this.$store.commit('updateLoginState',res.data.result[0].uname)
             
-            this.$router.push("/");
+            this.$router.push("/home/me");
             this.$toast("登录成功");
           } else {
             //登录失败

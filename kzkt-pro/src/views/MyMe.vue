@@ -12,42 +12,44 @@
         />
       </van-col>
 
-      <van-col v-if="$store.state.loginname" span="14"
-        > {{$store.state.loginname}}</van-col>
+      <van-col @click="edit" v-if="$store.state.loginname" span="14">
+        {{ $store.state.loginname }}</van-col
+      >
 
       <van-col v-else span="14"
-        ><router-link to="/login">登录/注册<van-icon name="arrow" /></router-link
+        ><router-link to="/login"
+          >登录/注册<van-icon name="arrow" /></router-link
       ></van-col>
       <van-col span="4"><van-icon name="comment-o" size="25" /></van-col>
     </van-row>
 
     <!-- 订单 下载 关注 收藏 -->
-    <van-tabbar class="order"  v-model="active">
+    <van-tabbar class="order" v-model="active">
       <van-tabbar-item icon="orders-o">订单</van-tabbar-item>
       <van-tabbar-item icon="down">下载</van-tabbar-item>
       <van-tabbar-item icon="eye-o">关注</van-tabbar-item>
       <van-tabbar-item icon="star-o">收藏</van-tabbar-item>
     </van-tabbar>
 
-    <van-cell-group class="l1"  inset>
-      <van-cell title="余额"  value="0" is-link>
+    <van-cell-group class="l1" inset>
+      <van-cell title="余额" value="0" is-link>
         <van-icon name="balance-o" />0
       </van-cell>
-      <van-cell title="优惠券" value="0" is-link/>
-      <van-cell title="课程分销" value="¥0.00可提" is-link/>
-      <van-cell title="我的认证" value="" is-link/>
+      <van-cell title="优惠券" value="0" is-link />
+      <van-cell title="课程分销" value="¥0.00可提" is-link />
+      <van-cell title="我的认证" value="" is-link />
       <van-cell title="我的点赞" value="" is-link />
-      <van-cell title="我的兴趣" value="未选择" is-link/>
+      <van-cell title="我的兴趣" value="未选择" is-link />
     </van-cell-group>
-    <van-cell-group class="l2"  inset>
-      <van-cell title="我的评论" value="" is-link/>
-      <van-cell title="签到领堂豆兑大奖" value="" is-link/>
-      <van-cell title="兑换中心" value="" is-link/>
+    <van-cell-group class="l2" inset>
+      <van-cell title="我的评论" value="" is-link />
+      <van-cell title="签到领堂豆兑大奖" value="" is-link />
+      <van-cell title="兑换中心" value="" is-link />
     </van-cell-group>
-    <van-cell-group class="l3"  inset>
-      <van-cell title="联系客服" value="" is-link/>
-      <van-cell title="隐私" value="" is-link/>
-      <van-cell title="设置" value="" is-link/>
+    <van-cell-group class="l3" inset>
+      <van-cell title="联系客服" value="" is-link />
+      <van-cell title="隐私" value="" is-link />
+      <van-cell title="设置" value="" is-link @click="setting" />
     </van-cell-group>
   </div>
 </template>
@@ -58,6 +60,18 @@ export default {
     return {
       active: 0,
     };
+  },
+  methods: {
+    setting() {
+      if (this.$route.path != "/setting") {
+        this.$router.push("/setting");
+      }
+    },
+    edit() {
+      if (this.$route.path != "/edit") {
+        this.$router.push("/edit");
+      }
+    },
   },
 };
 </script>
@@ -80,16 +94,15 @@ a {
 .van-tabbar-item--active {
   background-color: #eee;
 }
-.l1{
+.l1 {
   margin-top: 20px;
 }
-.l2{
+.l2 {
   margin-top: 20px;
 }
-.l3{
+.l3 {
   margin-top: 20px;
 }
-
 </style>
 
 

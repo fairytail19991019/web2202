@@ -6,6 +6,16 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/setting',
+    name: 'setting',
+    component: () => import('../views/Setting.vue'),
+  },
+  {
+    path: '/edit',
+    name: 'edit',
+    component: () => import('../views/Edit.vue'),
+  },
+  {
     path: '/login',
     name: 'login',
     component: () => import('../views/Login.vue'),
