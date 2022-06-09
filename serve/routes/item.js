@@ -12,6 +12,17 @@ i.get('/category', (req, res, next) => {
         res.send({ message: 'ok', code: 200, result: result });
     })
 })
+i.get('/classall', (req, res, next) => {
+    console.log(req.query)
+    pool.query('select * from kz_class', (err, result) => {
+        if (err) {
+            next(err)
+            return
+        }
+        console.log(result)
+        res.send({ message: 'ok', code: 200, result: result });
+    })
+})
 i.get('/class', (req, res, next) => {
     console.log(req.query)
     // 获取客户端传递的cid参数
