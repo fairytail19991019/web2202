@@ -38,11 +38,7 @@
     </mt-navbar>
 
     <mt-navbar class="sort">
-      <mt-tab-item id="1">前端开发</mt-tab-item>
-      <mt-tab-item id="2">软件测试</mt-tab-item>
-      <mt-tab-item id="3">英语</mt-tab-item>
-      <mt-tab-item id="4">Java</mt-tab-item>
-      <mt-tab-item id="5">eExcel</mt-tab-item>
+      <mt-tab-item :id="id" v-for="{id,category_name} in cateList" :key="id">{{category_name}}</mt-tab-item>
     </mt-navbar>
 
     <!-- tab-container -->
@@ -66,6 +62,7 @@ export default {
   components: { ZuJian01 },
   data() {
     return {
+      cateList:[],
       // 搜索框内容
       value: "",
       active: 0,
@@ -84,7 +81,16 @@ export default {
       },
     };
   },
+  mounted(){
+    this.getdata()
+  },
   methods: {
+    getdata(){
+      this.axios.get('/items/category').then(res=>{
+        console.log(res)
+        this.cateList=res.data.result
+      })
+    },
     onSearch(val) {
       Toast(val);
     },
