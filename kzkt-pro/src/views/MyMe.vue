@@ -11,8 +11,12 @@
           src="https://img01.yzcdn.cn/vant/cat.jpeg"
         />
       </van-col>
-      <van-col span="14"
-        ><router-link to="/register">登录/注册<van-icon name="arrow" /></router-link
+
+      <van-col v-if="$store.state.loginname" span="14"
+        > {{$store.state.loginname}}</van-col>
+
+      <van-col v-else span="14"
+        ><router-link to="/login">登录/注册<van-icon name="arrow" /></router-link
       ></van-col>
       <van-col span="4"><van-icon name="comment-o" size="25" /></van-col>
     </van-row>
