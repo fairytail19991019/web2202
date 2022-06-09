@@ -22,7 +22,9 @@
     </mt-navbar>
 
     <mt-tab-container v-model="selected" >
-      <mt-tab-container-item id="1">
+
+      <mt-tab-container-item id="1"  style=" display:block" >
+       
         <div 
         style="height: 115px; width: 100%; padding: 16px;display:flex;align-items: center;" 
         class="clear">
@@ -60,9 +62,10 @@
             </div>
           </div>
         </div>
+        
       </mt-tab-container-item>
 
-      <mt-tab-container-item id="2">
+      <mt-tab-container-item id="2"  style=" display:block" >
         <h3 style="padding:0 16px">课程目录</h3>
         <div style="max-height: 520px; margin-bottom: 30px;padding:0 16px;color:gray;">   
           <div >前言：为什么要学习剪映</div>
