@@ -21,7 +21,7 @@
       <mt-tab-item id="4">推荐</mt-tab-item>
     </mt-navbar>
 
-    <mt-tab-container v-model="selected">
+    <mt-tab-container v-model="selected" >
       <mt-tab-container-item id="1">
         <div 
         style="height: 115px; width: 100%; padding: 16px;display:flex;align-items: center;" 
@@ -494,12 +494,9 @@ export default {
 <style lang="scss" >
 .clear:after {
   content: “”;
-
   display: block;
-
   clear: both;
-
-
 }
+
 
 </style>
