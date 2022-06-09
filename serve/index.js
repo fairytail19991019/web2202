@@ -2,12 +2,14 @@ const express=require('express')
 const cors=require('cors')
 const app=express()
 const userRouter=require('./routes/user')
+const itemRouter=require('./routes/item')
 app.use(cors({
     origin:['http://localhost:8080','http://127.0.0.1:8080']
 }))
 app.use(express.urlencoded({extended:true}))
 
 app.use('/users',userRouter)
+app.use('/items',itemRouter)
 
 app.listen(3000,function(){
     console.log('服务器启动成功');
