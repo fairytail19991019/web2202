@@ -27,7 +27,7 @@ CREATE TABLE `kz_class`(
     `title` varchar(255) NOT NULL,
     `content` varchar(255),
     `image` varchar(255) DEFAULT NULL,
-    `hits`  varchar(255) DEFAULT NULL,
+    `hits`  varchar(32) DEFAULT NULL,
     foreign KEY(`category_id`) references `kz_category`(`id`)
 );
 insert into `kz_class` values(1,10,'前端开发','前端开发前端开发前端开发',NULL,'10000');
