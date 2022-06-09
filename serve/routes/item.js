@@ -38,20 +38,19 @@ i.get('/class', (req, res, next) => {
             return
         }
         // 将获取到总记录数赋给rowcount变量
-        rowcount = results[0].count;
+        rowcount = result[0].count;
         /**************************************************/
         // 根据总记录数和每页显示的记录数来计算总页数
         let pagecount = Math.ceil(rowcount / pagesize);
-        sql='SELECT id,title,content,hits,imgage FROM kz_class WHERE category_id=? LIMIT ?,?';
-        pool.query(sql,[cid,offset,pagesize],(err,result)=>{
-            if(err){
+        sql = 'SELECT id,title,content,hits,image FROM kz_class WHERE category_id=? LIMIT ?,?';
+        pool.query(sql, [cid, offset, pagesize], (err, result) => {
+            if (err) {
                 next(err)
                 return
             }
             res.send({ message: 'ok', code: 200, result: result, pagecount: pagecount })
         })
     })
-
 })
 
 module.exports = i;
