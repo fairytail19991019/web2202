@@ -57,7 +57,7 @@
         </div>
         <div style="padding: 1.15rem">
           <div>
-            <h1>课程详情</h1>
+            <h4 style="text-align: center;color:gray;">课程详情</h4>
             <div>
               <img
                 src="../assets/img/classdetail.jpg"
@@ -503,6 +503,7 @@ export default {
   content: “”;
   display: block;
   clear: both;
+  
 }
 
 
