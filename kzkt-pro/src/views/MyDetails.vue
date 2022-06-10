@@ -17,7 +17,7 @@
       </div >
       
     </div>
-    <!-- 腾讯课堂详情页 6.10 8.35  -->
+    <!-- 腾讯课堂详情页 6.10 19 -->
     <mt-navbar v-model="selected">
       <mt-tab-item id="1">介绍</mt-tab-item>
       <mt-tab-item id="2">目录</mt-tab-item>
