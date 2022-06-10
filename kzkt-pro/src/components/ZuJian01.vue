@@ -1,13 +1,13 @@
 <template>
   <div>
     <van-card class="van-card"
-      desc="加薪必看:考中级经济师证,挑战高年薪,不限专业!零基础"
-      title="加薪必看:考中级经济师证,挑战高年薪,不限专业!零基础"
-      thumb="/java/java (1).jpg"
+      :desc=zujian.content
+      :title=zujian.content
+       thumb="/java/java(1).jpg"
     >
       <template #tags>
         <van-tag plain type="danger" style="text-align:center">热门</van-tag>
-        <van-tag plain type="danger" style="margin-left:8px"><van-icon name="fire-o"/>热度{{p.hits}}</van-tag>
+        <van-tag plain type="danger" style="margin-left:8px"><van-icon name="fire-o"/>热度{{zujian.hits}}</van-tag>
 
         <van-button type="info" round size="small" class="star-button">开始上课</van-button>
       </template>
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  props:['p'],
+  props:['zujian'],
   getData(){
     this.axios.get('/items')
   }

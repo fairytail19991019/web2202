@@ -51,7 +51,9 @@
       <van-cell title="隐私" value="" is-link />
       <van-cell title="设置" value="" is-link @click="setting" />
     </van-cell-group>
+    <div style="height: 55px"></div>
   </div>
+  
 </template>
 
 <script>
