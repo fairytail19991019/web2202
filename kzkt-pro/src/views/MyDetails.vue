@@ -3,18 +3,18 @@
     <div style="width: 100%">
       <img src="../assets/img/shouyeimg.png" alt="" style="width: 100%" />
     </div>
-    <div class="clear" style="padding: 12px 16px">
+    <div class="clear" style="padding: 2px 16px">
       <div
-        style="display: flex; justify-content: space-between; margin-top: 16px"
+        style="display: flex; justify-content: space-between; "
       >
-        <span style="color:orange;font-size:1.14rem;">免费</span>
+        <span style="color:#ff7a38;font-size:1.14rem;">免费</span>
         <span style="color:gray;font-size:0.8rem;">8125人最近报名</span>
       </div>
-      <div><h3>抖音短视频剪辑剪映基础教程</h3></div> 
+      <h3 style="margin-top:0;">抖音短视频剪辑剪映基础教程</h3>
       <div style="display:inline-flex">
         <img src="../assets/img/alogo.png" alt="" style="height:1.14rem;width:1.14rem;margin-right:4px;"/>
       <a href=""><span  style="font-size:0.86rem;color:gray;line-height:1.14rem">好评帮，直播电商第4名</span></a>
-      </div>
+      </div >
       
     </div>
     <!-- 腾讯课堂详情页 6.10 8.35  -->
@@ -27,7 +27,7 @@
 
     <mt-tab-container v-model="selected" >
 
-      <mt-tab-container-item id="1"  style=" display:block" >
+      <mt-tab-container-item id="1"  style=" display:block"  >
        
         <div 
         style="height: 115px; width: 100%; padding: 16px;display:flex;align-items: center;" 
@@ -44,14 +44,14 @@
           <div style="padding: 0 16px">
             <h3>讲师介绍</h3>
           </div>
-          <div style="padding: 0 16px; display: inline-flex;align-items: center;" class="clear">
+          <div style="padding: 0 16px; display: flex;align-items: center;justify-content: center;margin-top:16px;" class="clear">
             <img
               src="../assets/img/teacther.jpg"
               alt=""
-              style="height: 2.5rem; width: 2.5rem;margin-right:10px;"/>
-            <div>
-              <p style="font-size:0.8rem">闽西老师</p>
-              <span style="font-size:0.6rem">视商研习创始人，手机拍摄摄影师，腾讯课堂认证讲师!</span>
+              style="height: 2.5rem; width: 2.5rem;margin-right:10px; border-radius: 50%;"/>
+            <div >
+              <p style="font-size:0.8rem;margin:2px 0;">闽西老师</p>
+              <span style="font-size:0.6rem;margin:2px 0;">视商研习创始人，手机拍摄摄影师，腾讯课堂认证讲师!</span>
             </div>
           </div>
         </div>
@@ -503,6 +503,7 @@ export default {
   content: “”;
   display: block;
   clear: both;
+  
   
 }
 
