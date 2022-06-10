@@ -13,7 +13,7 @@
       <div><h3>抖音短视频剪辑剪映基础教程</h3></div>
       <a href=""><img src="" alt="" />好评帮，直播电商第4名</a>
     </div>
-    <!-- 腾讯课堂详情页 6.9 8.35  -->
+    <!-- 腾讯课堂详情页 6.10 8.35  -->
     <mt-navbar v-model="selected">
       <mt-tab-item id="1">介绍</mt-tab-item>
       <mt-tab-item id="2">目录</mt-tab-item>
