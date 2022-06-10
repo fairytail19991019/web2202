@@ -28,28 +28,27 @@
           <div class="mt1_1">
             <img class="mt1_1_1" src="../assets/img/wenjianjia.jpg" alt="" />
             <div>
-              <div><span>免费领取资料</span></div>
-              <div><span>联系老师领取干货资料</span></div>
+              <div><span class="mt1_1_1_1">免费领取资料</span></div>
+              <div><span class="mt1_1_1_2">联系老师领取干货资料</span></div>
             </div>
           </div>
         </div>
         <div it="mt1_2">
           <div style="padding: 0 16px">
-            <h3>讲师介绍</h3>
+            <h3 class="mt1_21">讲师介绍</h3>
           </div>
           <div id="mt1_2_1" class="clear">
             <img src="../assets/img/teacther.jpg" alt="" class="mt1_2_1_1" />
             <div>
-              <p style="font-size: 0.8rem; margin: 2px 0">闽西老师</p>
-              <span style="font-size: 0.6rem; margin: 2px 0"
-                >视商研习创始人，手机拍摄摄影师，腾讯课堂认证讲师!</span
+              <p class="mt1_2_1_1_1">闽西老师</p>
+              <span class="mt1_2_1_1_2">视商研习创始人，手机拍摄摄影师，腾讯课堂认证讲师!</span
               >
             </div>
           </div>
         </div>
         <div style="padding: 1.15rem">
           <div>
-            <h4 style="text-align: center; color: gray">课程详情</h4>
+            <h4 style="text-align: center; color: #666c80">课程详情</h4>
             <div>
               <img
                 src="../assets/img/classdetail.jpg"
@@ -534,6 +533,7 @@ export default {
 }
 .kname1_3 {
   margin-top: 0;
+  color: #192630;
 }
 .kname1_4 {
   margin-top: 0;
@@ -564,10 +564,21 @@ export default {
   height: 36px;
   margin-right: 10px;
 }
+.mt1_1_1_1{
+  font-size: 1rem;
+  color:#3e414d;
+}
+.mt1_1_1_2{
+  font-size: 0.8rem;
+  color:#666c80;
+}
 #mt1_2 {
   height: 136px;
   padding: 0;
   width: 100%;
+}
+.mt1_21{
+  color: #3c464f;
 }
 #mt1_2_1 {
   padding: 0 16px;
@@ -581,6 +592,16 @@ export default {
   width: 2.5rem;
   margin-right: 10px;
   border-radius: 50%;
+}
+.mt1_2_1_1_1{
+  font-size: 0.8rem; 
+  margin: 2px 0;
+  color:#3e414d;
+}
+.mt1_2_1_1_2{
+  font-size: 0.6rem; 
+  margin: 2px 0;
+  color:#666c80;
 }
 .mt2_1 {
   max-height: 520px;
