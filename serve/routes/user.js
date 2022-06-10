@@ -1,6 +1,22 @@
 const express=require('express')
 const pool=require('../pool')
 const r=express.Router();
+r.put('/edit',(req,res,next)=>{
+    console.log(req.body)
+    pool.query('update kz_user set uname=?,upwd=?,email=?,phone=? where uid=?',[req.body.uname,req.body.upwd,req.body.email,req.body.phone,req.body.uid],(err,result)=>{
+        if(err){
+            next(err)
+            return
+        }
+        console.log(result)
+        if(result.affectedRows!=0){
+            res.send({code:200,msg:'数据修改成功'})
+        }else{
+            res.send({code:500,msg:'数据修改失败'})
+        }
+        
+    })
+})
 r.post('/register',(req,res,next)=>{
     console.log(req.body);
     pool.query('insert into kz_user set?',[req.body],(err,result)=>{
