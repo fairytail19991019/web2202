@@ -31,52 +31,39 @@
       推荐课程
     </h2>
 
-    <mt-navbar v-model="selected" style="margin: 0 20px" class="fsnav">
+    <!-- <mt-navbar v-model="selected" style="margin: 0 20px" class="fsnav">
       <mt-tab-item id="1">综合</mt-tab-item>
       <mt-tab-item id="2">好评</mt-tab-item>
       <mt-tab-item id="3">人气</mt-tab-item>
-    </mt-navbar>
+    </mt-navbar> -->
 
-    <mt-navbar
-      class="sort"
-      style="display: flex; justify-content: space-around; flex: 1"
-    >
-      <van-button
-        class="min-btn"
-        plain
-        type="info"
-        size="small"
-        :id="id"
-        v-for="{ id, category_name } in cateList"
+    <!-- 导航 -->
+    <mt-navbar v-model="selected">
+      <mt-tab-item
+        v-for="{ category_name, id } in cateList"
         :key="id"
+        :id="id + ''"
       >
         {{ category_name }}
-      </van-button>
+      </mt-tab-item>
     </mt-navbar>
 
-    <!-- tab-container -->
-    <mt-tab-container v-model="selected">
-      <mt-tab-container-item id="1" >
-        <zu-jian-01 v-for="x in cateClass" :key="x.id" :p='x'/>
-      </mt-tab-container-item>
-      <mt-tab-container-item id="2">
-        <zu-jian-01 />
+    <div
+      v-infinite-scroll="loadMore"
+      infinite-scroll-distance="30"
+      :infinite-scroll-immediate-check="true"
+    >
+      <!-- 引入组件列表 -->
+      <zu-jian-01 v-for="item in cateClass" :key="item.id" :zujian="item" />
 
-      </mt-tab-container-item>
-      <mt-tab-container-item id="3">
-        <zu-jian-01 />
-        <zu-jian-01 />
-        <zu-jian-01 />
-        <zu-jian-01 />
-        <zu-jian-01 />
-      </mt-tab-container-item>
-    </mt-tab-container>
-    <div style="height: 55px"></div>
+      <div style="height: 55px"></div>
+    </div>
   </div>
 </template>
 
 <script>
 import ZuJian01 from "../components/ZuJian01.vue";
+import { Indicator } from "mint-ui";
 export default {
   components: { ZuJian01 },
   data() {
@@ -115,6 +102,48 @@ export default {
         this.cateClass = res.data.result;
       });
     },
+
+    // 加载文章列表, 返回Promise
+
+    loadArticles(cid, page) {
+      return new Promise((resolve, reject) => {
+        Indicator.open("加载中...");
+        this.axios.get(`/items/class?cid=${cid}&page=${page}`).then((res) => {
+          resolve(res);
+          Indicator.close();
+        });
+      });
+    },
+
+    // 当触发触底事件后, 执行loadMore方法
+    loadMore() {
+      if (this.isLoading) {
+        // 如果下一页正在加载中, 则直接返回
+        return;
+      }
+      this.isLoading = true;
+
+      let cid = this.selected; // this.selected即是顶部导航选中项的类别ID
+      this.page++; // 下一页需要让data.page自增
+      console.log(`到底了, 加载数据 cid:${cid},  page:${this.page}`);
+      // 发送http请求, 加载相应页码的数据
+
+      this.loadArticles(cid, this.page).then((res) => {
+        console.log("加载下一页,", res);
+        // 将返回的文章列表res.data.result 追加到当前列表末尾data.articleList
+        this.cateClass.push(...res.data.result);
+        this.isLoading = false;
+        // this.articleList = this.articleList.concat(res.data.result)
+      });
+    },
+    // 自定义方法loadCats, 用于加载类别列表
+    loadCats() {
+      this.axios.get("/items/class").then((res) => {
+        console.log("加载类别列表:", res);
+        this.catList = res.data.result; //将类别列表数组存入data.catList
+      });
+    },
+
     onSearch(val) {
       Toast(val);
     },
@@ -123,9 +152,17 @@ export default {
     },
   },
   watch: {
-    selected(newvalue, oldvalue) {
-      console.log("newvalue", newvalue);
-      console.log("oldvalue", oldvalue);
+        // 监听顶部导航选中项的变化,  selected用于表示顶部导航选中项的ID
+    selected(newValue, oldValue) {
+      // 回到页面顶部
+      window.scrollTo(0, 0);
+      this.page = 1; // 将当前页码置为1
+
+      // console.log(newValue);  newValue即是当前选中项类别的ID
+      this.loadArticles(newValue, 1).then((res) => {
+        console.log("点击顶部导航", res);
+        this.cateClass = res.data.result; // 为articleList重新赋值为新数组
+      });
     },
   },
 };
