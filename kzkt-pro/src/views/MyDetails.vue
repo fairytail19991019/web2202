@@ -7,11 +7,15 @@
       <div
         style="display: flex; justify-content: space-between; margin-top: 16px"
       >
-        <span>免费</span>
-        <span>8125人最近报名</span>
+        <span style="color:orange;font-size:1.14rem;">免费</span>
+        <span style="color:gray;font-size:0.8rem;">8125人最近报名</span>
       </div>
-      <div><h3>抖音短视频剪辑剪映基础教程</h3></div>
-      <a href=""><img src="" alt="" />好评帮，直播电商第4名</a>
+      <div><h3>抖音短视频剪辑剪映基础教程</h3></div> 
+      <div style="display:inline-flex">
+        <img src="../assets/img/alogo.png" alt="" style="height:1.14rem;width:1.14rem;margin-right:4px;"/>
+      <a href=""><span  style="font-size:0.86rem;color:gray;line-height:1.14rem">好评帮，直播电商第4名</span></a>
+      </div>
+      
     </div>
     <!-- 腾讯课堂详情页 6.10 8.35  -->
     <mt-navbar v-model="selected">
