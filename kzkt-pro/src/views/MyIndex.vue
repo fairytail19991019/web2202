@@ -27,32 +27,51 @@
     </swiper>
 
     <!-- 推荐课程 -->
-    <h2>推荐课程</h2>
+    <h2 style="margin-left: 30px; font-size: 18px; margin-bottom: 2px">
+      推荐课程
+    </h2>
 
-    <div style="height: 10px"></div>
-
-    <mt-navbar v-model="selected">
+    <mt-navbar v-model="selected" style="margin: 0 20px" class="fsnav">
       <mt-tab-item id="1">综合</mt-tab-item>
       <mt-tab-item id="2">好评</mt-tab-item>
       <mt-tab-item id="3">人气</mt-tab-item>
     </mt-navbar>
 
-    <mt-navbar class="sort">
-      <mt-tab-item :id="id" v-for="{id,category_name} in cateList" :key="id">{{category_name}}</mt-tab-item>
+    <mt-navbar
+      class="sort"
+      style="display: flex; justify-content: space-around; flex: 1"
+    >
+      <van-button
+        class="min-btn"
+        plain
+        type="info"
+        size="small"
+        :id="id"
+        v-for="{ id, category_name } in cateList"
+        :key="id"
+      >
+        {{ category_name }}
+      </van-button>
     </mt-navbar>
 
     <!-- tab-container -->
     <mt-tab-container v-model="selected">
-      <mt-tab-container-item id="1">
-        <zu-jian-01 />
+      <mt-tab-container-item id="1" >
+        <zu-jian-01 v-for="x in cateClass" :key="x.id" :p='x'/>
       </mt-tab-container-item>
       <mt-tab-container-item id="2">
         <zu-jian-01 />
+
       </mt-tab-container-item>
       <mt-tab-container-item id="3">
         <zu-jian-01 />
+        <zu-jian-01 />
+        <zu-jian-01 />
+        <zu-jian-01 />
+        <zu-jian-01 />
       </mt-tab-container-item>
     </mt-tab-container>
+    <div style="height: 55px"></div>
   </div>
 </template>
 
@@ -62,10 +81,10 @@ export default {
   components: { ZuJian01 },
   data() {
     return {
-      cateList:[],
+      cateList: [],
+      cateClass: null,
       // 搜索框内容
       value: "",
-      active: 0,
       selected: 1,
       swiperOptions: {
         //效果,特效  默认为"slide"（普通位移切换），还可设置为"fade"（淡入）、"cube"（方块）、"coverflow"（3d流）、"flip"（3d翻转）
@@ -81,21 +100,32 @@ export default {
       },
     };
   },
-  mounted(){
-    this.getdata()
+  mounted() {
+    this.getdata();
   },
   methods: {
-    getdata(){
-      this.axios.get('/items/category').then(res=>{
-        console.log(res)
-        this.cateList=res.data.result
-      })
+    getdata() {
+      this.axios.get("/items/category").then((res) => {
+        console.log(res);
+        this.cateList = res.data.result;
+      });
+
+      this.axios.get("/items/class").then((res) => {
+        console.log(res);
+        this.cateClass = res.data.result;
+      });
     },
     onSearch(val) {
       Toast(val);
     },
     onCancel() {
       Toast("取消");
+    },
+  },
+  watch: {
+    selected(newvalue, oldvalue) {
+      console.log("newvalue", newvalue);
+      console.log("oldvalue", oldvalue);
     },
   },
 };
@@ -111,22 +141,29 @@ export default {
     height: 18vh;
   }
 }
-.sort{
+.sort {
   display: flex;
   flex: 1;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
+  margin: 10px 20px;
 
-  .mint-tab-item{
-    border: 1px solid rgb(14, 181, 231);
-    border-radius: 20px;
-    padding: 5px 0;
-    width: 30px;
-    margin: 0 10px;
-  }
-  .active{
+  .active {
     color: white;
     background-color: rgb(14, 181, 231);
+  }
+}
+.min-btn {
+  border-radius: 5px;
+  width: 60px;
+  height: 25px;
+  padding: 0;
+}
+.fsnav {
+  a {
+    padding: 10px;
+
+    font-size: 20px;
   }
 }
 </style>

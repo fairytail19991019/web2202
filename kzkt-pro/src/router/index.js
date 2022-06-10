@@ -41,6 +41,7 @@ const routes = [
     children: [{
       path: 'index',
       name: "index",
+      props:true,
       component: () => import('../views/MyIndex.vue')
     },
     {

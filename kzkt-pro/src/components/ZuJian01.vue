@@ -1,15 +1,15 @@
 <template>
   <div>
     <van-card class="van-card"
-      desc="描述信息"
-      title="商品标题"
-      thumb="https://img01.yzcdn.cn/vant/ipad.jpeg"
+      desc="加薪必看:考中级经济师证,挑战高年薪,不限专业!零基础"
+      title="加薪必看:考中级经济师证,挑战高年薪,不限专业!零基础"
+      thumb="/java/java (1).jpg"
     >
       <template #tags>
-        <van-tag plain type="danger">热销</van-tag>
-        <van-tag plain type="danger">新品</van-tag>
+        <van-tag plain type="danger" style="text-align:center">热门</van-tag>
+        <van-tag plain type="danger" style="margin-left:8px"><van-icon name="fire-o"/>热度{{p.hits}}</van-tag>
 
-        <van-button type="info" round size="small">开始上课</van-button>
+        <van-button type="info" round size="small" class="star-button">开始上课</van-button>
       </template>
 
     </van-card>
@@ -17,23 +17,39 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props:['p'],
+  getData(){
+    this.axios.get('/items')
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 .van-card{
     border-radius: 10px;
     margin: 5px 20px;
-    background-color: rgb(143, 252, 161);
-    .van-button{
+    background-color: rgb(240, 240, 240);
+    .star-button{
       width: 100px;
       height: 20px;
-      top:5px
+      top:3px;
+      right:-26px;
+    }
+    .van-card__desc{
+      font-size: 10px;
+    }
+    .van-card__footer{
+      .van-button--mini{
+        width: 3px;
+        height: 15px;
+      }
     }
 }
 .van-card__thumb{
-  width: 175px;
+  width: 150px;
   height: 80px;
-  margin-right: 25px;
+  margin-right: 20px;
+  margin-top: 5px;
 }
 </style>
