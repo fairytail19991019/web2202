@@ -39,22 +39,34 @@ const routes = [
     name: 'home',
     component: HomeView,
     children: [{
+      meta: {
+        keepAlive: true//指明当前路由需要保活
+      },
       path: 'index',
       name: "index",
       props:true,
       component: () => import('../views/MyIndex.vue')
     },
     {
+      meta: {
+        keepAlive: true//指明当前路由需要保活
+      },
       path: 'knowdge',
       name: "knowdge",
       component: () => import('../views/MyKnowdge.vue')
     },
     {
+      meta: {
+        keepAlive: true//指明当前路由需要保活
+      },
       path: 'class',
       name: "class",
       component: () => import('../views/MyClass.vue')
     },
     {
+      meta: {
+        keepAlive: true//指明当前路由需要保活
+      },
       path: 'me',
       name: "me",
       component: () => import('../views/MyMe.vue')

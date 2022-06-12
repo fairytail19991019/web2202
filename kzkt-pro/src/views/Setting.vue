@@ -35,7 +35,7 @@
     <br />
     <br />
     <button @click="Dialog" v-if="$store.state.loginname">退出登录</button>
-    <button v-else>登录</button>
+    <button v-else @click="$router.push('/login')">登录</button>
   </div>
 </template>
 
