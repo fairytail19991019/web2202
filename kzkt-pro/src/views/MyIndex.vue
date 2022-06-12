@@ -5,8 +5,10 @@
       <van-search
         v-model="value"
         show-action
+        shape="round"
         placeholder="请输入搜索关键词"
         @search="onSearch"
+        @focus="search"
         @cancel="onCancel"
       />
     </form>
@@ -97,6 +99,11 @@ export default {
     });
   },
   methods: {
+    search(){
+      if(this.$route.path!='/search'){
+        this.$router.push('/search')
+      }
+    },
     getdata() {
       this.axios.get("/items/category").then((res) => {
         console.log(res);

@@ -1,6 +1,10 @@
 const express = require('express')
 const pool = require('../pool')
 const i = express.Router()
+
+i.post('/search',(req,res,next)=>{
+    console.log(req.body);
+})
 i.get('/category', (req, res, next) => {
     console.log(req.query)
     pool.query('select * from kz_category', (err, result) => {
