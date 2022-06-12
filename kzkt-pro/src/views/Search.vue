@@ -5,11 +5,16 @@
         v-model="value"
         show-action
         shape="round"
+<<<<<<< HEAD
+=======
+        clearable
+>>>>>>> 0570e7a6953497641ffb62b9b2cad33ae0178ddc
         placeholder="请输入搜索关键词"
         @search="onSearch"
         @cancel="onCancel"
       />
     </form>
+<<<<<<< HEAD
 
     <div class="lastsh">
       <div>
@@ -43,6 +48,9 @@
         </table>
       </div>
     </div>
+=======
+    <router-view/>
+>>>>>>> 0570e7a6953497641ffb62b9b2cad33ae0178ddc
   </div>
 </template>
 
@@ -54,15 +62,27 @@ export default {
     };
   },
   methods: {
+<<<<<<< HEAD
     onSearch(val) {},
     onCancel() {
       this.$router.go(-1);
+=======
+    onSearch(val) {
+      console.log(val);
+      if(this.$route.path!='/search/search_results'){
+        this.$router.push('/search/search_results/'+val)
+      }
+    },
+    onCancel() {
+      this.$router.push('/home/index')
+>>>>>>> 0570e7a6953497641ffb62b9b2cad33ae0178ddc
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+<<<<<<< HEAD
 .lastsh{
   padding: 0 10px;
   font-size: 18px;
@@ -81,4 +101,6 @@ export default {
     }
   }
 }
+=======
+>>>>>>> 0570e7a6953497641ffb62b9b2cad33ae0178ddc
 </style>
