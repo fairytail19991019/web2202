@@ -5,11 +5,13 @@
         v-model="value"
         show-action
         shape="round"
+        clearable
         placeholder="请输入搜索关键词"
         @search="onSearch"
         @cancel="onCancel"
       />
     </form>
+    <router-view/>
   </div>
 </template>
 
@@ -22,10 +24,13 @@ export default {
   },
   methods: {
     onSearch(val) {
-      Toast(val);
+      console.log(val);
+      if(this.$route.path!='/search/search_results'){
+        this.$router.push('/search/search_results/'+val)
+      }
     },
     onCancel() {
-      Toast("取消");
+      this.$router.push('/home/index')
     },
   },
 };
