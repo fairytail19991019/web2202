@@ -2,9 +2,25 @@ const express = require('express')
 const pool = require('../pool')
 const i = express.Router()
 
-i.post('/search',(req,res,next)=>{
+//查询接口
+i.post('/search', (req, res, next) => {
     console.log(req.body);
+    let kw = '%' + `${req.body.kw}` + "%"
+    pool.query('select * from kz_class where title like ?', [kw], (err, result) => {
+        if (err) {
+            next(err)
+            return
+        }
+        console.log(result);
+        if (result.length != 0) {
+            res.send({ code: 200, message: "ok", result })
+        } else {
+            res.send({ code: 500, message: "no such data", result })
+        }
+    })
 })
+
+//获取类目接口
 i.get('/category', (req, res, next) => {
     console.log(req.query)
     pool.query('select * from kz_category', (err, result) => {
@@ -16,6 +32,8 @@ i.get('/category', (req, res, next) => {
         res.send({ message: 'ok', code: 200, result: result });
     })
 })
+
+//获取课程接口
 i.get('/class', (req, res, next) => {
     console.log(req.query)
     if (!req.query.cid) {
