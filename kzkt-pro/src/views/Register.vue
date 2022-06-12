@@ -3,7 +3,7 @@
         <!-- 标题栏 -->
         <mt-header title="注册">
            
-            <mt-button icon='back'  slot="left"> <router-link to="/home/index" style='text-decoration:none ;color:white'>返回</router-link></mt-button>
+            <mt-button icon='back'  slot="left"> <router-link to="/home/me" style='text-decoration:none ;color:white'>返回</router-link></mt-button>
             
             <router-link to="/login" slot="right" style='text-decoration:none'>登录</router-link>
         </mt-header>

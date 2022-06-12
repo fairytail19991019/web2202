@@ -51,7 +51,7 @@
     <div
       v-infinite-scroll="loadMore"
       infinite-scroll-distance="30"
-      :infinite-scroll-immediate-check="true"
+      infinite-scroll-immediate-check="true"
     >
       <!-- 引入组件列表 -->
       <zu-jian-01 v-for="item in cateClass" :key="item.id" :zujian="item" />
@@ -68,11 +68,13 @@ export default {
   components: { ZuJian01 },
   data() {
     return {
+      page: 1,
+      isLoading: false,
       cateList: [],
-      cateClass: null,
+      cateClass: [],
       // 搜索框内容
       value: "",
-      selected: 1,
+      selected: null,
       swiperOptions: {
         //效果,特效  默认为"slide"（普通位移切换），还可设置为"fade"（淡入）、"cube"（方块）、"coverflow"（3d流）、"flip"（3d翻转）
         effect: "fade",
@@ -89,17 +91,16 @@ export default {
   },
   mounted() {
     this.getdata();
+    this.loadArticles(null, 1).then((res) => {
+      console.log(res);
+      this.cateClass = res.data.result;
+    });
   },
   methods: {
     getdata() {
       this.axios.get("/items/category").then((res) => {
         console.log(res);
         this.cateList = res.data.result;
-      });
-
-      this.axios.get("/items/class").then((res) => {
-        console.log(res);
-        this.cateClass = res.data.result;
       });
     },
 
@@ -108,10 +109,17 @@ export default {
     loadArticles(cid, page) {
       return new Promise((resolve, reject) => {
         Indicator.open("加载中...");
-        this.axios.get(`/items/class?cid=${cid}&page=${page}`).then((res) => {
-          resolve(res);
-          Indicator.close();
-        });
+        if (cid == null) {
+          this.axios.get(`/items/class?page=${page}`).then((res) => {
+            resolve(res);
+            Indicator.close();
+          });
+        } else {
+          this.axios.get(`/items/class?cid=${cid}&page=${page}`).then((res) => {
+            resolve(res);
+            Indicator.close();
+          });
+        }
       });
     },
 
@@ -123,24 +131,23 @@ export default {
       }
       this.isLoading = true;
 
-      let cid = this.selected; // this.selected即是顶部导航选中项的类别ID
+      let cid = this.selected ? this.selected : null; // this.selected即是顶部导航选中项的类别ID
       this.page++; // 下一页需要让data.page自增
       console.log(`到底了, 加载数据 cid:${cid},  page:${this.page}`);
       // 发送http请求, 加载相应页码的数据
 
       this.loadArticles(cid, this.page).then((res) => {
         console.log("加载下一页,", res);
-        // 将返回的文章列表res.data.result 追加到当前列表末尾data.articleList
-        this.cateClass.push(...res.data.result);
-        this.isLoading = false;
-        // this.articleList = this.articleList.concat(res.data.result)
-      });
-    },
-    // 自定义方法loadCats, 用于加载类别列表
-    loadCats() {
-      this.axios.get("/items/class").then((res) => {
-        console.log("加载类别列表:", res);
-        this.catList = res.data.result; //将类别列表数组存入data.catList
+        if (!res.data.result.length) {
+          this.isLoading = true;
+          this.$toast("我也是有底线的");
+          console.log("已经到底了");
+        } else {
+          // 将返回的文章列表res.data.result 追加到当前列表末尾data.articleList
+          this.cateClass.push(...res.data.result);
+          this.isLoading = false;
+          // this.articleList = this.articleList.concat(res.data.result)
+        }
       });
     },
 
@@ -151,8 +158,16 @@ export default {
       Toast("取消");
     },
   },
+  activated() {
+    //跳转回当前页时执行，重新将isLoading改为false 开启触底加载功能
+    this.isLoading = false;
+  },
+  deactivated() {
+    //跳转到其他页面时，将isLoading改为true 不执行触底加载
+    this.isLoading = true;
+  },
   watch: {
-        // 监听顶部导航选中项的变化,  selected用于表示顶部导航选中项的ID
+    // 监听顶部导航选中项的变化,  selected用于表示顶部导航选中项的ID
     selected(newValue, oldValue) {
       // 回到页面顶部
       window.scrollTo(0, 0);
