@@ -5,10 +5,13 @@
       <van-search
         v-model="value"
         show-action
+        shape="round"
         placeholder="请输入搜索关键词"
         @search="onSearch"
+        @focus="search"
         @cancel="onCancel"
       />
+
     </form>
 
     <!-- 轮播图 -->
@@ -97,6 +100,11 @@ export default {
     });
   },
   methods: {
+    search(){
+      if(this.$route.path!='/search'){
+        this.$router.push('/search')
+      }
+    },
     getdata() {
       this.axios.get("/items/category").then((res) => {
         console.log(res);
@@ -150,12 +158,14 @@ export default {
         }
       });
     },
-
+// 确定搜索触发
     onSearch(val) {
       Toast(val);
     },
+    // 点击取消按钮触发
     onCancel() {
       Toast("取消");
+      
     },
   },
   activated() {
