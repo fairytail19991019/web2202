@@ -61,7 +61,7 @@
       </mt-tab-container-item>
 
       <mt-tab-container-item id="2" style="display: block">
-        <h3 style="padding: 0 16px">课程目录</h3>
+        <h3 style="padding: 5px 16px;font-size:1.14rem">课程目录</h3>
         <div class="mt2_1">
           <div>前言：为什么要学习剪映</div>
           <div>认识剪映的界面</div>
@@ -82,7 +82,7 @@
         <div>
           <div class="clear" id="mt3">
             <div>
-              <h3>学员评价</h3>
+              <h3 style="font-size:1.14rem">学员评价</h3>
             </div>
             <div>
               <a href="">查看全部</a>
@@ -107,7 +107,7 @@
                 </p>
               </div>
             </div>
-            <div style="padding: 0 16px; margin: 0">
+            <div id="mt3_1_1">
               <p style="padding: 0; margin: 0">
                 很好 很喜欢老师的课程 作为一个小白 虽然不是老师的学生
                 但是老师课后也会帮助我 帮我解决我的困惑 谢谢老师
@@ -133,7 +133,7 @@
                 </p>
               </div>
             </div>
-            <div style="padding: 0 16px; margin: 0">
+            <div  id="mt3_1_1">
               <p style="padding: 0; margin: 0">
                 很好 很喜欢老师的课程 作为一个小白 虽然不是老师的学生
                 但是老师课后也会帮助我 帮我解决我的困惑 谢谢老师
@@ -159,7 +159,7 @@
                 </p>
               </div>
             </div>
-            <div style="padding: 0 16px; margin: 0">
+            <div id="mt3_1_1">
               <p style="padding: 0; margin: 0">
                 很好 很喜欢老师的课程 作为一个小白 虽然不是老师的学生
                 但是老师课后也会帮助我 帮我解决我的困惑 谢谢老师
@@ -184,7 +184,7 @@
                 </p>
               </div>
             </div>
-            <div style="padding: 0 16px; margin: 0">
+            <div id="mt3_1_1">
               <p style="padding: 0; margin: 0">
                 很好 很喜欢老师的课程 作为一个小白 虽然不是老师的学生
                 但是老师课后也会帮助我 帮我解决我的困惑 谢谢老师
@@ -209,7 +209,7 @@
                 </p>
               </div>
             </div>
-            <div style="padding: 0 16px; margin: 0">
+            <div id="mt3_1_1">
               <p style="padding: 0; margin: 0">
                 很好 很喜欢老师的课程 作为一个小白 虽然不是老师的学生
                 但是老师课后也会帮助我 帮我解决我的困惑 谢谢老师
@@ -220,10 +220,10 @@
       </mt-tab-container-item>
 
       <mt-tab-container-item id="4">
-        <h3 style="padding: 0 16px">授课机构</h3>
+        <h3 style="padding: 12px 16px;font-size:1.14286rem;">授课机构</h3>
         <div id="mt4" class="clear">
           <img src="../assets/img/teacther.jpg" alt="" class="mt4_1" />
-          <div>
+          <div  style=" padding: 12px 0px" >
             <p>
               <span class="mt4_1_1">视商研习社</span>
             </p>
@@ -236,7 +236,7 @@
             </ul>
           </div>
         </div>
-        <div style="display: flex; padding: 0 16px" class="clear">
+        <div style="display: flex; padding: 12px 16px" class="clear">
           <img
             src="../assets/img/qqlog.jpg"
             alt=""
@@ -247,7 +247,7 @@
           <div><i></i></div>
         </div>
 
-        <h3 style="padding: 0 16px">
+        <h3 style="padding: 0 16px;font-size:1.14286rem;">
           关联的付费课程<span style="display: inline-block"
             ><i></i>获取选课建议</span
           >
@@ -270,7 +270,7 @@
                   </h5>
                 </div>
                 <div style="margin: 5px 0">
-                  <span style="font-size: 0.8rem">免费</span>
+                  <span id="mt4_3_1">￥98</span>
                   <span style="font-size: 0.8rem">6人最近报名</span>
                 </div>
               </div>
@@ -279,82 +279,7 @@
         </div>
 
         <div>
-          <div id="mt4_2">
-            <div style="margin-right: 10px">
-              <img
-                src="../assets/img/dyjj01.jpg"
-                alt=""
-                style="height: 70px; width: 124px"
-              />
-            </div>
-            <div>
-              <div>
-                <div>
-                  <h5 style="margin: 5px 0">
-                    抖音vlog短视频自媒体制作引流运营赚钱盈利全攻略实战福利课教程
-                  </h5>
-                </div>
-                <div style="margin: 5px 0">
-                  <span style="font-size: 0.8rem">免费</span>
-                  <span style="font-size: 0.8rem">6人最近报名</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div id="mt4_2">
-            <div style="margin-right: 10px">
-              <img
-                src="../assets/img/dyjj01.jpg"
-                alt=""
-                style="height: 70px; width: 124px"
-              />
-            </div>
-            <div>
-              <div>
-                <div>
-                  <h5 style="margin: 5px 0">
-                    抖音vlog短视频自媒体制作引流运营赚钱盈利全攻略实战福利课教程
-                  </h5>
-                </div>
-                <div style="margin: 5px 0">
-                  <span style="font-size: 0.8rem">免费</span>
-                  <span style="font-size: 0.8rem">6人最近报名</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div id="mt4_2">
-            <div style="margin-right: 10px">
-              <img
-                src="../assets/img/dyjj01.jpg"
-                alt=""
-                style="height: 70px; width: 124px"
-              />
-            </div>
-            <div>
-              <div>
-                <div>
-                  <h5 style="margin: 5px 0">
-                    抖音vlog短视频自媒体制作引流运营赚钱盈利全攻略实战福利课教程
-                  </h5>
-                </div>
-                <div style="margin: 5px 0">
-                  <span style="font-size: 0.8rem">免费</span>
-                  <span style="font-size: 0.8rem">6人最近报名</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h3 style="padding: 0 16px">
+          <h3 style="padding: 0 16px;font-size:1.14286rem;">
             机构课程推荐<span><i></i>获取选课建议</span>
           </h3>
           <div id="mt4_3">
@@ -373,7 +298,7 @@
                   </h5>
                 </div>
                 <div style="margin: 5px 0">
-                  <span style="font-size: 0.8rem">免费</span>
+                  <span id="mt4_3_1">免费</span>
                   <span style="font-size: 0.8rem">6人最近报名</span>
                 </div>
               </div>
@@ -396,7 +321,7 @@
                   </h5>
                 </div>
                 <div style="margin: 5px 0">
-                  <span style="font-size: 0.8rem">免费</span>
+                  <span id="mt4_3_1">免费</span>
                   <span style="font-size: 0.8rem">6人最近报名</span>
                 </div>
               </div>
@@ -419,7 +344,7 @@
                   </h5>
                 </div>
                 <div style="margin: 5px 0">
-                  <span style="font-size: 0.8rem">免费</span>
+                  <span id="mt4_3_1">免费</span>
                   <span style="font-size: 0.8rem">6人最近报名</span>
                 </div>
               </div>
@@ -442,58 +367,13 @@
                   </h5>
                 </div>
                 <div style="margin: 5px 0">
-                  <span style="font-size: 0.8rem">免费</span>
+                  <span id="mt4_3_1">免费</span>
                   <span style="font-size: 0.8rem">6人最近报名</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div id="mt4_3">
-            <div style="margin-right: 10px">
-              <img
-                src="../assets/img/dyjj01.jpg"
-                alt=""
-                style="height: 70px; width: 124px"
-              />
-            </div>
-            <div>
-              <div>
-                <div>
-                  <h5 style="margin: 5px 0">
-                    抖音vlog短视频自媒体制作引流运营赚钱盈利全攻略实战福利课教程
-                  </h5>
-                </div>
-                <div style="margin: 5px 0">
-                  <span style="font-size: 0.8rem">免费</span>
-                  <span style="font-size: 0.8rem">6人最近报名</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="mt4_3">
-            <div style="margin-right: 10px">
-              <img
-                src="../assets/img/dyjj01.jpg"
-                alt=""
-                style="height: 70px; width: 124px"
-              />
-            </div>
-            <div>
-              <div>
-                <div>
-                  <h5 style="margin: 5px 0">
-                    抖音vlog短视频自媒体制作引流运营赚钱盈利全攻略实战福利课教程
-                  </h5>
-                </div>
-                <div style="margin: 5px 0">
-                  <span style="font-size: 0.8rem">免费</span>
-                  <span style="font-size: 0.8rem">6人最近报名</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </mt-tab-container-item>
     </mt-tab-container>
@@ -511,6 +391,9 @@ export default {
 </script>
 
 <style lang="scss" >
+div{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .clear:after {
   content: “”;
   display: block;
@@ -579,6 +462,7 @@ export default {
 }
 .mt1_21{
   color: #3c464f;
+  font-size: 1.21rem;
 }
 #mt1_2_1 {
   padding: 0 16px;
@@ -606,8 +490,10 @@ export default {
 .mt2_1 {
   max-height: 520px;
   margin-bottom: 30px;
-  padding: 0 16px;
+  padding: 4px 16px;
   color: gray;
+  margin-left:28px ;
+
 }
 .mt2_2 {
   display: flex;
@@ -627,6 +513,10 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 0px 16px;
+}
+#mt3_1_1{
+  padding: 0 16px; 
+  margin: 0 0 0 48px
 }
 #mt4 {
   display: flex;
@@ -658,5 +548,10 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 16px 16px;
+}
+#mt4_3_1{
+  font-size: 0.8rem;
+  margin-right: 6px;
+  color: #ff7a38;
 }
 </style>
