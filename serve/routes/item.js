@@ -4,7 +4,7 @@ const i = express.Router()
 
 //查询接口
 i.post('/search', (req, res, next) => {
-    console.log(req.body);
+    // console.log(req.body);
     let kw = '%' + `${req.body.kw}` + "%"
     pool.query('select * from kz_class where title like ?', [kw], (err, result) => {
         if (err) {
@@ -15,14 +15,43 @@ i.post('/search', (req, res, next) => {
         if (result.length != 0) {
             res.send({ code: 200, message: "ok", result })
         } else {
-            res.send({ code: 500, message: "no such data", result })
+            res.send({ code: 500, message: "no such data"})
         }
     })
 })
 
+//获取课程接口
+i.get('/subject', (req, res, next) => {
+    console.log(req.query)
+    pool.query('select * from kz_subject', (err, result) => {
+        if (err) {
+            next(err)
+            return
+        }
+        console.log(result)
+        res.send({ message: 'ok', code: 200, result: result });
+    })
+})
+
+//查找指定课程接口
+i.get('/jiuke',(req,res,next)=>{
+    console.log(req.query);
+    pool.query('select * from kz_jiuke where subject_id=?',[req.query.kid],(err,result)=>{
+        if(err){
+            next(err)
+            return
+        }
+        console.log(result);
+        if(result.length!=0){
+            res.send({code:200,msg:'ok',result})
+        }else{
+            res.send({code:500,msg:'err'})
+        }
+    })
+})
 //获取类目接口
 i.get('/category', (req, res, next) => {
-    console.log(req.query)
+    // console.log(req.query)
     pool.query('select * from kz_category', (err, result) => {
         if (err) {
             next(err)
@@ -35,7 +64,7 @@ i.get('/category', (req, res, next) => {
 
 //获取课程接口
 i.get('/class', (req, res, next) => {
-    console.log(req.query)
+    // console.log(req.query)
     if (!req.query.cid) {
         // 获取客户端传递的page参数
         let page = req.query.page ? req.query.page : 1;
@@ -105,7 +134,7 @@ i.get('/class', (req, res, next) => {
                     next(err)
                     return
                 }
-                res.send({ message: 'ok', code: 200, result: result, pagecount: pagecount })
+                res.send({ message: 'ok', code: 200, result, pagecount})
             })
         })
     }
