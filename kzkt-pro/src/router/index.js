@@ -6,7 +6,8 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/subject',
+    path: '/subject/:kid',
+    props:true,
     name: "subject",
     component: () => import('../views/Subject.vue')
   },
