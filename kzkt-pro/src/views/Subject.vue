@@ -1,9 +1,9 @@
 <template>
   <div>
     <header>
-      <mt-header title="" style="height:50px">
+      <mt-header title="" style="height: 50px">
         <router-link to="/home/knowdge" slot="left">
-          <mt-button icon="back" style="font-size:22px">返回</mt-button>
+          <mt-button icon="back" style="font-size: 22px">返回</mt-button>
         </router-link>
         <!-- <mt-button icon="more" slot="right"></mt-button> -->
       </mt-header>
@@ -32,29 +32,32 @@ export default {
   components: {
     "ke-jian": KeJian,
   },
-  props:["kid"],
-  watch:{
-    nm(){
-      this.getdata()
-    }
+  props: ["kid"],
+  watch: {
+    nm() {
+      this.axios.get("/items/jiuke?kid=" + this.nm).then((res) => {
+        console.log(res);
+        this.jiukelist = res.data.result;
+      });
+    },
   },
-  mounted(){
+  mounted() {
     // console.log(this.kid);
-    this.getdata()
+    this.getdata();
   },
   methods: {
     getdata() {
-      this.axios.get('/items/jiuke?kid='+this.kid).then(res=>{
+      this.axios.get("/items/jiuke?kid=" + this.kid).then((res) => {
         console.log(res);
-        this.jiukelist=res.data.result
-      })
-    }
+        this.jiukelist = res.data.result;
+      });
+    },
   },
   data() {
     return {
-      jiukelist:[],
+      jiukelist: [],
       nm: Number(this.kid),
-      mm:0,
+      mm: 0,
       option: [
         { text: "数学", value: 1 },
         { text: "语文", value: 2 },
