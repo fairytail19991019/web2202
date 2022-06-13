@@ -63,17 +63,17 @@
       <mt-tab-container-item id="2" style="display: block">
         <h3 style="padding: 5px 16px;font-size:1.14rem">课程目录</h3>
         <div class="mt2_1">
-          <div>前言：为什么要学习剪映</div>
-          <div>认识剪映的界面</div>
-          <div>图片素材的添加和调节时长</div>
-          <div>视频素材的添加和分割</div>
-          <div>添加视频动画和转场效果</div>
-          <div>关闭视频原声和添加音频效果</div>
-          <div>关闭视频原声和添加音频效果</div>
-          <div>真人录音和变声</div>
+          <div class="mt2_1_1">前言：为什么要学习剪映</div>
+          <div class="mt2_1_1">认识剪映的界面</div>
+          <div class="mt2_1_1">图片素材的添加和调节时长</div>
+          <div class="mt2_1_1">视频素材的添加和分割</div>
+          <div class="mt2_1_1">添加视频动画和转场效果</div>
+          <div class="mt2_1_1">关闭视频原声和添加音频效果</div>
+          <div class="mt2_1_1">关闭视频原声和添加音频效果</div>
+          <div class="mt2_1_1">真人录音和变声</div>
           <br />
           <div class="mt2_2">
-            <p style="">APP内学习，流畅又清晰</p>
+            <p style="font-size:1rem;color:#3e414d;">APP内学习，流畅又清晰</p>
           </div>
         </div>
       </mt-tab-container-item>
@@ -82,7 +82,7 @@
         <div>
           <div class="clear" id="mt3">
             <div>
-              <h3 style="font-size:1.14rem">学员评价</h3>
+              <h3 style="font-size:1.14rem">学员评价(6)</h3>
             </div>
             <div>
               <a href="">查看全部</a>
@@ -220,7 +220,7 @@
       </mt-tab-container-item>
 
       <mt-tab-container-item id="4">
-        <h3 style="padding: 12px 16px;font-size:1.14286rem;">授课机构</h3>
+        <h3 style="padding: 12px 16px;font-size:1.14286rem;color:#3c464f;">授课机构</h3>
         <div id="mt4" class="clear">
           <img src="../assets/img/teacther.jpg" alt="" class="mt4_1" />
           <div  style=" padding: 12px 0px" >
@@ -236,14 +236,15 @@
             </ul>
           </div>
         </div>
-        <div style="display: flex; padding: 12px 16px" class="clear">
+        <div style="display: flex; padding: 12px 16px;align-items: center;
+  " class="clear">
           <img
             src="../assets/img/qqlog.jpg"
             alt=""
             style="width: 20px; height: 20px"
           />
-          <div><i class="is-qq"></i>福利群</div>
-          <div>定期发放干货资料，优惠福利</div>
+          <div class="is-qq">福利群</div>
+          <div class="is-qq_1">定期发放干货资料，优惠福利</div>
           <div><i></i></div>
         </div>
 
@@ -405,6 +406,7 @@ div{
 #kname1 {
   display: flex;
   justify-content: space-between;
+  margin-top: 12px;
 }
 .kname1_1 {
   color: #ff7a38;
@@ -419,7 +421,9 @@ div{
   color: #192630;
 }
 .kname1_4 {
-  margin-top: 0;
+  // margin-top: 0;
+  padding: 12px 0;
+  margin-top: 12px;
 }
 .kname1_5 {
   height: 1.14rem;
@@ -431,6 +435,7 @@ div{
   font-size: 0.86rem;
   color: gray;
   line-height: 1.14rem;
+  
 }
 #mt1 {
   height: 115px;
@@ -495,6 +500,9 @@ div{
   margin-left:28px ;
 
 }
+.mt2_1_1{
+  padding: 4px 0;
+}
 .mt2_2 {
   display: flex;
   align-items: center;
@@ -536,6 +544,14 @@ div{
   display: flex;
   font-size: 0.75rem;
   margin: 2px 1px;
+}
+.is-qq{
+  font-size: 1rem;
+  margin:0px 8px;
+  
+}
+.is-qq_1{
+  font-size: 0.8rem;
 }
 #mt4_2 {
   display: flex;
