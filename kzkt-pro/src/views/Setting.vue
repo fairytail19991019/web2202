@@ -40,8 +40,6 @@
       />
     </van-popup>
 
-
-
        <van-cell @click="Dialog1" :value='hc' class="cell1" title="清除缓存" is-link />
        
        
