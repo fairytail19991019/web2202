@@ -1,21 +1,33 @@
 <template>
   <div>
     <div class="top">
-      <div>课程表</div>
+      <h3>课程表（test）</h3>
       <div class="icon"><van-icon size="30" name="calendar-o" /></div>
-      <div>
-        <div>今日学习<br />0分钟</div>
-        <div>超过平台<br />0%学员</div>
+      <div class="header-boxall">
+        <div class="header-box1">
+          <span class="header-tittle1">今日学习</span><br /><span
+            class="header-tittle2"
+            >0分钟</span
+          >
+        </div>
+        <div class="header-box1">
+          <span class="header-tittle1">超过平台</span><br /><span
+            class="header-tittle2"
+            >0%学员</span
+          >
+        </div>
       </div>
+      <div class="extra-color"></div>
     </div>
-    <h3>免费课</h3>
-    <div>
-      <span>课程</span>
-      <span>视频</span>
+    <div class="middle">
+      <h3>免费课</h3>
+      <div><span>视频</span><span>课程</span></div>
+
+      <class-item />
+      <class-item />
+      <class-item />
+      <class-item />
     </div>
-    <class-item />
-    <class-item />
-    <class-item />
   </div>
 </template>
 
@@ -29,10 +41,15 @@ export default {
 <style lang="scss" scoped>
 .top {
   width: 100%;
-  height: 190px;
-  background-color: aqua;
+  height: 21vh;
+  background-image: linear-gradient(#b6d4f8, #e0ecfa);
   text-align: center;
   position: relative;
+
+  h3 {
+    margin: 0;
+    padding-top: 1vh;
+  }
 
   .icon {
     display: inline-block;
@@ -41,17 +58,34 @@ export default {
     left: 320px;
   }
 
-  div:last-child {
+  .header-boxall {
+    margin-top: 5vh;
     display: flex;
     justify-content: space-around;
 
-    div {
-      display: inline-block;
-      margin-top: 80px;
+    .header-box1 {
+      .header-tittle1 {
+        display: inline-block;
+        color: #71819a;
+        text-align: center;
+      }
+      .header-tittle2 {
+        color: #162129;
+      }
     }
   }
+  .extra-color {
+    background-color: #fff;
+    width: 100%;
+    margin-top: 5.8vh;
+    height: 20px;
+    border-radius: 10px;
+  }
 }
-span {
-  margin: 10px;
+
+.middle {
+  span {
+    margin: 10px;
+  }
 }
 </style>
