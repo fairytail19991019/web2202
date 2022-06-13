@@ -6,6 +6,11 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/subject',
+    name: "subject",
+    component: () => import('../views/Subject.vue')
+  },
+  {
     path: '/search',
     redirect:'/search/search_index',
     name: 'search',
