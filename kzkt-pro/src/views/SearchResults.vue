@@ -1,6 +1,21 @@
 <template>
   <div>
-    <h1>查询结果</h1>
+    <mt-navbar v-model="selected">
+      <mt-tab-item id="1">全部</mt-tab-item>
+      <mt-tab-item id="2">课程</mt-tab-item>
+    </mt-navbar>
+
+    <div
+      v-infinite-scroll="loadMore"
+      infinite-scroll-distance="30"
+      infinite-scroll-immediate-check="true"
+    >
+      <!-- 引入组件列表 -->
+      <zu-jian-01 v-for="item in cateClass" :key="item.id" :zujian="item" />
+
+      <div style="height: 55px"></div>
+    </div>
+    
   </div>
 </template>
 
@@ -14,6 +29,7 @@ export default {
   data() {
     return {
       result: [],
+      selected:1
     };
   },
   methods: {

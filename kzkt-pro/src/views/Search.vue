@@ -25,7 +25,7 @@ export default {
   methods: {
     onSearch(val) {
       console.log(val);
-      if(this.$route.path!='/search/search_results'){
+      if(this.$route.path!='/search/search_results/'+val){
         this.$router.push('/search/search_results/'+val)
       }
     },
