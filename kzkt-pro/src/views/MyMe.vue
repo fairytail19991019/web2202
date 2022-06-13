@@ -53,7 +53,6 @@
     </van-cell-group>
     <div style="height: 55px"></div>
   </div>
-  
 </template>
 
 <script>
@@ -104,6 +103,12 @@ a {
 }
 .l3 {
   margin-top: 20px;
+}
+</style>
+
+<style>
+body {
+  background-color: #eee;
 }
 </style>
 
