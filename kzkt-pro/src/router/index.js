@@ -9,7 +9,10 @@ const routes = [
     path: '/subject/:kid',
     props:true,
     name: "subject",
-    component: () => import('../views/Subject.vue')
+    component: () => import('../views/Subject.vue'),
+    meta: {
+      title: '空中课堂-涨知识详情页'
+    },
   },
   {
     path: '/search',
