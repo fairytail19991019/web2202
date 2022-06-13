@@ -20,13 +20,27 @@
         <van-switch v-model="checked2" size="24px" />
       </template>
     </van-cell>
-    <van-cell is-link @click="showPopup">下载清晰度</van-cell>
-    <van-popup
-      v-model="show"
-      closeable
-      position="bottom"
-      :style="{ height: '30%'}"
-    >选择下载清晰度</van-popup>
+
+    <!-- 清晰度选择 -->
+    <van-field
+      class="qxd"
+      readonly
+      clickable
+      label="下载清晰度"
+      :value="qxdvalue"
+      placeholder="请选择清晰度"
+      @click="showPicker = true"
+    />
+    <van-popup v-model="showPicker" round position="bottom">
+      <van-picker
+        show-toolbar
+        :columns="columns"
+        @cancel="showPicker = false"
+        @confirm="onConfirm"
+      />
+    </van-popup>
+
+       <van-cell class="cell1" title="清除缓存" is-link />
 
     <!-- 设置页面 -->
 
@@ -35,24 +49,32 @@
     <br />
     <br />
     <button @click="Dialog" v-if="$store.state.loginname">退出登录</button>
-    <button v-else @click="$router.push('/login')">登录</button>
+    <button v-else>登录</button>
   </div>
 </template>
 
 <script>
+import LoginVue from "./Login.vue";
 export default {
   data() {
     return {
       checked1: true,
       checked2: false,
       show: false,
+
+      // 清晰度数据
+      qxdvalue: "",
+      showPicker: false,
+      columns: ["高清", "超清", "蓝光"],
     };
   },
   methods: {
-     showPopup() {
-      this.show = true;
+    // 清晰度选择
+    onConfirm(value) {
+      this.qxdvalue = value;
+      this.showPicker = false;
     },
-  
+
     Dialog() {
       this.$dialog
         .confirm({
@@ -75,5 +97,11 @@ export default {
 }
 .cell1 {
   margin-top: 15px;
+}
+
+</style>
+<style>
+.van-field__control {
+  text-align: right;
 }
 </style>
