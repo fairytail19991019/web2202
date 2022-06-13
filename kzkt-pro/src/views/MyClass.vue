@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="top">
-      <div>课程表</div>
+      <div>课程表(test)</div>
       <div class="icon"><van-icon size="30" name="calendar-o" /></div>
       <div>
         <div>今日学习<br />0分钟</div>
