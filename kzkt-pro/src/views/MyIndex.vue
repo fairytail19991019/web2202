@@ -11,7 +11,6 @@
         @focus="search"
         @cancel="onCancel"
       />
-
     </form>
 
     <!-- 轮播图 -->
@@ -158,14 +157,12 @@ export default {
         }
       });
     },
-// 确定搜索触发
+
     onSearch(val) {
       Toast(val);
     },
-    // 点击取消按钮触发
     onCancel() {
       Toast("取消");
-      
     },
   },
   activated() {
