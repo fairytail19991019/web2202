@@ -11,7 +11,7 @@
         />
       </van-col>
 
-      <van-col @click="edit" v-if="$store.state.loginname" span="14">
+      <van-col @click="edit" v-if="$store.state.loginname" span="14" to='./Edit.vue'>
         {{ $store.state.loginname }}</van-col
       >
 
