@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="setting">
     <van-nav-bar
       title="设置"
       left-text="返回"
@@ -40,20 +40,32 @@
       />
     </van-popup>
 
-       <van-cell @click="Dialog1" :value='hc' class="cell1" title="清除缓存" is-link />
-       
-       
+    <van-cell
+      @click="Dialog1"
+      :value="hc"
+      class="cell1"
+      title="清除缓存"
+      is-link
+    />
 
     <!-- 设置页面 -->
-    <van-button @click="Dialog" v-if="$store.state.loginname" class="cell1" type="danger" block>退出登录</van-button>
-    <van-button v-else class="cell1" type="default" block to="/login">登录</van-button>
+    <van-button
+      @click="Dialog"
+      v-if="$store.state.loginname"
+      class="cell1"
+      type="danger"
+      block
+      >退出登录</van-button
+    >
+    <van-button v-else class="cell1" type="default" block to="/login"
+      >登录</van-button
+    >
   </div>
 </template>
 
 <script>
 import LoginVue from "./Login.vue";
 export default {
-  
   data() {
     return {
       checked1: true,
@@ -64,7 +76,7 @@ export default {
       qxdvalue: "",
       showPicker: false,
       columns: ["高清", "超清", "蓝光"],
-      hc:'5M'
+      hc: "5M",
     };
   },
   methods: {
@@ -92,7 +104,7 @@ export default {
           message: "要清除缓存吗",
         })
         .then(() => {
-          this.hc=''
+          this.hc = "";
         })
         .catch(() => {});
     },
@@ -115,7 +127,10 @@ a {
 .van-field__control {
   text-align: right;
 }
-body {
+/* body {
+  background-color: #eee;
+} */
+#setting {
   background-color: #eee;
 }
 </style>

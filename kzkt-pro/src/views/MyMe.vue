@@ -1,6 +1,5 @@
-
 <template>
-  <div>
+  <div id="me">
     <!-- 顶部头像登录 -->
     <van-row class="login" type="flex" justify="space-between" align="center">
       <van-col span="4" offset="2"
@@ -107,8 +106,12 @@ a {
 </style>
 
 <style>
-body {
+#me {
   background-color: #eee;
+}
+#me::before{
+  content:"";
+  display:table;
 }
 </style>
 

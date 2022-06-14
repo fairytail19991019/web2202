@@ -6,6 +6,15 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/subject/:kid',
+    props:true,
+    name: "subject",
+    component: () => import('../views/Subject.vue'),
+    meta: {
+      title: '空中课堂-涨知识详情页'
+    },
+  },
+  {
     path: '/search',
     redirect:'/search/search_index',
     name: 'search',
