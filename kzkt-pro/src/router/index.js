@@ -6,8 +6,16 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/order',
+    name: 'order',
+    component: () => import('../views/Order.vue'),
+    meta: {
+      title: "空中课堂-订单"
+    }
+  },
+  {
     path: '/subject/:kid',
-    props:true,
+    props: true,
     name: "subject",
     component: () => import('../views/Subject.vue'),
     meta: {
@@ -16,7 +24,7 @@ const routes = [
   },
   {
     path: '/search',
-    redirect:'/search/search_index',
+    redirect: '/search/search_index',
     name: 'search',
     component: () => import('../views/Search.vue'),
     meta: {
@@ -25,7 +33,7 @@ const routes = [
     children: [
       {
         path: 'search_results/:kw',
-        props:true,
+        props: true,
         name: 'search_results',
         component: () => import('../views/SearchResults.vue'),
         meta: {

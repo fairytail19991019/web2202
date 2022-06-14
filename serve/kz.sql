@@ -31,6 +31,7 @@ insert into `kz_subject` values(null,"历史",null);
 
 create table `kz_jiuke`(
     `gid` INT PRIMARY KEY AUTO_INCREMENT,
+    `issold` boolean DEFAULT false,
     `title` VARCHAR(32),
     `desc` VARCHAR(32),
     `mai` INT,
@@ -41,63 +42,63 @@ create table `kz_jiuke`(
     `subject_id` INT
 );
 
-insert into `kz_jiuke` values(1,'中考暴力作文写作','告别无话可说，就是那么一回事',5132,30,60,'爆款',2);
-insert into `kz_jiuke` values(2,'传世名作初体验','文言文的魅力，用不同的打开方式',4262,30,60,null,2);
-insert into `kz_jiuke` values(null,'人物之百态人生','见闻与传奇，聆听他们的故事',4262,0,30,'免费',2);
-insert into `kz_jiuke` values(null,'看历史风云变','历史车轮滚滚，史家文采涛涛',4262,30,60.00,"",2);
-insert into `kz_jiuke` values(null,'识文体品佳作','千古名作,如何看懂其中的门道',4262,30,60.00,"火爆",2);
-insert into `kz_jiuke` values(null,'品味诸子百家','百家争鸣的时代,大师说了什么',4262,30,60.00,"",2);
-insert into `kz_jiuke` values(null,'铭记美丽河山','游山玩水,托物言志',4262,30,60.00,"",2);
-insert into `kz_jiuke` values(null,'虚词上','重点讲解“之”“乎”“者”“也”等九个虚词',4262,30,60.00,"",2);
-insert into `kz_jiuke` values(null,'性格稳定的实词','形象的比喻和富有趣味型的例句帮助同学们掌握',4262,30,60.00,"",2);
-insert into `kz_jiuke` values(null,'比较变态的实词','总结最有效的方法使同学们有方法可循',4262,30,60.00,"",2);
-insert into `kz_jiuke` values(null,'文言文翻译','归纳文言文中的特殊句式',4262,30,60.00,"",2);
-insert into `kz_jiuke` values(null,'集合上','学习函数的最重要前提，帮助你打好高中基础',4262,30,60.00,"火爆",1);
-insert into `kz_jiuke` values(null,'集合下','金牌教练，帮你跨过初中高中数学分水岭',4262,0,60.00,"免费",1);
-insert into `kz_jiuke` values(null,'函数的概念与表示','高效学习函数基本概念',4262,0,60.00,"免费",1);
-insert into `kz_jiuke` values(null,'复合函数解析式求法','透析复杂函数基本概念',4262,30,60.00,"",1);
-insert into `kz_jiuke` values(null,'函数的单调性','掌握函数的重要性质单调性',4262,30,60.00,"",1);
-insert into `kz_jiuke` values(null,'单调性的应用','趣味讲解单调性运用',4262,30,60.00,"",1);
-insert into `kz_jiuke` values(null,'函数的奇偶性','举一反三，活学活用',4262,30,60.00,"",1);
-insert into `kz_jiuke` values(null,'函数的周期性','循序渐进学习函数周期性',4262,30,60.00,"",1);
-insert into `kz_jiuke` values(null,'函数的综合应用','5大技巧,7大视屏',4262,30,60.00,"",1);
-insert into `kz_jiuke` values(null,'指数及指数函数','运用函数基本知识解剖基本初等函数指数函数',4262,30,60.00,"",1);
-insert into `kz_jiuke` values(null,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
-insert into `kz_jiuke` values(null,'温度与标识','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
-insert into `kz_jiuke` values(null,'温度计使用方法','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
-insert into `kz_jiuke` values(null,'长融化与凝固','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
-insert into `kz_jiuke` values(null,'汽化现象','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
-insert into `kz_jiuke` values(null,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
-insert into `kz_jiuke` values(null,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
-insert into `kz_jiuke` values(null,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
-insert into `kz_jiuke` values(null,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
-insert into `kz_jiuke` values(null,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
-insert into `kz_jiuke` values(null,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
-insert into `kz_jiuke` values(null,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
-insert into `kz_jiuke` values(null,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
-insert into `kz_jiuke` values(null,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
-insert into `kz_jiuke` values(null,'走进化学实验室','物理变化与化学变化的区别',4262,30,60.00,"",5);
-insert into `kz_jiuke` values(null,'构成物质的例子','物理变化与化学变化的区别',4262,30,60.00,"",5);
-insert into `kz_jiuke` values(null,'化学元素','物理变化与化学变化的区别',4262,30,60.00,"",5);
-insert into `kz_jiuke` values(null,'化学式和方程式','物理变化与化学变化的区别',4262,30,60.00,"",5);
-insert into `kz_jiuke` values(null,'器质性制取','物理变化与化学变化的区别',4262,30,60.00,"",5);
-insert into `kz_jiuke` values(null,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
-insert into `kz_jiuke` values(null,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
-insert into `kz_jiuke` values(null,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
-insert into `kz_jiuke` values(null,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
-insert into `kz_jiuke` values(null,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
-insert into `kz_jiuke` values(null,'神奇动物在哪里','神奇的动物，趣味的单词',4262,30,60.00,"",3);
-insert into `kz_jiuke` values(null,'谁偷窥了我的日常','神奇的动物，趣味的单词',4262,30,60.00,"",3);
-insert into `kz_jiuke` values(null,'零点奇迹的名词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
-insert into `kz_jiuke` values(null,'零点奇迹的冠词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
-insert into `kz_jiuke` values(null,'零点奇迹的代词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
-insert into `kz_jiuke` values(null,'零点奇迹的数词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
-insert into `kz_jiuke` values(null,'零点奇迹的形容词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
-insert into `kz_jiuke` values(null,'零点奇迹的动词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
-insert into `kz_jiuke` values(null,'零点奇迹的易混淆动词辨析','神奇的动物，趣味的单词',4262,30,60.00,"",3);
-insert into `kz_jiuke` values(null,'零点奇迹的副词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
-insert into `kz_jiuke` values(null,'零点奇迹的宾语从句','神奇的动物，趣味的单词',4262,30,60.00,"",3);
-insert into `kz_jiuke` values(null,'初中易错词汇','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(1,false,'中考暴力作文写作','告别无话可说，就是那么一回事',5132,30,60,'爆款',2);
+insert into `kz_jiuke` values(2,false,'传世名作初体验','文言文的魅力，用不同的打开方式',4262,30,60,null,2);
+insert into `kz_jiuke` values(null,false,'人物之百态人生','见闻与传奇，聆听他们的故事',4262,0,30,'免费',2);
+insert into `kz_jiuke` values(null,false,'看历史风云变','历史车轮滚滚，史家文采涛涛',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'识文体品佳作','千古名作,如何看懂其中的门道',4262,30,60.00,"火爆",2);
+insert into `kz_jiuke` values(null,false,'品味诸子百家','百家争鸣的时代,大师说了什么',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'铭记美丽河山','游山玩水,托物言志',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'虚词上','重点讲解“之”“乎”“者”“也”等九个虚词',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'性格稳定的实词','形象的比喻和富有趣味型的例句帮助同学们掌握',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'比较变态的实词','总结最有效的方法使同学们有方法可循',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'文言文翻译','归纳文言文中的特殊句式',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'集合上','学习函数的最重要前提，帮助你打好高中基础',4262,30,60.00,"火爆",1);
+insert into `kz_jiuke` values(null,false,'集合下','金牌教练，帮你跨过初中高中数学分水岭',4262,0,60.00,"免费",1);
+insert into `kz_jiuke` values(null,false,'函数的概念与表示','高效学习函数基本概念',4262,0,60.00,"免费",1);
+insert into `kz_jiuke` values(null,false,'复合函数解析式求法','透析复杂函数基本概念',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'函数的单调性','掌握函数的重要性质单调性',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'单调性的应用','趣味讲解单调性运用',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'函数的奇偶性','举一反三，活学活用',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'函数的周期性','循序渐进学习函数周期性',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'函数的综合应用','5大技巧,7大视屏',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'指数及指数函数','运用函数基本知识解剖基本初等函数指数函数',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'温度与标识','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'温度计使用方法','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长融化与凝固','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'汽化现象','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'走进化学实验室','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'构成物质的例子','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'化学元素','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'化学式和方程式','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'器质性制取','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'神奇动物在哪里','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'谁偷窥了我的日常','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的名词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的冠词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的代词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的数词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的形容词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的动词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的易混淆动词辨析','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的副词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的宾语从句','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'初中易错词汇','神奇的动物，趣味的单词',4262,30,60.00,"",3);
 
 create table `kz_category`(
     `id` INT PRIMARY KEY AUTO_INCREMENT,
