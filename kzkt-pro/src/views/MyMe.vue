@@ -50,7 +50,7 @@
       <van-cell title="隐私" value="" is-link />
       <van-cell title="设置" value="" is-link @click="setting" />
     </van-cell-group>
-    <div style="height: 55px"></div>
+    <!-- <div style="height: 13vh"></div> -->
   </div>
 </template>
 
@@ -108,10 +108,12 @@ a {
 <style>
 #me {
   background-color: #eee;
+  height: 100vh;
 }
 #me::before{
   content:"";
   display:table;
+
 }
 </style>
 

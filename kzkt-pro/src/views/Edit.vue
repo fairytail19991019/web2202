@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="edit">
     <!-- 个人信息页面 -->
 
     <!-- 顶部栏 -->
@@ -9,7 +9,7 @@
       left-arrow
       @click-left="$router.push('/home/me')"
     />
-    <van-field class="cell" name="uploader" label="文件上传">
+    <van-field class="cell" name="uploader" label="个人信息">
       <template #input>
         <van-uploader>
           <van-image round width="5rem" height="5rem" src="/默认图像.jpeg">
@@ -29,6 +29,7 @@
     <van-cell-group style="">
       <van-cell title="我的兴趣" value="" is-link />
     </van-cell-group>
+    <div style="height: 455px"></div>
   </div>
 </template>
 
@@ -52,7 +53,7 @@ export default {
 }
 </style>
 <style >
-body {
+#edit{
   background-color: #eee;
 }
 .van-uploader {
