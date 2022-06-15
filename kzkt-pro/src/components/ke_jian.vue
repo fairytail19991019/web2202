@@ -32,9 +32,6 @@
 <script>
 export default {
   props: ["jiu", "kid"],
-  watch:{
-    issold(){}
-  },
   methods: {
     Dialog() {
       this.$dialog

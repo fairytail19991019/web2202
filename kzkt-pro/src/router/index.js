@@ -6,6 +6,14 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/rs',
+    name: 'resently',
+    component: () => import('../views/ResentlySeen.vue'),
+    meta:{
+      title:"空中课堂-最近看过"
+    }
+  },
+  {
     path: '/order',
     name: 'order',
     component: () => import('../views/Order.vue'),
@@ -83,7 +91,8 @@ const routes = [
     }
   },
   {
-    path: '/mydetails',
+    path: '/mydetails/:cid',
+    props:true,
     name: 'MyDetails',
     component: () => import('../views/MyDetails.vue'),
     meta: {
