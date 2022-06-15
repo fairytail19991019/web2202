@@ -57,7 +57,7 @@ i.get('/category', (req, res, next) => {
             next(err)
             return
         }
-        console.log(result)
+        // console.log(result)
         res.send({ message: 'ok', code: 200, result: result });
     })
 })
@@ -90,7 +90,7 @@ i.get('/class', (req, res, next) => {
             /**************************************************/
             // 根据总记录数和每页显示的记录数来计算总页数
             let pagecount = Math.ceil(rowcount / pagesize);
-            sql = 'SELECT id,title,content,hits,image FROM kz_class LIMIT ?,?';
+            sql = 'SELECT id,title,hits,image FROM kz_class LIMIT ?,?';
             pool.query(sql, [offset, pagesize], (err, result) => {
                 if (err) {
                     next(err)
@@ -128,7 +128,7 @@ i.get('/class', (req, res, next) => {
             /**************************************************/
             // 根据总记录数和每页显示的记录数来计算总页数
             let pagecount = Math.ceil(rowcount / pagesize);
-            sql = 'SELECT id,title,content,hits,image FROM kz_class WHERE category_id=? LIMIT ?,?';
+            sql = 'SELECT id,title,hits,image FROM kz_class WHERE category_id=? LIMIT ?,?';
             pool.query(sql, [cid, offset, pagesize], (err, result) => {
                 if (err) {
                     next(err)
