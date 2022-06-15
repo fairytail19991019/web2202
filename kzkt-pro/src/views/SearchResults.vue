@@ -24,6 +24,11 @@ import ZuJian01 from "../components/ZuJian01.vue";
 export default {
   components: { ZuJian01 },
   props: ["kw"],
+  watch:{
+    kw(){
+      this.getData()
+    }
+  },
   mounted() {
     // console.log(this.kw);
     this.getData()
