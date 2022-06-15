@@ -1,28 +1,39 @@
 <template>
   <div>
-    <router-link to="/mydetails">
-      <van-card
-        class="van-card"
-        :title="zujian.title"
-        thumb="/java/java(1).jpg"
-      >
-        <template #tags>
-          <van-tag plain type="danger" style="text-align: center">热门</van-tag>
-          <van-tag plain type="danger" style="margin-left: 8px"
-            ><van-icon name="fire-o" />热度{{ zujian.hits }}</van-tag
-          >
-
-          <van-button type="info" round size="small" class="star-button"
-            >开始上课</van-button
-          >
-        </template>
-      </van-card>
-    </router-link>
+    <van-card
+      class="van-card"
+      :title="zujian.title"
+      thumb="/java/java(1).jpg"
+      @click="goDeatils"
+    >
+      <template #tags>
+        <van-tag plain type="danger" style="text-align: center">热门</van-tag>
+        <van-tag plain type="danger" style="margin-left: 8px"
+          ><van-icon name="fire-o" />热度{{ zujian.hits }}</van-tag
+        >
+        <van-button type="info" round size="small" class="star-button"
+          >开始上课</van-button
+        >
+      </template>
+    </van-card>
   </div>
 </template>
 
 <script>
 export default {
+  methods: {
+    goDeatils() {
+      let time=new Date().getTime() //获取点击时的时间戳
+      console.log(time);
+      let params=`time=${time}&id=${this.zujian.id}`
+      this.axios.put('/items/updatetime',params).then(res=>{
+        console.log(res);
+      })
+      if (this.$route.path != "/details") {
+        this.$router.push("/mydetails/"+this.zujian.id);
+      }
+    },
+  },
   props: ["zujian"],
 };
 </script>
