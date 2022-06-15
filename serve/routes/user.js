@@ -16,7 +16,7 @@ r.put('/updateorder',(req,res,next)=>{
                     next(err)
                     return
                 }
-                console.log(result);
+                // console.log(result);
                 res.send({code:200,msg:"ok"})
             })
         }else{
@@ -25,7 +25,7 @@ r.put('/updateorder',(req,res,next)=>{
                     next(err)
                     return
                 }
-                console.log(result);
+                // console.log(result);
                 res.send({code:200,msg:"ok"})
             })
         }
