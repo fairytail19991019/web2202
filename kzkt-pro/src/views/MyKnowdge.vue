@@ -19,7 +19,7 @@
             <van-grid-item
               v-for="{kid,sname} in subject"
               :key="kid"
-              icon="/public/favicon.ico"
+              icon="/favicon.ico"
               :text="sname"
               :to="`/subject/${kid}`"
             />

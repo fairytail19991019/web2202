@@ -11,6 +11,7 @@ create table `kz_user`(
 );
 insert into `kz_user` values(1,'张三','123456','126@qq.com','15878942654');
 insert into `kz_user` values(2,'李四','123456','1245@qq.com','15873494265');
+insert into `kz_user` values(3,'admin','123456','1245@qq.com','15257609076');
 
 create table `kz_subject`(
     `kid` INT PRIMARY KEY AUTO_INCREMENT,

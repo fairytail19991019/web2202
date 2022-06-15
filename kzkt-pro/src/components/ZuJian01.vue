@@ -25,9 +25,6 @@
 <script>
 export default {
   props: ["zujian"],
-  getData() {
-    this.axios.get("/items");
-  },
 };
 </script>
 
