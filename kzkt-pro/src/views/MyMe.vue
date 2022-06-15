@@ -11,7 +11,7 @@
         />
       </van-col>
 
-      <van-col @click="edit" v-if="$store.state.loginname" span="14">
+      <van-col @click="jumpTo('/edit')" v-if="$store.state.loginname" span="14">
         {{ $store.state.loginname }}</van-col
       >
 
@@ -48,7 +48,7 @@
     <van-cell-group class="l3" inset>
       <van-cell title="联系客服" value="" is-link />
       <van-cell title="隐私" value="" is-link />
-      <van-cell title="设置" value="" is-link @click="setting" />
+      <van-cell title="设置" value="" is-link @click="jumpTo('/setting')" />
     </van-cell-group>
     <div style="height: 55px"></div>
   </div>
@@ -58,18 +58,21 @@
 export default {
   data() {
     return {
-      active: 0,
+      active: "",
     };
   },
-  methods: {
-    setting() {
-      if (this.$route.path != "/setting") {
-        this.$router.push("/setting");
+  watch:{
+    active(){
+      if(this.active==0){
+        this.jumpTo('/order')
+        this.active=""
       }
-    },
-    edit() {
-      if (this.$route.path != "/edit") {
-        this.$router.push("/edit");
+    }
+  },
+  methods: {
+    jumpTo(route) {
+      if (this.$route.path != route) {
+        this.$router.push(route);
       }
     },
   },

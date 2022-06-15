@@ -28,7 +28,7 @@ i.get('/subject', (req, res, next) => {
             next(err)
             return
         }
-        console.log(result)
+        // console.log(result)
         res.send({ message: 'ok', code: 200, result: result });
     })
 })
@@ -41,7 +41,7 @@ i.get('/jiuke',(req,res,next)=>{
             next(err)
             return
         }
-        console.log(result);
+        // console.log(result);
         if(result.length!=0){
             res.send({code:200,msg:'ok',result})
         }else{
