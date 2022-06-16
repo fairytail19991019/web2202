@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div style="width: 100%" v-if="details[0].index_img">
+  <div v-if="details[0]">
+    <div style="width: 100%">
       <img :src="`/Img/${details[0].index_img}.png`" alt="" style="width: 100%" />
     </div>
     <div id="kname" class="clear">
