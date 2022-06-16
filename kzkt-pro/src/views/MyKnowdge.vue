@@ -1,13 +1,14 @@
 <template>
   <div>
     <van-search
+      id="sear"
       v-model="sousuo"
       shape="round"
       background="white"
       placeholder="请搜索你想要的课程"
     />
     <div>
-      <router-link to="">
+      <router-link to="/dianping">
         <img src="../assets/dianping.jpg" alt="" id="dping" />
       </router-link>
     </div>
@@ -17,7 +18,7 @@
           <span>动画课程</span>
           <van-grid :column-num="3">
             <van-grid-item
-              v-for="{kid,sname} in subject"
+              v-for="{ kid, sname } in subject"
               :key="kid"
               :icon="`/${kid}.png`"
               :text="sname"
@@ -29,24 +30,23 @@
           <span>学习方法论</span>
           <div class="xue">
             <div>
-              <a href="">
+              <router-link to="/mydetails">
                 <img src="../assets/xue1.png" alt="" />
-              </a>
+              </router-link>
             </div>
             <div>
-              <a href="">
+              <router-link to="/mydetails">
                 <img src="../assets/xue2.jpg" alt="" />
-              </a>
+              </router-link>
             </div>
             <div>
-              <a href="">
+              <router-link to="/mydetails">
                 <img src="../assets/xue3.jpg" alt="" />
-              </a>
-            </div>
-            <div>
-              <a href="">
+              </router-link>
+            </div><div>
+              <router-link to="/mydetails">
                 <img src="../assets/xue4.jpg" alt="" />
-              </a>
+              </router-link>
             </div>
           </div>
         </li>
@@ -81,11 +81,11 @@ export default {
   data() {
     return {
       sousuo: "",
-      subject:[]
+      subject: [],
     };
   },
-  mounted(){
-    this.getdata()
+  mounted() {
+    this.getdata();
   },
   methods: {
     // goSubject(){
@@ -94,24 +94,24 @@ export default {
     //   }
     // },
     getdata() {
-      this.axios.get('/items/subject').then(res=>{
+      this.axios.get("/items/subject").then((res) => {
         console.log(res);
-        this.subject=res.data.result
-      })
-    }
+        this.subject = res.data.result;
+      });
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-van-search{
+.sear {
   position: fixed;
-  top:0;
+  top: 0;
 }
+
 #dping {
-  width: 90vw;
-  margin: 2vh auto;
-  text-align: center;
+  width:80vw;
+  margin: 2vh 10vw;
 }
 li > span {
   font-size: 20px;
