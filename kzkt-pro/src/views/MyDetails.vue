@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div v-if="details[0]">
     <div style="width: 100%">
-      <img src="../assets/img/shouyeimg.png" alt="" style="width: 100%" />
+      <img :src="`/Img/${details[0].index_img}.png`" alt="" style="width: 100%" />
     </div>
     <div id="kname" class="clear">
       <div id="kname1">
         <span class="kname1_1">免费</span>
         <span class="kname1_2">8125人最近报名</span>
       </div>
-      <h3 class="kname1_3">抖音短视频剪辑剪映基础教程</h3>
+      <h3 class="kname1_3">{{details[0].class_title}}</h3>
       <div class="kname1_4">
         <img src="../assets/img/alogo.png" alt="" class="kname1_5" />
         <a href=""><span class="kname1_6">好评帮，直播电商第4名</span></a>
@@ -38,11 +38,11 @@
             <h3 class="mt1_21">讲师介绍</h3>
           </div>
           <div id="mt1_2_1" class="clear">
-            <img src="../assets/img/teacther.jpg" alt="" class="mt1_2_1_1" />
+            <img :src="`/Img/${details[0].teacher_head}.jpg`" alt="" class="mt1_2_1_1" />
             <div>
-              <p class="mt1_2_1_1_1">闽西老师</p>
+              <p class="mt1_2_1_1_1">{{details[0].teacher}}</p>
               <span class="mt1_2_1_1_2"
-                >视商研习创始人，手机拍摄摄影师，腾讯课堂认证讲师!</span
+                >{{details[0].teacher_introduce}}</span
               >
             </div>
           </div>
@@ -52,7 +52,7 @@
             <h4 style="text-align: center; color: #666c80">课程详情</h4>
             <div>
               <img
-                src="../assets/img/classdetail.jpg"
+                :src="`/Img/${details[0].detail_img}.jpg`"
                 alt=""
                 style="width: 100%"
               />
@@ -402,9 +402,17 @@
 
 <script>
 export default {
+  props:["cid"],
+  mounted(){
+    this.axios.get('/items/details?cid='+this.cid).then(res=>{
+      console.log(res);
+      this.details=res.data.result
+    })
+  },
   data() {
     return {
       selected: 1,
+      details:[]
     };
   },
 };

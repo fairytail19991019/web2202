@@ -31,6 +31,7 @@
     </van-tabbar>
 
     <van-cell-group class="l1" inset>
+      <van-cell title="最近看过" value="" is-link @click="jumpTo('/rs')"/>
       <van-cell title="余额" value="0" is-link>
         <van-icon name="balance-o" />0
       </van-cell>
@@ -61,13 +62,13 @@ export default {
       active: "",
     };
   },
-  watch:{
-    active(){
-      if(this.active==0){
-        this.jumpTo('/order')
-        this.active=""
+  watch: {
+    active() {
+      if (this.active == 0) {
+        this.jumpTo("/order");
+        this.active = "";
       }
-    }
+    },
   },
   methods: {
     jumpTo(route) {
@@ -112,9 +113,9 @@ a {
 #me {
   background-color: #eee;
 }
-#me::before{
-  content:"";
-  display:table;
+#me::before {
+  content: "";
+  display: table;
 }
 </style>
 

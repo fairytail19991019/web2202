@@ -34,7 +34,7 @@
 
 <script>
 export default {
-  props: ["jiu"],
+  props: ["jiu", "kid"],
   methods: {
     Dialog() {
       this.$dialog
@@ -42,10 +42,15 @@ export default {
           message: "是否确定加入购物车",
         })
         .then(() => {
-          let params = `gid=${this.jiu.gid}`;
-          this.axios.put("/users/updateorder", params).then((res) => {
-            console.log(res);
-          });
+          if(!sessionStorage.getItem('name')){
+            this.$toast("请先登录");
+            return
+          }else{
+            let params = `gid=${this.jiu.gid}`;
+            this.axios.put("/users/updateorder", params).then((res) => {
+              console.log(res);
+            });
+          }
         })
         .catch(() => {});
     },

@@ -2,6 +2,50 @@ const express = require('express')
 const pool = require('../pool')
 const i = express.Router()
 
+//查询各类目总热度之和
+i.get('/total',(req,res,next)=>{
+    pool.query('select sum(hits) as total from kz_class group by category_id',(err,result)=>{
+        if(err){
+            next(err)
+            return
+        }
+        // console.log(result);
+        res.send({code:200,msg:'ok',result})
+    })
+})
+//查询课程按时间降序排序
+i.get('/desc',(req,res,next)=>{
+    pool.query('select id,title,hits,image,time from kz_class order by time desc limit 0,5',(err,result)=>{
+        if(err){
+            next(err)
+            return
+        }
+        // console.log(result);
+        res.send({code:200,msg:'ok',result})
+    })
+})
+//修改点击时间接口
+i.put('/updatetime',(req,res,next)=>{
+    console.log(req.body);
+    pool.query('update kz_class set time=? where id=?',[req.body.time,req.body.id],(err,result)=>{
+        if(err){
+            next(err)
+            return
+        }
+        res.send({code:200,msg:'ok'})
+    })
+})
+//课程详细页接口
+i.get('/details',(req,res,next)=>{
+    // console.log(req.query);
+    pool.query('select index_img,class_title,teacher_head,teacher,teacher_introduce,detail_img from kz_class where id=?',[req.query.cid],(err,result)=>{
+        if(err){
+            next(err)
+            return
+        }
+        res.send({code:200,msg:'ok',result})
+    })
+})
 //查询接口
 i.post('/search', (req, res, next) => {
     // console.log(req.body);
@@ -11,7 +55,7 @@ i.post('/search', (req, res, next) => {
             next(err)
             return
         }
-        console.log(result);
+        // console.log(result);
         if (result.length != 0) {
             res.send({ code: 200, message: "ok", result })
         } else {
@@ -57,7 +101,7 @@ i.get('/category', (req, res, next) => {
             next(err)
             return
         }
-        console.log(result)
+        // console.log(result)
         res.send({ message: 'ok', code: 200, result: result });
     })
 })
@@ -90,7 +134,7 @@ i.get('/class', (req, res, next) => {
             /**************************************************/
             // 根据总记录数和每页显示的记录数来计算总页数
             let pagecount = Math.ceil(rowcount / pagesize);
-            sql = 'SELECT id,title,content,hits,image FROM kz_class LIMIT ?,?';
+            sql = 'SELECT * FROM kz_class LIMIT ?,?';
             pool.query(sql, [offset, pagesize], (err, result) => {
                 if (err) {
                     next(err)
@@ -128,7 +172,7 @@ i.get('/class', (req, res, next) => {
             /**************************************************/
             // 根据总记录数和每页显示的记录数来计算总页数
             let pagecount = Math.ceil(rowcount / pagesize);
-            sql = 'SELECT id,title,content,hits,image FROM kz_class WHERE category_id=? LIMIT ?,?';
+            sql = 'SELECT * FROM kz_class WHERE category_id=? LIMIT ?,?';
             pool.query(sql, [cid, offset, pagesize], (err, result) => {
                 if (err) {
                     next(err)
