@@ -6,9 +6,7 @@
         <span>最近搜索</span>
       </div>
       <div>
-        <van-tag plain type="primary" size="large">语文</van-tag>
-        <van-tag plain type="primary" size="large">数学</van-tag>
-        <van-tag plain type="primary" size="large">英语</van-tag>
+        <van-tag plain type="primary" size="large" ref="lastsearch" @click="app()" :a="search">前端开发</van-tag>
       </div>
     </div>
 
@@ -19,8 +17,8 @@
       <div>
         <table>
           <tr>
-            <td>1.数学</td>
-            <td>2.python</td>
+            <td>1.<span>数学</span></td>
+            <td>2.<span>python</span></td>
           </tr>
           <tr>
             <td>3.数学</td>
@@ -34,7 +32,29 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      subject: [],
+      search:'',
+    }
+  },
+  methods:{
+    getdata() {
+      this.axios.get('/items/subject').then(res=>{
+        console.log(res);
+        this.subject=res.data.result
+      })
+    },
+
+    app(){
+      console.log(this.$refs.lastsearch.innerText);
+      let lastsearch=this.$refs.lastsearch.innerText
+      this.search=lastsearch
+      // this.$emit('childClick',search)
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

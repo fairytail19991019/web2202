@@ -3,7 +3,6 @@
     <router-link to="/mydetails">
       <van-card
         class="van-card"
-        :desc="zujian.content"
         :title="zujian.content"
         thumb="/java/java(1).jpg"
       >
