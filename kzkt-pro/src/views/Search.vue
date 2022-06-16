@@ -16,6 +16,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -32,6 +33,9 @@ export default {
     onCancel() {
       this.$router.push('/home/index')
     },
+    // childClick(e){
+    //   console.log('子路由传来的值='+e);
+    // }
   },
 };
 </script>
