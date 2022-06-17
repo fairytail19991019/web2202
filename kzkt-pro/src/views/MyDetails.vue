@@ -690,5 +690,6 @@ div {
 }
 .van-tabs__line{
   background-color: #1989fa;
+  width:20px;
 }
 </style>
