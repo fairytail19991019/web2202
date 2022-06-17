@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-card
+    <van-card @click="goumai"
       :desc="jiu.desc"
       :price="jiu.price"
       :title="jiu.title"
@@ -34,23 +34,21 @@
 
 <script>
 export default {
-  props: ["jiu", "kid"],
+  props: ["jiu"],
   methods: {
+    goumai(){
+      this.$router.push('/goumai')
+    },
     Dialog() {
       this.$dialog
         .confirm({
           message: "是否确定加入购物车",
         })
         .then(() => {
-          if(!sessionStorage.getItem('name')){
-            this.$toast("请先登录");
-            return
-          }else{
-            let params = `gid=${this.jiu.gid}`;
-            this.axios.put("/users/updateorder", params).then((res) => {
-              console.log(res);
-            });
-          }
+          let params = `gid=${this.jiu.gid}`;
+          this.axios.put("/users/updateorder", params).then((res) => {
+            console.log(res);
+          });
         })
         .catch(() => {});
     },
