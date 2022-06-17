@@ -24,7 +24,7 @@ export default {
   methods: {
     goDeatils() {
       let time=new Date().getTime() //获取点击时的时间戳
-      console.log(time);
+      // console.log(time);
       let params=`time=${time}&id=${this.zujian.id}`
       this.axios.put('/items/updatetime',params).then(res=>{
         console.log(res);

@@ -6,10 +6,19 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     loginname:sessionStorage.getItem('name'),  //存储登录用户信息
+    kid:null,
+    issold:sessionStorage.getItem('issold'),
   },
   getters: {
   },
   mutations: {
+    updateissold(state,issold){
+      state.issold=issold
+      sessionStorage.setItem('issold',issold)
+    },
+    updateKid(state,kid){
+      state.kid=kid
+    },
     updateLoginState(state,payload){ //修改登录状态
       // 将调用当前方法传过来的参数(用户名)赋值给state.loginname
       state.loginname=payload

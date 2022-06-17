@@ -19,7 +19,7 @@
         <img src="../assets/indeximage/index01.png" alt="" />
       </swiper-slide>
       <swiper-slide>
-        <img src="../assets/indeximage/index02.png" alt="" />
+        <img src="../assets/indeximage/index02.webp" alt="" />
       </swiper-slide>
       <swiper-slide>
         <img src="../assets/indeximage/index03.jpg" alt="" />

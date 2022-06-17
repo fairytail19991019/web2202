@@ -5,9 +5,15 @@
         <span>最近搜索</span>
       </div>
       <div>
-        <van-tag plain type="primary" size="large">语文</van-tag>
-        <van-tag plain type="primary" size="large">数学</van-tag>
-        <van-tag plain type="primary" size="large">英语</van-tag>
+        <van-tag
+          plain
+          type="primary"
+          size="large"
+          ref="lastsearch"
+          @click="app()"
+          :a="search"
+          >前端开发</van-tag
+        >
       </div>
     </div>
 
@@ -25,7 +31,19 @@ export default {
   mounted() {
     this.loadingChart();
   },
+  data() {
+    return {
+      subject: [],
+      search:'',
+    }
+  },
   methods: {
+    app(){
+      console.log(this.$refs.lastsearch.innerText);
+      let lastsearch=this.$refs.lastsearch.innerText
+      this.search=lastsearch
+      // this.$emit('childClick',search)
+    },
     loadingChart() {
       let value = [];
       this.axios.get("/items/total").then((res) => {
@@ -90,24 +108,6 @@ export default {
 }
 
 .hotsearch {
-  margin: 20px 30px;
-
-  div:nth-child(1) {
-    margin: 15px 0;
-    font-weight: 200;
-    font-size: 14px;
-  }
-
-  :nth-child(2) {
-    table {
-      width: 100%;
-      font-size: 16px;
-
-      td {
-        width: 70px;
-        line-height: 35px;
-      }
-    }
-  }
+  margin: 30px 0px;
 }
 </style>

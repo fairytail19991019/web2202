@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="zuiwai">
     <van-card
+      @click="goumai"
       :desc="jiu.desc"
       :price="jiu.price"
       :title="jiu.title"
@@ -13,42 +14,52 @@
       </template>
       <template #footer>
         <div>课程：3个 视频：26集</div>
-        <div>
-          <van-button
-            v-if="!jiu.issold"
-            size="normal"
-            type="primary"
-            round
-            @click="Dialog"
-            >加入购物车</van-button
-          >
-          <van-button v-else size="normal" type="danger" round @click="Dialog1"
-            >移除购物车</van-button
-          >
-        </div>
         <!-- <van-button size="mini">开始上课</van-button> -->
       </template>
     </van-card>
+    <div class="bttnn">
+      <van-button
+        v-if="!jiu.issold"
+        size="normal"
+        type="primary"
+        round
+        @click="Dialog"
+        >加入购物车</van-button
+      >
+      <van-button v-else size="normal" type="danger" round @click="Dialog1"
+        >移除购物车</van-button
+      >
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["jiu", "kid"],
+  data() {
+    return {
+      value:true
+    }
+  },
+  props: ["jiu"],
   methods: {
+    goumai() {
+      this.$router.push("/goumai");
+    },
     Dialog() {
       this.$dialog
         .confirm({
           message: "是否确定加入购物车",
         })
         .then(() => {
-          if(!sessionStorage.getItem('name')){
+          if (!sessionStorage.getItem("name")) {
             this.$toast("请先登录");
-            return
-          }else{
+            return;
+          } else {
             let params = `gid=${this.jiu.gid}`;
             this.axios.put("/users/updateorder", params).then((res) => {
               console.log(res);
+              this.$store.commit("updateissold", false);
+              this.value=this.$store.state.issold
             });
           }
         })
@@ -63,6 +74,8 @@ export default {
           let params = `gid=${this.jiu.gid}`;
           this.axios.put("/users/updateorder", params).then((res) => {
             console.log(res);
+            this.$store.commit("updateissold", true);
+            this.value=this.$store.state.issold
           });
         })
         .catch(() => {});
@@ -113,10 +126,17 @@ export default {
   height: 20px;
   font-size: 10px;
 }
-.van-card__footer{
+.van-card__footer {
   display: flex;
   justify-content: space-between;
   font-size: 10px;
-
+}
+.zuiwai{
+  position: relative;
+}
+.bttnn{
+  position: absolute;
+  right: 10vw;
+  top: 95px;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div v-if="details[0]">
     <!-- 返回键  分享键 -->
     <!-- 6.16 -->
-    <div v-if="details[0]">
+    <div>
       <van-nav-bar
         title=""
         left-text="返回"
@@ -28,11 +28,8 @@
     </div>
     <!-- 课程详情 -->
     <div style="width: 100%">
-      <img
-        :src="`/Img/${details[0].index_img}.png`"
-        alt=""
-        style="width: 100%"
-      />
+      <video id="video" style="height:220.42px;" src="../assets/donghua/shili.mp4" controls width="100%" :poster="`/Img/${details[0].index_img}.png`">
+        </video>  
     </div>
     <div id="kname" class="clear">
       <div id="kname1">
@@ -46,15 +43,9 @@
       </div>
     </div>
     <!-- 腾讯课堂详情页 6.10 19 -->
-    <mt-navbar v-model="selected">
-      <mt-tab-item id="1">介绍</mt-tab-item>
-      <mt-tab-item id="2">目录</mt-tab-item>
-      <mt-tab-item id="3">评价</mt-tab-item>
-      <mt-tab-item id="4">推荐</mt-tab-item>
-    </mt-navbar>
-
-    <mt-tab-container v-model="selected">
-      <mt-tab-container-item id="1" style="display: block">
+     <div class="test">
+    <van-tabs v-model="active">
+      <van-tab title="介绍">
         <div id="mt1" class="clear">
           <div class="mt1_1">
             <img class="mt1_1_1" src="../assets/img/wenjianjia.jpg" alt="" />
@@ -94,9 +85,8 @@
             </div>
           </div>
         </div>
-      </mt-tab-container-item>
-
-      <mt-tab-container-item id="2" style="display: block">
+      </van-tab>
+      <van-tab title="目录">
         <h3 style="padding: 8px 16px; font-size: 1.14rem">课程目录</h3>
         <div class="mt2_1">
           <van-cell
@@ -162,10 +152,9 @@
             </p>
           </div>
         </div>
-      </mt-tab-container-item>
-
-      <mt-tab-container-item id="3">
-        <div>
+      </van-tab>
+      <van-tab title="评价">
+                <div>
           <div class="clear" id="mt3">
             <div>
               <h3 style="font-size: 1.14rem">学员评价(6)</h3>
@@ -241,7 +230,7 @@
               <div style="font-size: 1rem; line-height: 1.5rem">
                 <p>***三</p>
                 <p style="color: gray">
-                  8个月前|已上课3小时20分钟评论 <span>五星好评</span>
+                  8个月前|已上课3小时20分钟评论  <span>五星好评</span>
                 </p>
               </div>
             </div>
@@ -303,10 +292,9 @@
             </div>
           </div>
         </div>
-      </mt-tab-container-item>
-
-      <mt-tab-container-item id="4">
-        <h3 style="padding: 12px 16px; font-size: 1.14286rem; color: #3c464f">
+      </van-tab>
+      <van-tab title="推荐">
+                <h3 style="padding: 12px 16px; font-size: 1.14286rem; color: #3c464f">
           授课机构
         </h3>
         <div id="mt4" class="clear">
@@ -480,8 +468,9 @@
             </div>
           </div>
         </div>
-      </mt-tab-container-item>
-    </mt-tab-container>
+      </van-tab>
+    </van-tabs>
+  </div>
   </div>
 </template>
 
@@ -498,6 +487,7 @@ export default {
   },
   data() {
     return {
+      active: 0,
       selected: 1,
       details: [],
       showShare: false,
@@ -694,5 +684,10 @@ div {
   font-size: 0.8rem;
   margin-right: 6px;
   color: #ff7a38;
+}
+.van-tabs__line{
+  background-color: #1989fa;
+  width:20px;
+  z-index: 0;
 }
 </style>
