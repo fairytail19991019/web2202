@@ -28,11 +28,8 @@
     </div>
     <!-- 课程详情 -->
     <div style="width: 100%">
-      <img
-        :src="`/Img/${details[0].index_img}.png`"
-        alt=""
-        style="width: 100%"
-      />
+      <video id="video" style="height:220.42px;" src="../assets/donghua/shili.mp4" controls width="100%" :poster="`/Img/${details[0].index_img}.png`">
+        </video>  
     </div>
     <div id="kname" class="clear">
       <div id="kname1">
