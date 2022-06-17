@@ -48,7 +48,7 @@
     <!-- 腾讯课堂详情页 6.10 19 -->
      <div class="test">
     <van-tabs v-model="active">
-      <van-tab title="标签 1">
+      <van-tab title="介绍">
         <div id="mt1" class="clear">
           <div class="mt1_1">
             <img class="mt1_1_1" src="../assets/img/wenjianjia.jpg" alt="" />
@@ -89,7 +89,7 @@
           </div>
         </div>
       </van-tab>
-      <van-tab title="标签 2">
+      <van-tab title="目录">
         <h3 style="padding: 8px 16px; font-size: 1.14rem">课程目录</h3>
         <div class="mt2_1">
           <van-cell
@@ -156,7 +156,7 @@
           </div>
         </div>
       </van-tab>
-      <van-tab title="标签 3">
+      <van-tab title="评价">
                 <div>
           <div class="clear" id="mt3">
             <div>
@@ -296,7 +296,7 @@
           </div>
         </div>
       </van-tab>
-      <van-tab title="标签 4">
+      <van-tab title="推荐">
                 <h3 style="padding: 12px 16px; font-size: 1.14286rem; color: #3c464f">
           授课机构
         </h3>
