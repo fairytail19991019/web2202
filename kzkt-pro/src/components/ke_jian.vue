@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <van-card @click="goumai"
+  <div class="zuiwai">
+    <van-card
+      @click="goumai"
       :desc="jiu.desc"
       :price="jiu.price"
       :title="jiu.title"
@@ -13,22 +14,22 @@
       </template>
       <template #footer>
         <div>课程：3个 视频：26集</div>
-        <div>
-          <van-button
-            v-if="!jiu.issold"
-            size="normal"
-            type="primary"
-            round
-            @click="Dialog"
-            >加入购物车</van-button
-          >
-          <van-button v-else size="normal" type="danger" round @click="Dialog1"
-            >移除购物车</van-button
-          >
-        </div>
         <!-- <van-button size="mini">开始上课</van-button> -->
       </template>
     </van-card>
+    <div class="bttnn">
+      <van-button
+        v-if="!jiu.issold"
+        size="normal"
+        type="primary"
+        round
+        @click="Dialog"
+        >加入购物车</van-button
+      >
+      <van-button v-else size="normal" type="danger" round @click="Dialog1"
+        >移除购物车</van-button
+      >
+    </div>
   </div>
 </template>
 
@@ -36,8 +37,8 @@
 export default {
   props: ["jiu"],
   methods: {
-    goumai(){
-      this.$router.push('/goumai')
+    goumai() {
+      this.$router.push("/goumai");
     },
     Dialog() {
       this.$dialog
@@ -49,11 +50,11 @@ export default {
             this.$toast("请先登录");
             return;
           } else {
-            let a=this.$store.state.issold
+            let a = this.$store.state.issold;
             let params = `gid=${this.jiu.gid}`;
             this.axios.put("/users/updateorder", params).then((res) => {
               console.log(res);
-              this.$store.commit('updateSold',!a)
+              this.$store.commit("updateSold", !a);
             });
           }
         })
@@ -122,5 +123,13 @@ export default {
   display: flex;
   justify-content: space-between;
   font-size: 10px;
+}
+.zuiwai{
+  position: relative;
+}
+.bttnn{
+  position: absolute;
+  right: 10vw;
+  top: 95px;
 }
 </style>
