@@ -3,7 +3,7 @@
     <van-card
       class="van-card"
       :title="zujian.title"
-      thumb="/java/java(1).jpg"
+      :thumb="'http://localhost:8080/java/'+zujian.image+'.jpg'"
       @click="goDeatils"
     >
       <template #tags>
