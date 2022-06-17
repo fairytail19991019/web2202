@@ -9,6 +9,11 @@ import VueAxios from 'vue-axios'
 axios.defaults.baseURL='http://localhost:3000'
 Vue.use(VueAxios,axios)
 
+import { Collapse, CollapseItem } from 'vant';
+
+Vue.use(Collapse);
+Vue.use(CollapseItem);
+
 // import Vue from 'vue' ;
 import { Tab, Tabs } from 'vant';
 
