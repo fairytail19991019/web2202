@@ -41,6 +41,11 @@ export default {
         this.$store.commit("updateKid", this.kid);
       });
     },
+    sold(){
+      this.axios.get("/items/jiuke?kid=" + this.$store.state.kid).then((res) => {
+        console.log(res);
+      });
+    }
   },
   mounted() {
     // console.log(this.kid);

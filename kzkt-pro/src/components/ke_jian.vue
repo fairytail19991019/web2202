@@ -46,7 +46,7 @@ export default {
             this.$toast("请先登录");
             return;
           } else {
-            let a=this.$store.state
+            let a=this.$store.state.issold
             let params = `gid=${this.jiu.gid}`;
             this.axios.put("/users/updateorder", params).then((res) => {
               console.log(res);
