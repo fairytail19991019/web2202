@@ -38,13 +38,6 @@ export default {
     }
   },
   methods: {
-    getdata() {
-      this.axios.get('/items/subject').then(res=>{
-        console.log(res);
-        this.subject=res.data.result
-      })
-    },
-
     app(){
       console.log(this.$refs.lastsearch.innerText);
       let lastsearch=this.$refs.lastsearch.innerText
