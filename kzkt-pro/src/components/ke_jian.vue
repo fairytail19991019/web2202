@@ -19,7 +19,7 @@
     </van-card>
     <div class="bttnn">
       <van-button
-        v-if="!jiu.issold"
+        v-if="!data"
         size="normal"
         type="primary"
         round
@@ -37,11 +37,22 @@
 export default {
   data() {
     return {
-      value:true
+      value:true,
+      data:[]
     }
   },
   props: ["jiu"],
+  mounted(){
+    this.getissold()
+  },
   methods: {
+    getissold(){
+      this.axios.get(`/items/getkejian?gid=${this.jiu.gid}`).then(res=>{
+        console.log(res)
+        this.data=res.data.result.issold
+
+      })
+    },
     goumai() {
       this.$router.push("/goumai");
     },
@@ -58,8 +69,8 @@ export default {
             let params = `gid=${this.jiu.gid}`;
             this.axios.put("/users/updateorder", params).then((res) => {
               console.log(res);
-              this.$store.commit("updateissold", false);
-              this.value=this.$store.state.issold
+             this.$store.commit("updateissold",this.data);
+             this.getissold()
             });
           }
         })
@@ -74,28 +85,16 @@ export default {
           let params = `gid=${this.jiu.gid}`;
           this.axios.put("/users/updateorder", params).then((res) => {
             console.log(res);
-            this.$store.commit("updateissold", true);
-            this.value=this.$store.state.issold
+           this.$store.commit("updateissold",this.data);
+           this.getissold()
           });
         })
         .catch(() => {});
     },
   },
-  data() {
-    return {
-      issold: null,
-      // jiuzhong: [
-      //   {
-      //     title:"传世名作初体验",
-      //     desc: "文言文的魅力，用不同的打开方式",
-      //     gid: "0",
-      //     price: "60",
-      //     icon: "../",
-      //     towhere: "shuxue",
-      //   },
-      // ],
-    };
-  },
+  watch:{
+    
+  }
 };
 </script>
 

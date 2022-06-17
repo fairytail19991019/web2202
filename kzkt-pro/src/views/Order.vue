@@ -28,6 +28,16 @@ export default {
       jiukelist: [],
     };
   },
+computed:{
+    a(){
+      return this.$store.state.issold
+    }
+  },
+  watch:{
+      a(){
+     this.getData()
+    }
+  },
   mounted() {
     this.getData();
   },

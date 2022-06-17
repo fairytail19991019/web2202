@@ -9,14 +9,20 @@
       left-arrow
       @click-left="$router.push('/home/me')"
     />
-    <van-field class="cell" name="uploader" label="文件上传">
-      <template #input>
-        <van-uploader>
-          <van-image round width="5rem" height="5rem" src="/默认图像.jpeg">
-          </van-image>
-        </van-uploader>
-      </template>
-    </van-field>
+    <el-upload
+      class="upload-demo"
+      drag
+      action="http://localhost:4000/upload"
+      name="uploadFile"
+      multiple
+      :on-success="handleUploadSuccess"
+    >
+      <i class="el-icon-upload"></i>
+      <div class="el-upload__text"><em>点击上传</em></div>
+      <div class="el-upload__tip" slot="tip">
+        只能上传jpg/png文件，且不超过500kb
+      </div>
+    </el-upload>
     <van-cell-group class="cell">
       <van-cell title="昵称" value="" is-link />
     </van-cell-group>
@@ -33,7 +39,25 @@
 </template>
 
 <script>
+import { mapMutations, mapState } from "vuex";
 export default {
+  computed: {
+    ...mapState(["loginname"]),
+  },
+  methods: {
+    ...mapMutations(["updateurl"]),
+    handleUploadSuccess(res) {
+      //当文件上传成功后触发
+      console.log(res);
+      const a = res.urls[0];
+      this.updateurl(a);
+      const parmas = `url=${a}&uname=${this.loginname}`;
+      this.axios.post("/items/url", parmas).then((res) => {
+        console.log(res);
+        this.$router.push("/home/me");
+      });
+    },
+  },
   data() {
     return {
       // 默认图像
@@ -47,7 +71,7 @@ export default {
 .cell {
   margin-top: 15px;
 }
-.color{
+.color {
   color: blue;
 }
 </style>
@@ -59,5 +83,4 @@ body {
   margin-top: 30px;
   margin-left: 40px;
 }
-
 </style>
