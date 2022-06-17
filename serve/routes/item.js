@@ -2,48 +2,65 @@ const express = require('express')
 const pool = require('../pool')
 const i = express.Router()
 
+//订单接口
+i.get('/order', (req, res, next) => {
+    pool.query('select * from kz_jiuke where issold=true', (err, result) => {
+        if (err) {
+            next(err)
+            return
+        }
+        // console.log(result)
+        if (result.length == 0) {
+            res.send({ code: 500, msg: "no data" })
+        } else {
+            res.send({ code: 200, msg: "ok", result })
+
+        }
+    })
+})
+
 //查询各类目总热度之和
-i.get('/total',(req,res,next)=>{
-    pool.query('select sum(hits) as total from kz_class group by category_id',(err,result)=>{
-        if(err){
+i.get('/total', (req, res, next) => {
+    pool.query('select sum(hits) as total from kz_class group by category_id', (err, result) => {
+        if (err) {
             next(err)
             return
         }
         // console.log(result);
-        res.send({code:200,msg:'ok',result})
+        res.send({ code: 200, msg: 'ok', result })
     })
 })
 //查询课程按时间降序排序
-i.get('/desc',(req,res,next)=>{
-    pool.query('select id,title,hits,image,time from kz_class order by time desc limit 0,5',(err,result)=>{
-        if(err){
+i.get('/desc', (req, res, next) => {
+    pool.query('select id,title,hits,image,time from kz_class order by time desc limit 0,5', (err, result) => {
+        if (err) {
             next(err)
             return
         }
         // console.log(result);
-        res.send({code:200,msg:'ok',result})
+        res.send({ code: 200, msg: 'ok', result })
     })
 })
 //修改点击时间接口
-i.put('/updatetime',(req,res,next)=>{
+i.put('/updatetime', (req, res, next) => {
     console.log(req.body);
-    pool.query('update kz_class set time=? where id=?',[req.body.time,req.body.id],(err,result)=>{
-        if(err){
+    pool.query('update kz_class set time=? where id=?', [req.body.time, req.body.id], (err, result) => {
+        if (err) {
             next(err)
             return
         }
-        res.send({code:200,msg:'ok'})
+        res.send({ code: 200, msg: 'ok' })
     })
 })
 //课程详细页接口
-i.get('/details',(req,res,next)=>{
+i.get('/details', (req, res, next) => {
     // console.log(req.query);
-    pool.query('select index_img,class_title,teacher_head,teacher,teacher_introduce,detail_img from kz_class where id=?',[req.query.cid],(err,result)=>{
-        if(err){
+    pool.query('select index_img,class_title,teacher_head,teacher,teacher_introduce,detail_img from kz_class where id=?', [req.query.cid], (err, result) => {
+        if (err) {
             next(err)
             return
         }
-        res.send({code:200,msg:'ok',result})
+        res.send({ code: 200, msg: 'ok', result })
     })
 })
 //查询接口
@@ -59,7 +76,7 @@ i.post('/search', (req, res, next) => {
         if (result.length != 0) {
             res.send({ code: 200, message: "ok", result })
         } else {
-            res.send({ code: 500, message: "no such data"})
+            res.send({ code: 500, message: "no such data" })
         }
     })
 })
@@ -78,18 +95,18 @@ i.get('/subject', (req, res, next) => {
 })
 
 //查找指定课程接口
-i.get('/jiuke',(req,res,next)=>{
+i.get('/jiuke', (req, res, next) => {
     console.log(req.query);
-    pool.query('select * from kz_jiuke where subject_id=?',[req.query.kid],(err,result)=>{
-        if(err){
+    pool.query('select * from kz_jiuke where subject_id=?', [req.query.kid], (err, result) => {
+        if (err) {
             next(err)
             return
         }
         // console.log(result);
-        if(result.length!=0){
-            res.send({code:200,msg:'ok',result})
-        }else{
-            res.send({code:500,msg:'err'})
+        if (result.length != 0) {
+            res.send({ code: 200, msg: 'ok', result })
+        } else {
+            res.send({ code: 500, msg: 'err' })
         }
     })
 })
@@ -178,7 +195,7 @@ i.get('/class', (req, res, next) => {
                     next(err)
                     return
                 }
-                res.send({ message: 'ok', code: 200, result, pagecount})
+                res.send({ message: 'ok', code: 200, result, pagecount })
             })
         })
     }
