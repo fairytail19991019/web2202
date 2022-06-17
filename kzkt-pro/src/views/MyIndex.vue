@@ -79,7 +79,7 @@ export default {
       selected: null,
       swiperOptions: {
         //效果,特效  默认为"slide"（普通位移切换），还可设置为"fade"（淡入）、"cube"（方块）、"coverflow"（3d流）、"flip"（3d翻转）
-        effect: "fade",
+        effect: "slide",
         loop: true,
         autoplay: {
           delay: 2000, //间隔时长, 单位毫秒
