@@ -8,10 +8,15 @@ export default new Vuex.Store({
     loginname:sessionStorage.getItem('name'),  //存储登录用户信息
     kid:null,
     issold:sessionStorage.getItem('issold'),
+    url:sessionStorage.getItem("url")
   },
   getters: {
   },
   mutations: {
+    updateurl(state,url){
+      state.url=url
+      sessionStorage.setItem('url',url)
+    },
     updateissold(state,issold){
       state.issold=issold
       sessionStorage.setItem('issold',issold)

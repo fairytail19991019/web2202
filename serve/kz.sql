@@ -7,11 +7,12 @@ create table `kz_user`(
     `uname` VARCHAR(32),
     `upwd` VARCHAR(32),
     `email` VARCHAR(64),
-    `phone` VARCHAR(16)
+    `phone` VARCHAR(16),
+    `head` VARCHAR(255)
 );
-insert into `kz_user` values(1,'张三','123456','126@qq.com','15878942654');
-insert into `kz_user` values(2,'李四','123456','1245@qq.com','15873494265');
-insert into `kz_user` values(3,'admin','123456','1245@qq.com','15257609076');
+insert into `kz_user` values(1,'张三','123456','126@qq.com','15878942654',null);
+insert into `kz_user` values(2,'李四','123456','1245@qq.com','15873494265',null);
+insert into `kz_user` values(3,'admin','123456','1245@qq.com','15257609076',null);
 
 create table `kz_subject`(
     `kid` INT PRIMARY KEY AUTO_INCREMENT,

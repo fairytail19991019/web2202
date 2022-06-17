@@ -2,6 +2,25 @@ const express = require('express')
 const pool = require('../pool')
 const i = express.Router()
 
+i.post('/url',(req,res,next)=>{
+    console.log(req.body);
+    pool.query('update kz_user set head=? where uid=?',[req.body.url,req.body.uname],(err,result)=>{
+        if(err){
+            next(err)
+            return
+        }
+        res.send({code:200,msg:"ok",result})
+    })
+})
+i.get('/getkejian',(req,res,next)=>{
+   pool.query('select issold from kz_jiuke where gid=?',[req.query.gid],(err,result)=>{
+    if(err){
+      next(err)
+      return
+    }
+    res.send({code:200,msg:'获取成功',result:result[0]})
+   })
+})
 //订单接口
 i.get('/order', (req, res, next) => {
     pool.query('select * from kz_jiuke where issold=true', (err, result) => {

@@ -4,11 +4,13 @@
     <van-row class="login" type="flex" justify="space-between" align="center">
       <van-col span="4" offset="2"
         ><van-image
+          v-if="$store.state.loginname"
           round
           width="3rem"
           height="3rem"
-          src="https://img01.yzcdn.cn/vant/cat.jpeg"
+          :src="$store.state.url"
         />
+        <van-image v-else round width="3rem" height="3rem" src="https://img01.yzcdn.cn/vant/cat.jpeg" />
       </van-col>
 
       <van-col @click="jumpTo('/edit')" v-if="$store.state.loginname" span="14">
@@ -31,7 +33,7 @@
     </van-tabbar>
 
     <van-cell-group class="l1" inset>
-      <van-cell title="最近看过" value="" is-link @click="jumpTo('/rs')"/>
+      <van-cell title="最近看过" value="" is-link @click="jumpTo('/rs')" />
       <van-cell title="余额" value="0" is-link>
         <van-icon name="balance-o" />0
       </van-cell>
