@@ -107,26 +107,27 @@
                   3.vue自定义指令、计算属性、常用属性方法
                 </div></van-collapse-item
               >
-              <van-collapse-item title="第四节" name="3"
+              <van-collapse-item title="第四节" name="4"
                 ><div>4、vue-router\vue-cli</div></van-collapse-item
               >
-              <van-collapse-item title="第五节" name="3"
+              <van-collapse-item title="第五节" name="5"
                 ><div>5、Vue项目实战1</div></van-collapse-item
               >
-              <van-collapse-item title="第六节" name="3"
+              <van-collapse-item title="第六节" name="6"
                 ><div>6、Vue项目实战2</div></van-collapse-item
               >
-              <van-collapse-item title="第七节" name="3"
+              <van-collapse-item title="第七节" name="7"
                 ><div>7、H5购物车详细解析vuex</div></van-collapse-item
               >
-              <van-collapse-item title="第八节" name="3"
+              <van-collapse-item title="第八节" name="8"
                 ><div>8、Vue源码解析</div></van-collapse-item
               >
-              <van-collapse-item title="第九节" name="3"
-                ><div>9、Vue+echarts实现疫情地</div>
-                图</van-collapse-item
+              <van-collapse-item title="第九节" name="9"
+                ><div>9、Vue+echarts实现疫情地图</div>
+                <div>9.1、Vue+echarts实现疫情地图</div>
+                </van-collapse-item
               >
-              <van-collapse-item title="第十节" name="3"
+              <van-collapse-item title="第十节" name="10"
                 ><div>10、Vue自定义指令实现图片懒加载</div></van-collapse-item
               >
             </van-collapse>
