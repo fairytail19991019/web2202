@@ -688,4 +688,7 @@ div {
   margin-right: 6px;
   color: #ff7a38;
 }
+.van-tabs__line{
+  background-color: #1989fa;
+}
 </style>
