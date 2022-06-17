@@ -5,9 +5,7 @@
         <span>最近搜索</span>
       </div>
       <div>
-        <van-tag plain type="primary" size="large">语文</van-tag>
-        <van-tag plain type="primary" size="large">数学</van-tag>
-        <van-tag plain type="primary" size="large">英语</van-tag>
+        <van-tag plain type="primary" size="large" ref="lastsearch" @click="app()" :a="search">前端开发</van-tag>
       </div>
     </div>
 

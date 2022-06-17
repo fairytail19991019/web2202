@@ -11,6 +11,7 @@
         @cancel="onCancel"
       />
     </form>
+
     <router-view/>
   </div>
 </template>
