@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div class="lastsearch">
       <div>
         <span>最近搜索</span>
@@ -10,87 +9,99 @@
       </div>
     </div>
 
-    <hr>
+    <hr />
 
     <div class="hotsearch">
-      <div>热门搜索</div>
-      <div>
-        <table>
-          <tr>
-            <td>1.<span>数学</span></td>
-            <td>2.<span>python</span></td>
-          </tr>
-          <tr>
-            <td>3.数学</td>
-            <td>4.asdasdfffsdf</td>
-          </tr>
-        </table>
-      </div>
+      <div id="main" style="width: 100vw; height: 100vw"></div>
     </div>
-
   </div>
 </template>
 
 <script>
+import * as echarts from "echarts";
 export default {
-  data() {
-    return {
-      subject: [],
-      search:'',
-    }
+  mounted() {
+    this.loadingChart();
   },
-  methods:{
-    getdata() {
-      this.axios.get('/items/subject').then(res=>{
+  methods: {
+    loadingChart() {
+      let value = [];
+      this.axios.get("/items/total").then((res) => {
         console.log(res);
-        this.subject=res.data.result
-      })
+        for (let i=0;i<res.data.result.length;i++) {
+          value.push(res.data.result[i].total);
+        }
+        let myChart = echarts.init(document.getElementById("main"));
+        myChart.setOption({
+          title: {
+            text: "热门搜索",
+          },
+          tooltip: {
+            trigger: "axis",
+            axisPointer: {
+              type: "shadow",
+            },
+          },
+          legend: {},
+          grid: {
+            left: "3%",
+            right: "4%",
+            bottom: "3%",
+            containLabel: true,
+          },
+          xAxis: {
+            type: "value",
+            boundaryGap: [0, 0.01],
+          },
+          yAxis: {
+            type: "category",
+            data: ["前端开发","软件测试","英语","java","Excel"],
+          },
+          series: [
+            {
+              name: "热度",
+              type: "bar",
+              data: value,
+            },
+          ],
+        });
+      });
     },
-
-    app(){
-      console.log(this.$refs.lastsearch.innerText);
-      let lastsearch=this.$refs.lastsearch.innerText
-      this.search=lastsearch
-      // this.$emit('childClick',search)
-    }
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.lastsearch{
+.lastsearch {
   margin: 20px 20px;
 
-  div:nth-child(1){
+  div:nth-child(1) {
     margin: 15px 0;
-    span{
+    span {
       font-weight: 600;
     }
   }
 
-  .van-tag{
+  .van-tag {
     margin: 0 10px;
   }
 }
 
-.hotsearch{
+.hotsearch {
   margin: 20px 30px;
 
-  div:nth-child(1){
+  div:nth-child(1) {
     margin: 15px 0;
     font-weight: 200;
     font-size: 14px;
   }
 
-  :nth-child(2){
-    
-    table{
-
+  :nth-child(2) {
+    table {
       width: 100%;
       font-size: 16px;
-      
 
-      td{
+      td {
         width: 70px;
         line-height: 35px;
       }

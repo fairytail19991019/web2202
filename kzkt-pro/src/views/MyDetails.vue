@@ -1,14 +1,45 @@
 <template>
   <div>
+    <!-- 返回键  分享键 -->
+    <!-- 6.16 -->
+    <div v-if="details[0]">
+      <van-nav-bar
+        title=""
+        left-text="返回"
+        left-arrow
+        @click-left="$router.push('/home/index')"
+      >
+        <template #right>
+          <van-cell
+            title=""
+            @click="showShare = true"
+            style="height: 46px; width: 200px"
+          >
+            <van-icon name="share" size="18" style="margin-right: 15px" />
+          </van-cell>
+          <van-share-sheet
+            v-model:show="showShare"
+            title="将课程分享至"
+            :options="options"
+            @select="onSelect"
+          />
+        </template>
+      </van-nav-bar>
+    </div>
+    <!-- 课程详情 -->
     <div style="width: 100%">
-      <img src="../assets/img/shouyeimg.png" alt="" style="width: 100%" />
+      <img
+        :src="`/Img/${details[0].index_img}.png`"
+        alt=""
+        style="width: 100%"
+      />
     </div>
     <div id="kname" class="clear">
       <div id="kname1">
         <span class="kname1_1">免费</span>
         <span class="kname1_2">8125人最近报名</span>
       </div>
-      <h3 class="kname1_3">抖音短视频剪辑剪映基础教程</h3>
+      <h3 class="kname1_3">{{ details[0].class_title }}</h3>
       <div class="kname1_4">
         <img src="../assets/img/alogo.png" alt="" class="kname1_5" />
         <a href=""><span class="kname1_6">好评帮，直播电商第4名</span></a>
@@ -38,12 +69,16 @@
             <h3 class="mt1_21">讲师介绍</h3>
           </div>
           <div id="mt1_2_1" class="clear">
-            <img src="../assets/img/teacther.jpg" alt="" class="mt1_2_1_1" />
+            <img
+              :src="`/Img/${details[0].teacher_head}.jpg`"
+              alt=""
+              class="mt1_2_1_1"
+            />
             <div>
-              <p class="mt1_2_1_1_1">闽西老师</p>
-              <span class="mt1_2_1_1_2"
-                >视商研习创始人，手机拍摄摄影师，腾讯课堂认证讲师!</span
-              >
+              <p class="mt1_2_1_1_1">{{ details[0].teacher }}</p>
+              <span class="mt1_2_1_1_2">{{
+                details[0].teacher_introduce
+              }}</span>
             </div>
           </div>
         </div>
@@ -52,7 +87,7 @@
             <h4 style="text-align: center; color: #666c80">课程详情</h4>
             <div>
               <img
-                src="../assets/img/classdetail.jpg"
+                :src="`/Img/${details[0].detail_img}.jpg`"
                 alt=""
                 style="width: 100%"
               />
@@ -64,18 +99,67 @@
       <mt-tab-container-item id="2" style="display: block">
         <h3 style="padding: 8px 16px; font-size: 1.14rem">课程目录</h3>
         <div class="mt2_1">
-         
-          <van-cell style="margin-left:0;" title="前言：为什么要学习剪映" is-link arrow-direction="down" value="内容" />
-          <van-cell style="margin-left:0;" title="认识剪映的界面" is-link arrow-direction="down" value="内容" />
-          <van-cell style="margin-left:0;" title="图片素材的添加和调节时长" is-link arrow-direction="down" value="内容" />
-          <van-cell style="margin-left:0;" title="视频素材的添加和分割" is-link arrow-direction="down" value="内容" />
-          <van-cell style="margin-left:0;" title="添加视频动画和转场效果" is-link arrow-direction="down" value="内容" />
-          <van-cell style="margin-left:0;" title="关闭视频原声和添加音频效果" is-link arrow-direction="down" value="内容" />
-          <van-cell style="margin-left:0;" title="关闭视频原声和添加音频效果" is-link arrow-direction="down" value="内容" />
-          <van-cell style="margin-left:0;" title="真人录音和变声" is-link arrow-direction="down" value="内容" />
+          <van-cell
+            style="margin-left: 0"
+            title="前言：为什么要学习剪映"
+            is-link
+            arrow-direction="down"
+            value="内容"
+          />
+          <van-cell
+            style="margin-left: 0"
+            title="认识剪映的界面"
+            is-link
+            arrow-direction="down"
+            value="内容"
+          />
+          <van-cell
+            style="margin-left: 0"
+            title="图片素材的添加和调节时长"
+            is-link
+            arrow-direction="down"
+            value="内容"
+          />
+          <van-cell
+            style="margin-left: 0"
+            title="视频素材的添加和分割"
+            is-link
+            arrow-direction="down"
+            value="内容"
+          />
+          <van-cell
+            style="margin-left: 0"
+            title="添加视频动画和转场效果"
+            is-link
+            arrow-direction="down"
+            value="内容"
+          />
+          <van-cell
+            style="margin-left: 0"
+            title="关闭视频原声和添加音频效果"
+            is-link
+            arrow-direction="down"
+            value="内容"
+          />
+          <van-cell
+            style="margin-left: 0"
+            title="关闭视频原声和添加音频效果"
+            is-link
+            arrow-direction="down"
+            value="内容"
+          />
+          <van-cell
+            style="margin-left: 0"
+            title="真人录音和变声"
+            is-link
+            arrow-direction="down"
+            value="内容"
+          />
           <br />
           <div class="mt2_2">
-            <p style="font-size: 0.8rem; color: #3e414d">APP内学习，流畅又清晰</p>
+            <p style="font-size: 0.8rem; color: #3e414d">
+              APP内学习，流畅又清晰
+            </p>
           </div>
         </div>
       </mt-tab-container-item>
@@ -87,7 +171,7 @@
               <h3 style="font-size: 1.14rem">学员评价(6)</h3>
             </div>
             <div>
-              <a href="" style="font-size:0.8rem;color:#3e414d;">查看全部</a>
+              <a href="" style="font-size: 0.8rem; color: #3e414d">查看全部</a>
             </div>
           </div>
 
@@ -264,14 +348,15 @@
           "
         >
           关联的付费课程
-          <div >
-            <img src="../assets/img/tclogo.png" alt="">
-            <span style="display: inline-block; font-size: 0.8rem; color: #3e414d">
-            <i></i>
-            获取选课建议
+          <div>
+            <img src="../assets/img/tclogo.png" alt="" />
+            <span
+              style="display: inline-block; font-size: 0.8rem; color: #3e414d"
+            >
+              <i></i>
+              获取选课建议
             </span>
           </div>
-          
         </h3>
 
         <div>
@@ -401,11 +486,35 @@
 </template>
 
 <script>
+import { Toast } from "vant";
+
 export default {
+  props: ["cid"],
+  mounted() {
+    this.axios.get("/items/details?cid=" + this.cid).then((res) => {
+      console.log(res);
+      this.details = res.data.result;
+    });
+  },
   data() {
     return {
       selected: 1,
+      details: [],
+      showShare: false,
+      options: [
+        { name: "微信", icon: "wechat" },
+        { name: "微博", icon: "weibo" },
+        { name: "复制链接", icon: "link" },
+        { name: "分享海报", icon: "poster" },
+        { name: "二维码", icon: "qrcode" },
+      ],
     };
+  },
+  methods: {
+    onSelect(option) {
+      Toast(option.name);
+      this.showShare = false;
+    },
   },
 };
 </script>
@@ -509,8 +618,6 @@ div {
   font-size: 0.6rem;
   margin: 2px 0;
   color: #666c80;
-
-
 }
 .mt2_1 {
   max-height: 520px;

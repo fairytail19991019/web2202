@@ -19,7 +19,7 @@
             <van-grid-item
               v-for="{kid,sname} in subject"
               :key="kid"
-              icon="/public/favicon.ico"
+              :icon="`/${kid}.png`"
               :text="sname"
               :to="`/subject/${kid}`"
             />
@@ -104,6 +104,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+van-search{
+  position: fixed;
+  top:0;
+}
 #dping {
   width: 90vw;
   margin: 2vh auto;

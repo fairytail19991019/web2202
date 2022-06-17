@@ -24,6 +24,11 @@ import ZuJian01 from "../components/ZuJian01.vue";
 export default {
   components: { ZuJian01 },
   props: ["kw"],
+  watch:{
+    kw(){
+      this.getData()
+    }
+  },
   mounted() {
     // console.log(this.kw);
     this.getData()
@@ -42,6 +47,8 @@ export default {
       this.axios.post(url, params).then((res) => {
         console.log(res);
         this.result = res.data.result;
+        if(res.code==500){
+        }
       });
     },
     // 当触发触底事件后, 执行loadMore方法
