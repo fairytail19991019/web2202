@@ -108,24 +108,6 @@ export default {
 }
 
 .hotsearch {
-  margin: 20px 30px;
-
-  div:nth-child(1) {
-    margin: 15px 0;
-    font-weight: 200;
-    font-size: 14px;
-  }
-
-  :nth-child(2) {
-    table {
-      width: 100%;
-      font-size: 16px;
-
-      td {
-        width: 70px;
-        line-height: 35px;
-      }
-    }
-  }
+  margin: 30px 0px;
 }
 </style>

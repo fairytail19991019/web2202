@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div v-if="details[0]">
     <!-- 返回键  分享键 -->
     <!-- 6.16 -->
-    <div v-if="details[0]">
+    <div>
       <van-nav-bar
         title=""
         left-text="返回"
