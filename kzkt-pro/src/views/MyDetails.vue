@@ -46,15 +46,9 @@
       </div>
     </div>
     <!-- 腾讯课堂详情页 6.10 19 -->
-    <mt-navbar v-model="selected">
-      <mt-tab-item id="1">介绍</mt-tab-item>
-      <mt-tab-item id="2">目录</mt-tab-item>
-      <mt-tab-item id="3">评价</mt-tab-item>
-      <mt-tab-item id="4">推荐</mt-tab-item>
-    </mt-navbar>
-
-    <mt-tab-container v-model="selected">
-      <mt-tab-container-item id="1" style="display: block">
+     <div class="test">
+    <van-tabs v-model="active">
+      <van-tab title="标签 1">
         <div id="mt1" class="clear">
           <div class="mt1_1">
             <img class="mt1_1_1" src="../assets/img/wenjianjia.jpg" alt="" />
@@ -94,9 +88,8 @@
             </div>
           </div>
         </div>
-      </mt-tab-container-item>
-
-      <mt-tab-container-item id="2" style="display: block">
+      </van-tab>
+      <van-tab title="标签 2">
         <h3 style="padding: 8px 16px; font-size: 1.14rem">课程目录</h3>
         <div class="mt2_1">
           <van-cell
@@ -162,10 +155,9 @@
             </p>
           </div>
         </div>
-      </mt-tab-container-item>
-
-      <mt-tab-container-item id="3">
-        <div>
+      </van-tab>
+      <van-tab title="标签 3">
+                <div>
           <div class="clear" id="mt3">
             <div>
               <h3 style="font-size: 1.14rem">学员评价(6)</h3>
@@ -241,7 +233,7 @@
               <div style="font-size: 1rem; line-height: 1.5rem">
                 <p>***三</p>
                 <p style="color: gray">
-                  8个月前|已上课3小时20分钟评论 <span>五星好评</span>
+                  8个月前|已上课3小时20分钟评论  <span>五星好评</span>
                 </p>
               </div>
             </div>
@@ -303,10 +295,9 @@
             </div>
           </div>
         </div>
-      </mt-tab-container-item>
-
-      <mt-tab-container-item id="4">
-        <h3 style="padding: 12px 16px; font-size: 1.14286rem; color: #3c464f">
+      </van-tab>
+      <van-tab title="标签 4">
+                <h3 style="padding: 12px 16px; font-size: 1.14286rem; color: #3c464f">
           授课机构
         </h3>
         <div id="mt4" class="clear">
@@ -480,8 +471,9 @@
             </div>
           </div>
         </div>
-      </mt-tab-container-item>
-    </mt-tab-container>
+      </van-tab>
+    </van-tabs>
+  </div>
   </div>
 </template>
 
@@ -498,6 +490,7 @@ export default {
   },
   data() {
     return {
+      active: 0,
       selected: 1,
       details: [],
       showShare: false,
