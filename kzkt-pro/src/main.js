@@ -9,6 +9,12 @@ import VueAxios from 'vue-axios'
 axios.defaults.baseURL='http://localhost:3000'
 Vue.use(VueAxios,axios)
 
+// import Vue from 'vue' ;
+import { Tab, Tabs } from 'vant';
+
+Vue.use(Tab);
+Vue.use(Tabs);
+
 //配置mintui
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
