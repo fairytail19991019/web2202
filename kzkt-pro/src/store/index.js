@@ -7,13 +7,14 @@ export default new Vuex.Store({
   state: {
     loginname:sessionStorage.getItem('name'),  //存储登录用户信息
     kid:null,
-    issold:0
+    issold:sessionStorage.getItem('issold'),
   },
   getters: {
   },
   mutations: {
-    updateSold(state,sold){
-      state.issold=sold
+    updateissold(state,issold){
+      state.issold=issold
+      sessionStorage.setItem('issold',issold)
     },
     updateKid(state,kid){
       state.kid=kid

@@ -35,6 +35,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      value:true
+    }
+  },
   props: ["jiu"],
   methods: {
     goumai() {
@@ -50,11 +55,11 @@ export default {
             this.$toast("请先登录");
             return;
           } else {
-            let a = this.$store.state.issold;
             let params = `gid=${this.jiu.gid}`;
             this.axios.put("/users/updateorder", params).then((res) => {
               console.log(res);
-              this.$store.commit("updateSold", !a);
+              this.$store.commit("updateissold", false);
+              this.value=this.$store.state.issold
             });
           }
         })
@@ -69,6 +74,8 @@ export default {
           let params = `gid=${this.jiu.gid}`;
           this.axios.put("/users/updateorder", params).then((res) => {
             console.log(res);
+            this.$store.commit("updateissold", true);
+            this.value=this.$store.state.issold
           });
         })
         .catch(() => {});
