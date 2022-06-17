@@ -6,6 +6,22 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/dianping',
+    name: 'dianping',
+    component: () => import('../views/Dianping.vue'),
+    meta: {
+      title: "空中课堂-点评页"
+    }
+  },
+  {
+    path: '/goumai',
+    name: 'goumai',
+    component: () => import('../views/Goumai.vue'),
+    meta: {
+      title: "空中课堂-购买页"
+    }
+  },
+  {
     path: '/rs',
     name: 'resently',
     component: () => import('../views/ResentlySeen.vue'),

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-card
+    <van-card @click="goumai"
       :desc="jiu.desc"
       :price="jiu.price"
       :title="jiu.title"
@@ -36,6 +36,9 @@
 export default {
   props: ["jiu"],
   methods: {
+    goumai(){
+      this.$router.push('/goumai')
+    },
     Dialog() {
       this.$dialog
         .confirm({
