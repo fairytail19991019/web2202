@@ -1,78 +1,132 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- 主机： 127.0.0.1
--- 生成日期： 2022-06-17 13:52:37
--- 服务器版本： 10.4.24-MariaDB
--- PHP 版本： 7.4.29
+set names utf8;
+drop database if exists kz;
+create database kz CHARSET=UTF8;
+use kz;
+create table `kz_user`(
+    `uid` INT PRIMARY KEY AUTO_INCREMENT,
+    `uname` VARCHAR(32),
+    `upwd` VARCHAR(32),
+    `email` VARCHAR(64),
+    `phone` VARCHAR(16)
+);
+insert into `kz_user` values(1,'张三','123456','126@qq.com','15878942654');
+insert into `kz_user` values(2,'李四','123456','1245@qq.com','15873494265');
+insert into `kz_user` values(3,'admin','123456','1245@qq.com','15257609076');
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+create table `kz_subject`(
+    `kid` INT PRIMARY KEY AUTO_INCREMENT,
+    `sname` VARCHAR(32),
+    `icon` VARCHAR(32) DEFAULT NULL
+);
+
+insert into `kz_subject` values(1,"数学",null);
+insert into `kz_subject` values(2,"语文",null);
+insert into `kz_subject` values(null,"英语",null);
+insert into `kz_subject` values(null,"物理",null);
+insert into `kz_subject` values(null,"化学",null);
+insert into `kz_subject` values(null,"政治",null);
+insert into `kz_subject` values(null,"地理",null);
+insert into `kz_subject` values(null,"生物",null);
+insert into `kz_subject` values(null,"历史",null);
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+create table `kz_jiuke`(
+    `gid` INT PRIMARY KEY AUTO_INCREMENT,
+    `issold` boolean DEFAULT false,
+    `title` VARCHAR(32),
+    `desc` VARCHAR(32),
+    `mai` INT,
+    `price` INT,
+    `oprice` INT,
+    `tag` VARCHAR(16),
+    -- `pic` VARCHAR(255) DEFAULT NULL,
+    `subject_id` INT
+);
 
---
--- 数据库： `kz`
---
-CREATE DATABASE IF NOT EXISTS `kz` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `kz`;
+insert into `kz_jiuke` values(1,false,'中考暴力作文写作','告别无话可说，就是那么一回事',5132,30,60,'爆款',2);
+insert into `kz_jiuke` values(2,false,'传世名作初体验','文言文的魅力，用不同的打开方式',4262,30,60,null,2);
+insert into `kz_jiuke` values(null,false,'人物之百态人生','见闻与传奇，聆听他们的故事',4262,0,30,'免费',2);
+insert into `kz_jiuke` values(null,false,'看历史风云变','历史车轮滚滚，史家文采涛涛',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'识文体品佳作','千古名作,如何看懂其中的门道',4262,30,60.00,"火爆",2);
+insert into `kz_jiuke` values(null,false,'品味诸子百家','百家争鸣的时代,大师说了什么',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'铭记美丽河山','游山玩水,托物言志',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'虚词上','重点讲解“之”“乎”“者”“也”等九个虚词',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'性格稳定的实词','形象的比喻和富有趣味型的例句帮助同学们掌握',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'比较变态的实词','总结最有效的方法使同学们有方法可循',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'文言文翻译','归纳文言文中的特殊句式',4262,30,60.00,"",2);
+insert into `kz_jiuke` values(null,false,'集合上','学习函数的最重要前提，帮助你打好高中基础',4262,30,60.00,"火爆",1);
+insert into `kz_jiuke` values(null,false,'集合下','金牌教练，帮你跨过初中高中数学分水岭',4262,0,60.00,"免费",1);
+insert into `kz_jiuke` values(null,false,'函数的概念与表示','高效学习函数基本概念',4262,0,60.00,"免费",1);
+insert into `kz_jiuke` values(null,false,'复合函数解析式求法','透析复杂函数基本概念',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'函数的单调性','掌握函数的重要性质单调性',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'单调性的应用','趣味讲解单调性运用',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'函数的奇偶性','举一反三，活学活用',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'函数的周期性','循序渐进学习函数周期性',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'函数的综合应用','5大技巧,7大视屏',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'指数及指数函数','运用函数基本知识解剖基本初等函数指数函数',4262,30,60.00,"",1);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'温度与标识','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'温度计使用方法','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长融化与凝固','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'汽化现象','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'长度和时间的测量','最基本的物理量可以衡量万物',4262,30,60.00,"",4);
+insert into `kz_jiuke` values(null,false,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'走进化学实验室','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'构成物质的例子','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'化学元素','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'化学式和方程式','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'器质性制取','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'物质的变化与性质','物理变化与化学变化的区别',4262,30,60.00,"",5);
+insert into `kz_jiuke` values(null,false,'神奇动物在哪里','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'谁偷窥了我的日常','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的名词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的冠词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的代词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的数词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的形容词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的动词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的易混淆动词辨析','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的副词','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'零点奇迹的宾语从句','神奇的动物，趣味的单词',4262,30,60.00,"",3);
+insert into `kz_jiuke` values(null,false,'初中易错词汇','神奇的动物，趣味的单词',4262,30,60.00,"",3);
 
--- --------------------------------------------------------
+create table `kz_category`(
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `category_name` VARCHAR(30) NOT NULL
+);
+insert into `kz_category` values(10,'前端开发');
+insert into `kz_category` values(20,'软件测试');
+insert into `kz_category` values(30,'英语');
+insert into `kz_category` values(40,'java');
+insert into `kz_category` values(50,'Excel');
 
---
--- 表的结构 `kz_category`
---
-
-DROP TABLE IF EXISTS `kz_category`;
-CREATE TABLE `kz_category` (
-  `id` int(11) NOT NULL,
-  `category_name` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `kz_category`
---
-
-INSERT INTO `kz_category` (`id`, `category_name`) VALUES
-(10, '前端开发'),
-(20, '软件测试'),
-(30, '英语'),
-(40, 'java'),
-(50, 'Excel');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `kz_class`
---
-
-DROP TABLE IF EXISTS `kz_class`;
-CREATE TABLE `kz_class` (
-  `time` varchar(32) DEFAULT NULL,
-  `id` int(11) NOT NULL,
-  `category_id` int(11) DEFAULT NULL,
-  `hot` tinyint(1) DEFAULT NULL,
-  `title` varchar(64) DEFAULT NULL,
-  `image` varchar(64) DEFAULT NULL,
-  `hits` varchar(32) DEFAULT NULL,
-  `index_img` varchar(64) DEFAULT NULL,
-  `class_title` varchar(64) DEFAULT NULL,
-  `teacher_head` varchar(64) DEFAULT NULL,
-  `teacher` varchar(16) DEFAULT NULL,
-  `teacher_introduce` varchar(64) DEFAULT NULL,
-  `detail_img` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `kz_class`
---
-
+CREATE TABLE `kz_class`(
+    `time` VARCHAR(32),
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `category_id` INT,
+    `hot` boolean,
+    `title` varchar(64),
+    `image` varchar(64) DEFAULT NULL,
+    `hits`  varchar(32) DEFAULT NULL,
+    `index_img` varchar(64),
+    `class_title` varchar(64),
+    `teacher_head` varchar(64),
+    `teacher` varchar(16),
+    `teacher_introduce` varchar(64),
+    `detail_img` varchar(64),
+    foreign KEY(`category_id`) references `kz_category`(`id`)
+);
 INSERT INTO `kz_class` (`time`, `id`, `category_id`, `hot`, `title`, `image`, `hits`, `index_img`, `class_title`, `teacher_head`, `teacher`, `teacher_introduce`, `detail_img`) VALUES
 (NULL, 1, 10, 1, 'WEB前端开发/0基础入门/新手小白适合/实操易上手', 'java(1)', '10000', 'Q1', '2022逆袭web前端高级开发 | JS/React/VueJS/NodeJS框架实战', 'Q1-T', '职坐标-张云', '8年互联网/前端从业经验', 'Q1-1'),
 (NULL, 2, 10, 1, '前端开123发132前端开发', 'java(2)', '20000', 'Q1', '2022逆袭web前端高级开发 | JS/React/VueJS/NodeJS框架实战', 'Q1-T', '职坐标-张云', '8年互联网/前端从业经验', 'Q1-1'),
@@ -183,221 +237,3 @@ INSERT INTO `kz_class` (`time`, `id`, `category_id`, `hot`, `title`, `image`, `h
 (NULL, 107, 50, 0, 'Office高级办公 Excel电子表格 公式函数 提高办公效率 必学课程', 'java(19)', '13000', 'E1', '【免费】Excel教程 excel零基础 高效职场办公 实战速成 [朱仕平]', 'E1-T', '朱仕平', '微软认证Office领域专家', 'E1-1'),
 (NULL, 108, 50, 0, 'excel教程入门到精通精讲视频OFFICE办公软件免费公开课', 'java(20)', '28000', 'E1', '【免费】Excel教程 excel零基础 高效职场办公 实战速成 [朱仕平]', 'E1-T', '朱仕平', '微软认证Office领域专家', 'E1-1'),
 (NULL, 109, 50, 0, 'excel教程 excel零基础 excel入门(办公软件、电子表格)【oeasy】', 'java(21)', '18000', 'E1', '【免费】Excel教程 excel零基础 高效职场办公 实战速成 [朱仕平]', 'E1-T', '朱仕平', '微软认证Office领域专家', 'E1-1');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `kz_jiuke`
---
-
-DROP TABLE IF EXISTS `kz_jiuke`;
-CREATE TABLE `kz_jiuke` (
-  `gid` int(11) NOT NULL,
-  `issold` tinyint(1) DEFAULT 0,
-  `title` varchar(32) DEFAULT NULL,
-  `desc` varchar(32) DEFAULT NULL,
-  `mai` int(11) DEFAULT NULL,
-  `price` int(11) DEFAULT NULL,
-  `oprice` int(11) DEFAULT NULL,
-  `tag` varchar(16) DEFAULT NULL,
-  `subject_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `kz_jiuke`
---
-
-INSERT INTO `kz_jiuke` (`gid`, `issold`, `title`, `desc`, `mai`, `price`, `oprice`, `tag`, `subject_id`) VALUES
-(1, 0, '中考暴力作文写作', '告别无话可说，就是那么一回事', 5132, 30, 60, '爆款', 2),
-(2, 0, '传世名作初体验', '文言文的魅力，用不同的打开方式', 4262, 30, 60, NULL, 2),
-(3, 0, '人物之百态人生', '见闻与传奇，聆听他们的故事', 4262, 0, 30, '免费', 2),
-(4, 0, '看历史风云变', '历史车轮滚滚，史家文采涛涛', 4262, 30, 60, '', 2),
-(5, 0, '识文体品佳作', '千古名作,如何看懂其中的门道', 4262, 30, 60, '火爆', 2),
-(6, 0, '品味诸子百家', '百家争鸣的时代,大师说了什么', 4262, 30, 60, '', 2),
-(7, 0, '铭记美丽河山', '游山玩水,托物言志', 4262, 30, 60, '', 2),
-(8, 0, '虚词上', '重点讲解“之”“乎”“者”“也”等九个虚词', 4262, 30, 60, '', 2),
-(9, 0, '性格稳定的实词', '形象的比喻和富有趣味型的例句帮助同学们掌握', 4262, 30, 60, '', 2),
-(10, 0, '比较变态的实词', '总结最有效的方法使同学们有方法可循', 4262, 30, 60, '', 2),
-(11, 0, '文言文翻译', '归纳文言文中的特殊句式', 4262, 30, 60, '', 2),
-(12, 0, '集合上', '学习函数的最重要前提，帮助你打好高中基础', 4262, 30, 60, '火爆', 1),
-(13, 0, '集合下', '金牌教练，帮你跨过初中高中数学分水岭', 4262, 0, 60, '免费', 1),
-(14, 0, '函数的概念与表示', '高效学习函数基本概念', 4262, 0, 60, '免费', 1),
-(15, 0, '复合函数解析式求法', '透析复杂函数基本概念', 4262, 30, 60, '', 1),
-(16, 0, '函数的单调性', '掌握函数的重要性质单调性', 4262, 30, 60, '', 1),
-(17, 0, '单调性的应用', '趣味讲解单调性运用', 4262, 30, 60, '', 1),
-(18, 0, '函数的奇偶性', '举一反三，活学活用', 4262, 30, 60, '', 1),
-(19, 0, '函数的周期性', '循序渐进学习函数周期性', 4262, 30, 60, '', 1),
-(20, 0, '函数的综合应用', '5大技巧,7大视屏', 4262, 30, 60, '', 1),
-(21, 0, '指数及指数函数', '运用函数基本知识解剖基本初等函数指数函数', 4262, 30, 60, '', 1),
-(22, 0, '长度和时间的测量', '最基本的物理量可以衡量万物', 4262, 30, 60, '', 4),
-(23, 0, '温度与标识', '最基本的物理量可以衡量万物', 4262, 30, 60, '', 4),
-(24, 0, '温度计使用方法', '最基本的物理量可以衡量万物', 4262, 30, 60, '', 4),
-(25, 0, '长融化与凝固', '最基本的物理量可以衡量万物', 4262, 30, 60, '', 4),
-(26, 0, '汽化现象', '最基本的物理量可以衡量万物', 4262, 30, 60, '', 4),
-(27, 0, '长度和时间的测量', '最基本的物理量可以衡量万物', 4262, 30, 60, '', 4),
-(28, 0, '长度和时间的测量', '最基本的物理量可以衡量万物', 4262, 30, 60, '', 4),
-(29, 0, '长度和时间的测量', '最基本的物理量可以衡量万物', 4262, 30, 60, '', 4),
-(30, 0, '长度和时间的测量', '最基本的物理量可以衡量万物', 4262, 30, 60, '', 4),
-(31, 0, '长度和时间的测量', '最基本的物理量可以衡量万物', 4262, 30, 60, '', 4),
-(32, 0, '长度和时间的测量', '最基本的物理量可以衡量万物', 4262, 30, 60, '', 4),
-(33, 0, '长度和时间的测量', '最基本的物理量可以衡量万物', 4262, 30, 60, '', 4),
-(34, 0, '长度和时间的测量', '最基本的物理量可以衡量万物', 4262, 30, 60, '', 4),
-(35, 0, '物质的变化与性质', '物理变化与化学变化的区别', 4262, 30, 60, '', 5),
-(36, 0, '走进化学实验室', '物理变化与化学变化的区别', 4262, 30, 60, '', 5),
-(37, 0, '构成物质的例子', '物理变化与化学变化的区别', 4262, 30, 60, '', 5),
-(38, 0, '化学元素', '物理变化与化学变化的区别', 4262, 30, 60, '', 5),
-(39, 0, '化学式和方程式', '物理变化与化学变化的区别', 4262, 30, 60, '', 5),
-(40, 0, '器质性制取', '物理变化与化学变化的区别', 4262, 30, 60, '', 5),
-(41, 0, '物质的变化与性质', '物理变化与化学变化的区别', 4262, 30, 60, '', 5),
-(42, 0, '物质的变化与性质', '物理变化与化学变化的区别', 4262, 30, 60, '', 5),
-(43, 0, '物质的变化与性质', '物理变化与化学变化的区别', 4262, 30, 60, '', 5),
-(44, 0, '物质的变化与性质', '物理变化与化学变化的区别', 4262, 30, 60, '', 5),
-(45, 0, '物质的变化与性质', '物理变化与化学变化的区别', 4262, 30, 60, '', 5),
-(46, 0, '神奇动物在哪里', '神奇的动物，趣味的单词', 4262, 30, 60, '', 3),
-(47, 0, '谁偷窥了我的日常', '神奇的动物，趣味的单词', 4262, 30, 60, '', 3),
-(48, 0, '零点奇迹的名词', '神奇的动物，趣味的单词', 4262, 30, 60, '', 3),
-(49, 0, '零点奇迹的冠词', '神奇的动物，趣味的单词', 4262, 30, 60, '', 3),
-(50, 0, '零点奇迹的代词', '神奇的动物，趣味的单词', 4262, 30, 60, '', 3),
-(51, 0, '零点奇迹的数词', '神奇的动物，趣味的单词', 4262, 30, 60, '', 3),
-(52, 0, '零点奇迹的形容词', '神奇的动物，趣味的单词', 4262, 30, 60, '', 3),
-(53, 0, '零点奇迹的动词', '神奇的动物，趣味的单词', 4262, 30, 60, '', 3),
-(54, 0, '零点奇迹的易混淆动词辨析', '神奇的动物，趣味的单词', 4262, 30, 60, '', 3),
-(55, 0, '零点奇迹的副词', '神奇的动物，趣味的单词', 4262, 30, 60, '', 3),
-(56, 0, '零点奇迹的宾语从句', '神奇的动物，趣味的单词', 4262, 30, 60, '', 3),
-(57, 0, '初中易错词汇', '神奇的动物，趣味的单词', 4262, 30, 60, '', 3);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `kz_subject`
---
-
-DROP TABLE IF EXISTS `kz_subject`;
-CREATE TABLE `kz_subject` (
-  `kid` int(11) NOT NULL,
-  `sname` varchar(32) DEFAULT NULL,
-  `icon` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `kz_subject`
---
-
-INSERT INTO `kz_subject` (`kid`, `sname`, `icon`) VALUES
-(1, '数学', NULL),
-(2, '语文', NULL),
-(3, '英语', NULL),
-(4, '物理', NULL),
-(5, '化学', NULL),
-(6, '政治', NULL),
-(7, '地理', NULL),
-(8, '生物', NULL),
-(9, '历史', NULL);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `kz_user`
---
-
-DROP TABLE IF EXISTS `kz_user`;
-CREATE TABLE `kz_user` (
-  `uid` int(11) NOT NULL,
-  `uname` varchar(32) DEFAULT NULL,
-  `upwd` varchar(32) DEFAULT NULL,
-  `email` varchar(64) DEFAULT NULL,
-  `phone` varchar(16) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `kz_user`
---
-
-INSERT INTO `kz_user` (`uid`, `uname`, `upwd`, `email`, `phone`) VALUES
-(1, '张三', '123456', '126@qq.com', '15878942654'),
-(2, '李四', '123456', '1245@qq.com', '15873494265'),
-(3, 'admin', '123456', '1245@qq.com', '15257609076');
-
---
--- 转储表的索引
---
-
---
--- 表的索引 `kz_category`
---
-ALTER TABLE `kz_category`
-  ADD PRIMARY KEY (`id`);
-
---
--- 表的索引 `kz_class`
---
-ALTER TABLE `kz_class`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `category_id` (`category_id`);
-
---
--- 表的索引 `kz_jiuke`
---
-ALTER TABLE `kz_jiuke`
-  ADD PRIMARY KEY (`gid`);
-
---
--- 表的索引 `kz_subject`
---
-ALTER TABLE `kz_subject`
-  ADD PRIMARY KEY (`kid`);
-
---
--- 表的索引 `kz_user`
---
-ALTER TABLE `kz_user`
-  ADD PRIMARY KEY (`uid`);
-
---
--- 在导出的表使用AUTO_INCREMENT
---
-
---
--- 使用表AUTO_INCREMENT `kz_category`
---
-ALTER TABLE `kz_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
-
---
--- 使用表AUTO_INCREMENT `kz_class`
---
-ALTER TABLE `kz_class`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
-
---
--- 使用表AUTO_INCREMENT `kz_jiuke`
---
-ALTER TABLE `kz_jiuke`
-  MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
-
---
--- 使用表AUTO_INCREMENT `kz_subject`
---
-ALTER TABLE `kz_subject`
-  MODIFY `kid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- 使用表AUTO_INCREMENT `kz_user`
---
-ALTER TABLE `kz_user`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- 限制导出的表
---
-
---
--- 限制表 `kz_class`
---
-ALTER TABLE `kz_class`
-  ADD CONSTRAINT `kz_class_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `kz_category` (`id`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
