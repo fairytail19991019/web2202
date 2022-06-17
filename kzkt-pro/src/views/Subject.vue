@@ -38,8 +38,14 @@ export default {
       this.axios.get("/items/jiuke?kid=" + this.nm).then((res) => {
         console.log(res);
         this.jiukelist = res.data.result;
+        this.$store.commit("updateKid", this.kid);
       });
     },
+    sold(){
+      this.axios.get("/items/jiuke?kid=" + this.$store.state.kid).then((res) => {
+        console.log(res);
+      });
+    }
   },
   mounted() {
     // console.log(this.kid);
@@ -50,11 +56,13 @@ export default {
       this.axios.get("/items/jiuke?kid=" + this.kid).then((res) => {
         console.log(res);
         this.jiukelist = res.data.result;
+        this.$store.commit("updateKid", this.kid);
       });
     },
   },
   data() {
     return {
+      sold:this.$store.issold,
       jiukelist: [],
       nm: Number(this.kid),
       mm: 0,

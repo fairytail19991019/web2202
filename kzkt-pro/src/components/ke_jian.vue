@@ -34,7 +34,7 @@
 
 <script>
 export default {
-  props: ["jiu", "kid"],
+  props: ["jiu"],
   methods: {
     Dialog() {
       this.$dialog
@@ -42,13 +42,15 @@ export default {
           message: "是否确定加入购物车",
         })
         .then(() => {
-          if(!sessionStorage.getItem('name')){
+          if (!sessionStorage.getItem("name")) {
             this.$toast("请先登录");
-            return
-          }else{
+            return;
+          } else {
+            let a=this.$store.state.issold
             let params = `gid=${this.jiu.gid}`;
             this.axios.put("/users/updateorder", params).then((res) => {
               console.log(res);
+              this.$store.commit('updateSold',!a)
             });
           }
         })
@@ -113,10 +115,9 @@ export default {
   height: 20px;
   font-size: 10px;
 }
-.van-card__footer{
+.van-card__footer {
   display: flex;
   justify-content: space-between;
   font-size: 10px;
-
 }
 </style>
