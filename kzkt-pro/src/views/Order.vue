@@ -19,7 +19,7 @@
 <script>
 import KeJian from "@/components/ke_jian.vue";
 export default {
-    components: {
+  components: {
     "ke-jian": KeJian,
   },
   data() {
@@ -28,18 +28,19 @@ export default {
       jiukelist: [],
     };
   },
-computed:{
-    a(){
-      return this.$store.state.issold
-    }
+  computed: {
+    a() {
+      return this.$store.state.issold;
+    },
   },
-  watch:{
-      a(){
-     this.getData()
-    }
+  watch: {
+    a() {
+      this.getData();
+    },
   },
   mounted() {
     this.getData();
+    this.$store.commit("updatepath", this.$route.path);
   },
   methods: {
     getData() {

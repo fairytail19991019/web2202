@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    path:sessionStorage.getItem('path'),
     loginname:sessionStorage.getItem('name'),  //存储登录用户信息
     kid:null,
     issold:sessionStorage.getItem('issold'),
@@ -13,6 +14,10 @@ export default new Vuex.Store({
   getters: {
   },
   mutations: {
+    updatepath(state,path){
+      state.path=path
+      sessionStorage.setItem('patn',path)
+    },
     updateurl(state,url){
       state.url=url
       sessionStorage.setItem('url',url)

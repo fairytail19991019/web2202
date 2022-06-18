@@ -2,7 +2,7 @@
   <div>
     <header>
       <mt-header title="集合" style="height: 50px; font-size: 20px">
-        <router-link to="/subject/1" slot="left">
+        <router-link :to="$store.state.path" slot="left">
           <mt-button icon="back" style="font-size: 20px">返回</mt-button>
         </router-link>
         <mt-button icon="" slot="right"></mt-button>
@@ -42,7 +42,8 @@
 </template>
 
 <script>
-export default {};
+export default {
+};
 </script>
 
 <style>

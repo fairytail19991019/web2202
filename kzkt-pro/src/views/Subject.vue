@@ -19,7 +19,7 @@
     <!-- 引入组件列表 -->
     <div>
       <!-- 引入文章列表项 -->
-      <ke-jian v-for="jiuke in jiukelist" :key="jiuke.gid" :jiu="jiuke">
+      <ke-jian v-for="jiuke in jiukelist" :key="jiuke.gid" :jiu="jiuke" >
       </ke-jian>
       <div style="height: 60px"></div>
     </div>
@@ -41,13 +41,14 @@ export default {
         this.$store.commit("updateKid", this.kid);
       });
     },
-    a(){
-     this.getdata()
-    }
+    a() {
+      this.getdata();
+    },
   },
   mounted() {
     // console.log(this.kid);
     this.getdata();
+    this.$store.commit('updatepath',this.$route.path)
   },
   methods: {
     getdata() {
@@ -58,14 +59,14 @@ export default {
       });
     },
   },
-  computed:{
-    a(){
-      return this.$store.state.issold
-    }
+  computed: {
+    a() {
+      return this.$store.state.issold;
+    },
   },
   data() {
     return {
-      sold:this.$store.issold,
+      sold: this.$store.issold,
       jiukelist: [],
       nm: Number(this.kid),
       mm: 0,
