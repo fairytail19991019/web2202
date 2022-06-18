@@ -76,9 +76,6 @@ export default {
 }
 </style>
 <style >
-body {
-  background-color: #eee;
-}
 .van-uploader {
   margin-top: 30px;
   margin-left: 40px;
