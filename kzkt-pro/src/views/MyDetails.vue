@@ -2,7 +2,7 @@
   <div v-if="details[0]">
     <!-- 返回键  分享键 -->
     <!-- 6.16 -->
-    <div>
+    <div style="width:100%">
       <van-nav-bar
         title=""
         left-text="返回"
@@ -18,6 +18,7 @@
             <van-icon name="share" size="18" style="margin-right: 15px" />
           </van-cell>
           <van-share-sheet
+            style="width:100%"
             v-model:show="showShare"
             title="将课程分享至"
             :options="options"
@@ -52,7 +53,7 @@
     <div class="test">
       <van-tabs v-model="active">
         <van-tab title="介绍">
-          <div id="mt1" class="clear">
+          <div id="mt1" class="clear" >
             <div class="mt1_1">
               <img class="mt1_1_1" src="../assets/img/wenjianjia.jpg" alt="" />
               <div>
@@ -532,6 +533,7 @@ div {
   margin-top: 12px;
 }
 .kname1_5 {
+  
   height: 1.14rem;
   width: 1.14rem;
   margin-right: 4px;
@@ -544,14 +546,16 @@ div {
 }
 #mt1 {
   height: 115px;
-  width: 100%;
-  padding: 16px;
+  width: 80%;
+  margin-left: 16px;
   display: flex;
   align-items: center;
 }
 .mt1_1 {
   display: flex;
+  width: 100%;
 }
+
 #mt1 .mt1_1 .mt1_1_1 {
   width: 36px;
   height: 36px;
