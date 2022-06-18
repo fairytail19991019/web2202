@@ -533,6 +533,7 @@ div {
   margin-top: 12px;
 }
 .kname1_5 {
+  
   height: 1.14rem;
   width: 1.14rem;
   margin-right: 4px;
